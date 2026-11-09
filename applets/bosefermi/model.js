@@ -48,16 +48,32 @@ export function resetHist(s) { s.hist.fill(0); s.nAcc = 0; }
 export function energy(s) { let e = 0; for (let i = 0; i < s.levels; i++) e += i * s.occ[i]; return e; }
 export function groundFraction(h, N) { return h[0] / N; }
 
-// Exact *canonical* occupations for N particles on levels ε_i = i (Borrmann–Franke recursion):
-//   Z_N = (1/N) Σ_{k=1}^{N} (±1)^{k+1} Z_1(kβ) Z_{N−k},  Z_1(β) = 1/(1 − e^{−β}),
-//   ⟨n_i⟩ = Σ_{k=1}^{N} (±1)^{k+1} e^{−k β ε_i} Z_{N−k}/Z_N   (+ bosons, − fermions).
-// For small N these differ markedly from the grand-canonical formulas, especially for bosons.
+// Exact *canonical* occupations for N particles on levels ε_i = i by dynamic programming over levels
+// (numerically stable, unlike the alternating Borrmann–Franke recursion for fermions at low T):
+//   fermions: Z^{(m)}_n = Z^{(m-1)}_n + w_m Z^{(m-1)}_{n-1};  bosons: Z^{(m)}_n = Σ_{k≥0} w_m^k Z^{(m-1)}_{n-k},
+// with w_m = e^{-βε_m}; ⟨n_i⟩ = Σ_{k≥1} k w_i^k Z^{(¬i)}_{N-k} / Z_N, where Z^{(¬i)} excludes level i.
 export function canonicalOccupations(N, kT, stat, levels = 80) {
-  const b = 1 / kT, sgn = stat === 'bose' ? 1 : -1;
-  const Z1 = (k) => 1 / (1 - Math.exp(-k * b));
-  const Z = [1];
-  for (let n = 1; n <= N; n++) { let s = 0; for (let k = 1; k <= n; k++) s += Math.pow(sgn, k + 1) * Z1(k) * Z[n - k]; Z[n] = s / n; }
+  const w = Float64Array.from({ length: levels }, (_, i) => Math.exp(-i / kT));
+  const build = (skip) => {
+    let Z = new Float64Array(N + 1); Z[0] = 1;
+    for (let m = 0; m < levels; m++) {
+      if (m === skip) continue;
+      const Zn = new Float64Array(N + 1);
+      for (let n = 0; n <= N; n++) {
+        if (stat === 'fermi') Zn[n] = Z[n] + (n > 0 ? w[m] * Z[n - 1] : 0);
+        else { let acc = 0, wk = 1; for (let k = 0; k <= n; k++) { acc += wk * Z[n - k]; wk *= w[m]; } Zn[n] = acc; }
+      }
+      Z = Zn;
+    }
+    return Z;
+  };
+  const ZN = build(-1)[N];
   const occ = new Float64Array(levels);
-  for (let i = 0; i < levels; i++) { let s = 0; for (let k = 1; k <= N; k++) s += Math.pow(sgn, k + 1) * Math.exp(-k * b * i) * Z[N - k]; occ[i] = s / Z[N]; }
+  for (let i = 0; i < levels; i++) {
+    const Zx = build(i); let s = 0, wk = 1;
+    const kmax = stat === 'fermi' ? 1 : N;
+    for (let k = 1; k <= kmax; k++) { wk *= w[i]; s += k * wk * Zx[N - k]; }
+    occ[i] = s / ZN;
+  }
   return occ;
 }
