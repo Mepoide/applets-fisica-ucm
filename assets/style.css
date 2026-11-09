@@ -78,7 +78,7 @@ button.icon { padding: 0.2rem 0.55rem; font-size: 1.05rem; line-height: 1; }
 .home p { max-width: 46rem; }
 #nav-toggle { display: none; }
 @media (max-width: 900px) {
-  .course-body { grid-template-columns: 1fr; }
+  .course-body { grid-template-columns: minmax(0, 1fr); }
   #nav-toggle { display: inline-block; }
   .sidebar { display: none; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--line); }
   body.nav-open .sidebar { display: block; }
@@ -109,8 +109,6 @@ details.sec .theory { padding: 0.2rem 0 0.6rem; }
 .canvases.stack canvas { aspect-ratio: 3 / 1; }
 .canvases.single { grid-template-columns: 1fr; }
 .toggles button[aria-pressed="true"] { border-color: var(--accent); font-weight: 600; }
-.sidebar .tad, .course-head .tad { color: var(--accent); font-weight: 700; margin-left: 0.15em; }
-.sidebar .tad-legend { font-size: 0.85rem; color: var(--muted); margin: 1rem 0.5rem 0; line-height: 1.35; }
 
 /* ---- sidebar sections ---- */
 .sidebar ul.pages { margin: 0.2rem 0 0.6rem; }
@@ -124,7 +122,7 @@ details.sec .theory { padding: 0.2rem 0 0.6rem; }
 .sidebar details.sec-nav summary .count { font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .sidebar details.sec-nav ol a { padding-left: 1.2rem; font-size: 0.95rem; }
 /* ---- landing hero ---- */
-.hero { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 8.5; min-height: 340px; background: var(--panel); border: 1px solid var(--line); }
+.hero { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 8.5; min-height: 340px; width: 100%; max-width: 100%; background: var(--panel); border: 1px solid var(--line); }
 .hero canvas.hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0.55; }
 .hero-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3.6rem 26% 3.4rem; pointer-events: none; }
 .hero-text h2 { margin: 0 0 0.5rem; font-size: clamp(1.2rem, 2.4vw, 1.9rem); line-height: 1.15; text-shadow: 0 1px 12px var(--bg), 0 0 2px var(--bg); }
@@ -141,7 +139,18 @@ details.sec .theory { padding: 0.2rem 0 0.6rem; }
 .card .num { display: inline-block; min-width: 1.6em; padding: 0 0.35em; border-radius: 4px; background: var(--accent); color: var(--accent-fg); font-size: 0.85rem; text-align: center; margin-bottom: 0.4rem; }
 .section-index .lead { font-size: 1.1rem; max-width: 46rem; }
 article.page { max-width: 52rem; }
-@media (max-width: 700px) { .hero-text { padding: 1rem 8%; } .hero-map a.hm { font-size: 0.85rem; padding: 0.25rem 0.6rem; } }
+@media (max-width: 700px) {
+  .hero { aspect-ratio: auto; height: 400px; min-height: 0; }
+  .hero-text { padding: 3rem 6% 3.2rem; }
+  .hero-text h2 { font-size: 1.25rem; }
+  .hero-text p { font-size: 0.9rem; }
+  .hero-map a.hm { font-size: 0.85rem; padding: 0.25rem 0.6rem; }
+  .hm-left, .hm-right { top: auto; bottom: 20%; }
+  .hm-left { left: 4%; } .hm-right { right: 4%; }
+  .hm-bl { left: 4%; bottom: 5%; } .hm-br { right: 4%; bottom: 5%; }
+  .canvases { grid-template-columns: 1fr; }
+  html, body { overflow-x: hidden; }
+}
 .eq-defs { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.7rem; margin: 0.6rem 0 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); font-size: 0.92rem; }
 .eq-defs dt { color: var(--accent); font-weight: 600; white-space: nowrap; }
 .eq-defs dd { margin: 0; color: var(--muted); }

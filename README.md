@@ -65,9 +65,9 @@ standalone page to embed.
 | 7 | `#/potencial` | Difusión en un potencial externo | Diffusion in an external potential |
 | 8 | `#/arrhenius` | Procesos de activación: ley de Arrhenius | Activation processes: Arrhenius law |
 | 9 | `#/resonancia` | Resonancia estocástica | Stochastic resonance |
-| 10* | `#/maxwell` | Discos duros y distribución de Maxwell | Hard disks and the Maxwell distribution |
-| 11* | `#/pila-arena` | Pila de arena y criticalidad autoorganizada | Sandpile and self-organized criticality |
-| 12* | `#/von-karman` | Gas reticular con obstáculo: calle de Von Kármán | Lattice gas with an obstacle: Von Kármán street |
+| 10 | `#/maxwell` | Discos duros y distribución de Maxwell | Hard disks and the Maxwell distribution |
+| 11 | `#/pila-arena` | Pila de arena y criticalidad autoorganizada | Sandpile and self-organized criticality |
+| 12 | `#/von-karman` | Gas reticular con obstáculo: calle de Von Kármán | Lattice gas with an obstacle: Von Kármán street |
 
 ### Física del Estado Sólido / Solid State Physics (`#/s/fes`)
 
@@ -100,8 +100,6 @@ standalone page to embed.
 | 8 | `#/superred-enlace-fuerte` | Aproximación de enlace fuerte a las superredes | Tight-binding approximation to superlattices |
 | 9 | `#/superred-gaussiana` | Superredes gaussianas de GaAs-AlGaAs | Gaussian GaAs-AlGaAs superlattices |
 | 10 | `#/absorcion-2d` | Absorción óptica en sistemas bidimensionales | Optical absorption in two-dimensional systems |
-
-\* Experimentos del TAD de 2003, no incluidos en el curso original. / Experiments from the 2003 TAD, not in the original course.
 
 Los experimentos 2 y 8 de Física Estadística son los mismos que 1 y 2 de Sistemas fuera del
 Equilibrio (el curso original también los compartía); `macro` reutiliza la vista de ventana de
@@ -173,5 +171,6 @@ Java code is frozen on the `legacy-java` branch.
 - Contexto histórico (TAD 2003, curso original, R. Brito) / historical context: [`docs/contexto/README.md`](docs/contexto/README.md).
 - Auditoría física / physics audit: [`docs/audit/README.md`](docs/audit/README.md).
 - Evaluación didáctica / didactic evaluation: [`docs/evaluacion-didactica.md`](docs/evaluacion-didactica.md).
+- Análisis didáctico final y propuestas de nuevas simulaciones / final didactic analysis and proposals: [`docs/analisis-didactico-y-propuestas.md`](docs/analisis-didactico-y-propuestas.md).
 - Especificaciones y planes / specs and plans: [`docs/superpowers/`](docs/superpowers/).
 - Capturas / screenshots: [`docs/screenshots/`](docs/screenshots/).

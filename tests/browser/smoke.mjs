@@ -119,6 +119,18 @@ for (const slug of slugs) {
   const shown = await page.$eval('#sidebar', (el) => getComputedStyle(el).display !== 'none');
   console.log(`${hidden && shown ? 'OK  ' : 'FAIL'} mobile nav hidden=${hidden} toggled=${shown}`);
   if (!(hidden && shown)) failures++;
+  await page.click('#nav-toggle');
+  // Mobile layout: no horizontal overflow on the home page nor on an experiment page.
+  const overflow = () => page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth);
+  await page.evaluate(() => { location.hash = '#/'; }); await page.waitForSelector('.hero canvas'); await page.waitForTimeout(600);
+  const ovHome = await overflow();
+  if (!process.env.BASE_URL) await page.screenshot({ path: `${root}docs/screenshots/mobile-home.png`, fullPage: true });
+  await page.evaluate((h) => { location.hash = h; }, `#/${routes[0].slug}`); await page.waitForSelector('button.primary'); await page.waitForTimeout(600);
+  const ovExp = await overflow();
+  if (!process.env.BASE_URL) await page.screenshot({ path: `${root}docs/screenshots/mobile-experiment.png`, fullPage: true });
+  const okOv = ovHome <= 0 && ovExp <= 0;
+  console.log(`${okOv ? 'OK  ' : 'FAIL'} mobile overflow home=${ovHome}px experiment=${ovExp}px`);
+  if (!okOv) failures++;
   await page.close();
 }
 await browser.close();
