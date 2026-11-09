@@ -39,9 +39,10 @@ label.ctl output { min-width: 2.5em; font-variant-numeric: tabular-nums; }
 .tabs button[aria-selected="true"] { border-bottom-color: var(--accent); font-weight: 600; }
 .tab-panel[hidden] { display: none; }
 .canvases { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
-.canvases figure { margin: 0; }
+.canvases figure { margin: 0; min-width: 0; }
+.stage > *, .canvases > * { min-width: 0; }
 .canvases figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.4; }
-canvas.plot { width: 100%; aspect-ratio: 1 / 1; display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; touch-action: none; }
+canvas.plot { width: 100%; max-width: 100%; min-width: 0; aspect-ratio: 1 / 1; display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; touch-action: none; }
 canvas.plot.wide { aspect-ratio: 2 / 1; }
 canvas.plot.tall { aspect-ratio: 3 / 4; }
 .readout { font-variant-numeric: tabular-nums; color: var(--fg); font-size: 0.95rem; padding: 0.4rem 0; }
