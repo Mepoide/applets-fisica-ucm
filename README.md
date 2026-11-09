@@ -14,6 +14,9 @@ serve the folder.
 
 ## Uso / Usage
 
+Sitio publicado / live site: <https://mepoide.github.io/applets-fisica-ucm/> (GitHub Pages
+desde `main`; `.nojekyll` evita que Jekyll descarte `applets/_fhp/`).
+
 ```bash
 npm run serve          # http://localhost:8080
 npm test               # physics tests (node:test)

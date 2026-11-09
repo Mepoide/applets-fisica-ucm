@@ -1,17 +1,21 @@
 // Browser smoke test: serves the repo, opens every applet in both languages,
 // presses Start, waits, checks for console errors and that the canvas changed,
 // and saves a screenshot per applet. Usage: node tests/browser/smoke.mjs [slug ...]
+// Set BASE_URL (e.g. https://mepoide.github.io/applets-fisica-ucm) to test a deployed
+// site instead of a local server; screenshots are then skipped.
 import { spawn } from 'node:child_process';
 import { chromium } from 'playwright-core';
 import { readdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const PORT = 8123;
+const BASE = (process.env.BASE_URL || `http://127.0.0.1:${PORT}`).replace(/\/$/, '');
 const root = new URL('../../', import.meta.url).pathname;
 const slugs = process.argv.slice(2).length ? process.argv.slice(2)
   : readdirSync(`${root}applets`).filter((d) => !d.startsWith('_') && existsSync(`${root}applets/${d}/index.html`));
 
-const server = spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: root, stdio: 'ignore' });
+const server = process.env.BASE_URL ? null
+  : spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: root, stdio: 'ignore' });
 await new Promise((r) => setTimeout(r, 700));
 
 const exe = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((p) => existsSync(p));
@@ -25,7 +29,7 @@ for (const slug of slugs) {
     const errors = [];
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
     page.on('pageerror', (e) => errors.push(String(e)));
-    const url = `http://127.0.0.1:${PORT}/applets/${slug}/index.html?lang=${lang}`;
+    const url = `${BASE}/applets/${slug}/index.html?lang=${lang}`;
     try {
       await page.goto(url, { waitUntil: 'networkidle' });
       await page.waitForTimeout(300);
@@ -43,7 +47,7 @@ for (const slug of slugs) {
       if (!ok) failures++;
       console.log(`${ok ? 'OK  ' : 'FAIL'} ${slug} [${lang}] title="${title}" canvasChanged=${changed} errors=${errors.length} theory="${theoryText.replace(/\s+/g, ' ')}"`);
       for (const e of errors) console.log(`      ${e}`);
-      if (lang === 'es') {
+      if (lang === 'es' && !process.env.BASE_URL) {
         await page.click('button[data-tab="sim"]');
         await page.waitForTimeout(400);
         await page.screenshot({ path: `${root}docs/screenshots/${slug}.png`, fullPage: true });
@@ -59,7 +63,7 @@ for (const slug of slugs) {
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e)));
-  await page.goto(`http://127.0.0.1:${PORT}/index.html`, { waitUntil: 'networkidle' });
+  await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
   const n = await page.$$eval('a.card', (a) => a.length);
   console.log(`${errors.length === 0 && n === 6 ? 'OK  ' : 'FAIL'} index cards=${n} errors=${errors.length}`);
   if (!(errors.length === 0 && n === 6)) failures++;
@@ -67,5 +71,5 @@ for (const slug of slugs) {
   await page.close();
 }
 await browser.close();
-server.kill();
+server?.kill();
 process.exit(failures ? 1 : 0);
