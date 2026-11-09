@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gas reticular FHP: onda sonora</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<header class="site"></header>
+<main>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="sim" aria-selected="true" data-i18n="tab.sim">Simulación</button>
+    <button type="button" role="tab" data-tab="theory" aria-selected="false" data-i18n="tab.theory">Teoría y notas</button>
+  </div>
+  <section id="sim" class="tab-panel">
+    <div class="params" id="params"></div>
+    <div id="loopctl"></div>
+    <div class="canvases">
+      <figure><canvas id="lattice" class="plot"></canvas><figcaption data-i18n="onda.cap.lattice"></figcaption></figure>
+      <figure><canvas id="profile" class="plot"></canvas><figcaption data-i18n="onda.cap.profile"></figcaption></figure>
+    </div>
+    <div class="readout" id="readout"></div>
+    <p class="hint" data-i18n="onda.hint"></p>
+  </section>
+  <section id="theory" class="tab-panel" hidden><div class="theory"></div></section>
+  <footer class="site"></footer>
+</main>
+<script type="module" src="./view.js"></script>
+</body>
+</html>
