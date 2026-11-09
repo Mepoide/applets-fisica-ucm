@@ -69,3 +69,38 @@ had empty plots, dead buttons or inconsistent scales).
    engine. Low effort.
 6. **Random walk and diffusion** (1D/2D, histogram vs Gaussian, $\langle x^2\rangle = 2Dt$): a
    natural bridge between particles and the thermal mode of modos-lineales. Low effort.
+
+
+---
+
+## Fase 2 (2026-11-09): curso de 9 experimentos con ecuación viva / Phase 2: 9-experiment course with live equations
+
+**ES.** Tras encontrar el contexto del TAD (ver `docs/contexto/`), el alcance pasó de "seis applets"
+a la sección completa *Sistemas fuera del Equilibrio* del curso original. De las seis propuestas
+de la fase 1 se descartaron por ahora las ajenas a esa sección (D2Q9, BTW 2D, Ising); la entropía
+$H(t)$ y el camino aleatorio quedaron absorbidos por los experimentos 1–2 y 6–7. Lo construido:
+
+| # | Experimento | Interactividad | Qué aprende el estudiante | Comparación teoría ↔ simulación |
+|---|---|---|---|---|
+| 1 | Anillo de Kac | N, M, 4 condiciones iniciales | Caos molecular como cierre, su validez a tiempos cortos, recurrencia de Poincaré | Δ(t) de campo medio superpuesta; cuenta atrás a T = 2N |
+| 2 | Irreversibilidad y fluctuaciones | 3 vistas (gas, Ehrenfest, ventana), N, kT, histograma | La irreversibilidad es cuestión de N, no de la dinámica | Binomial exacta, bandas σ y 3σ, P(todas a un lado) |
+| 3 | Conductividad térmica | N, T₁, T₂, perfiles T y ρ | Coeficiente de transporte medido como en el laboratorio; estado estacionario; presión uniforme | Recta de Fourier, κ ∝ √T, Q_in/Q_out |
+| 4 | Ondas sonoras | FHP + solución lineal, f, R, γ, Γ, D_T | Hidrodinámica emergente; modelo atérmico vs fluido real; Landau–Placzek | Predicción acústica (Hankel) sobre el perfil radial; frente c_s |
+| 5 | Maginu | s, n_max, red, especie, estado inicial | Reacción-difusión; sincronización por difusión; ruido de número finito | Ciclo límite RK4 vs media espacial |
+| 6 | Browniano | N, M/m, R/r, kT, microscopio/MSD | Fluctuaciones → difusión; equipartición | ⟨Δr²⟩ = 4Dt ajustado; ½M⟨V²⟩ = kT; Enskog |
+| 7 | Difusión en potencial | 3 potenciales, kT logarítmico en vivo | Metrópolis y estado de Boltzmann; relajación | p_i Boltzmann, χ²/dof, barra kT |
+| 8 | Arrhenius | N, kT, asimetría A | Ley exponencial emergente; cada factor de Kramers; una aproximación habitual que falla | Tres tasas (Kramers red, armónica, curso) vs ajuste |
+| 9 | Resonancia estocástica | N, kT, A, T, barrido automático | El ruido puede mejorar la respuesta; condición τ_K = T/2 | Amplitud de respuesta A_ω vs kT, kT_res predicho |
+
+Valoración: la sección queda completa y cada experimento tiene al menos una comprobación
+cuantitativa en pantalla. Pendiente para una fase 3, si se habla con R. Brito: las secciones
+*Física Estadística* (11 experimentos, de las que `fluctuaciones` y `maxwell` ya cubren dos) y, con
+F. Domínguez-Adame, *Estado Sólido* y *Dispositivos Cuánticos*.
+
+**EN.** After the TAD context was found (`docs/contexto/`), the scope moved from "six applets" to
+the whole *Non-equilibrium Systems* section of the original course. Of the six phase-1 proposals,
+those outside that section (D2Q9, 2D BTW, Ising) were set aside; entropy $H(t)$ and the random
+walk were absorbed by experiments 1–2 and 6–7. Every experiment now has at least one quantitative
+check on screen (table above). A phase 3, if agreed with R. Brito, would cover *Statistical
+Physics* (11 experiments, two already covered) and, with F. Domínguez-Adame, *Solid State* and
+*Quantum Devices*.

@@ -44,3 +44,24 @@ incompleto · **C** = presentación o usabilidad.
 - Todos los applets tienen ahora tests numéricos reproducibles (`npm test`, 43 tests) y prueba de
   humo en navegador (`npm run test:browser`). / All applets now have reproducible numerical
   tests and a browser smoke test.
+
+
+## Fase 2: experimentos del curso original recuperados del bytecode / Phase 2: course experiments recovered from bytecode
+
+Los applets `KACApplet`, `HardDisksApplet`, `GasApplet`, `IrreversibilidadApplet`, `ejerc1`–`ejerc6`
+solo existen como `.class` en valbuena.fis.ucm.es; se analizaron sus campos, constantes y cadenas
+(`docs/contexto/README.md`) y se reimplementaron desde la física descrita en las páginas del curso.
+Only bytecode exists for these applets; fields, constants and strings were analysed and the
+experiments reimplemented from the physics in the course pages.
+
+| Experimento | Hallazgo / Finding | Grav. | Evidencia | Corrección |
+|---|---|---|---|---|
+| 2 Irreversibilidad | Bandas de fluctuación en $\pm1/\sqrt N$ sobre la desviación relativa; tres applets separados para la misma estadística. | C | Texto del curso, `HardDisksApplet` | Bandas $\pm\sqrt N$, $\pm3\sqrt N$ sobre $\Delta$; una sola vista con tres modelos |
+| 3 Conductividad | "Conductividad" = energía intercambiada sin normalizar por tiempo ni por $L_y$; pared térmica muestreando la maxwelliana (enfría el gas). | A | Campos `ET1, ET2, conduc` de `ejerc4`; cálculo | $\kappa = (Q/L_y)/(\Delta T/L_x)$ con $Q$ por unidad de tiempo; reemisión con distribución de flujo (Rayleigh); test `thermal wall heats` |
+| 4 Ondas sonoras | La ecuación (1) del curso incluye el modo térmico, inexistente en el FHP (atérmico); comparación solo cualitativa (densidad en un cuadrado). | B | Texto del curso; `ejerc2` | Predicción acústica atérmica por transformada de Hankel superpuesta al perfil radial; vista B con el modo térmico donde sí existe; test `front advances at c_s` |
+| 5 Maginu | Tablas de transición precalculadas sin relación visible con las ecuaciones; ciclo límite como figura estática. | B | Campos `trans[][][][]`, `differ` de `ejerc5` | Reacción estocástica (Poisson) sobre las ecuaciones de Maginu; ciclo RK4 y trayectoria media en vivo; test de conservación y sincronización |
+| 6 Browniano | Applet externo (M. Fowler) sin medida. | C | Página del curso | Implementación propia con MSD, $D$, equipartición y Enskog; tests |
+| 7 Potencial | Histograma sobre 200 pasos fijos. | C | Texto del curso | Media móvil exponencial y $\chi^2$; test χ² vs Boltzmann para 3 potenciales |
+| 8 Arrhenius | La tasa de la ec. (2) del curso cuenta como escape toda llegada a la barrera: sobreestima $k$ en una red fina (factor ~25 con $\Delta x = 0.025$). | A | Test `lattice Kramers rate fits the measured decay`: $k_{\rm fit}/k_{\rm Kramers} = 0.94$, $k_{\rm curso}/k_{\rm Kramers} \approx 25$ | Tasa de Kramers exacta en la red (flujo sobre población) y aproximación armónica; la del curso se muestra punteada y se explica |
+| 9 Resonancia | Solo traza $x(t)$ frente al mínimo; sin medida de la resonancia. | C | Campos de `ejerc3` | Amplitud de respuesta $A_\omega$, $\tau_K$, $kT_{\rm res}$ y barrido; test de máximo en $kT_{\rm res}$ |
+| 1 Kac | Correcto. Solo se añaden la recurrencia explícita y campo medio para todas las condiciones iniciales. | ✓ | Test de periodicidad exacta $2N$ | — |
