@@ -9,5 +9,8 @@
     "test:browser": "node tests/browser/smoke.mjs",
     "serve": "python3 -m http.server 8080"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "^1.65.0"
+  }
 }
