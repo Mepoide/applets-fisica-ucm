@@ -16,7 +16,7 @@ i18n.register({
     'vk.wall.bounceback': 'rebote (no deslizamiento)', 'vk.wall.specular': 'especular (deslizamiento)',
     'vk.box': 'Caja de promediado (nodos)', 'vk.color': 'Color', 'vk.color.density': 'densidad', 'vk.color.speed': 'módulo de la velocidad', 'vk.color.vorticity': 'vorticidad',
     'vk.arrows': 'Flechas de velocidad', 'vk.relative': 'Restar la velocidad de entrada', 'vk.smooth': 'Promedio temporal del campo',
-    'vk.cap': 'El flujo entra por la izquierda y sale por la derecha (canal periódico con zona de entrada que impone densidad y velocidad). La placa azul es perpendicular al flujo. El campo se promedia en cajas; la vorticidad (rojo/azul) hace visible la estela.',
+    'vk.cap': 'El flujo entra por la izquierda y sale por la derecha (canal periódico con zona de entrada que impone densidad y velocidad). La placa negra es perpendicular al flujo. El campo se promedia en cajas; la vorticidad (rojo/azul) hace visible la estela.',
     'vk.readout': 't = {t} · ⟨u⟩ aguas arriba = {uup} · g(f) = {g} · ν(f) ≈ {nu} · Re = g·u·L/ν ≈ {re} · Mach u/c_s = {mach}',
     'vk.hint': 'Con f = 0.5 el factor galileano g(f) se anula: no hay advección no lineal y no puede formarse la calle de vórtices (el original usaba f = 0.5). Usa f ≈ 0.2–0.3, u ≈ 0.2–0.3 y espera unos miles de pasos; la vorticidad promediada en el tiempo es la mejor forma de ver la estela.',
     'vk.eq.g': 'factor galileano g(f) = (7/12)(1−2f)/(1−f)', 'vk.eq.u': 'velocidad media medida aguas arriba', 'vk.eq.L': 'longitud de la placa', 'vk.eq.nu': 'viscosidad cinemática FHP-III', 'vk.eq.re': 'número de Reynolds efectivo', 'vk.eq.ma': 'número de Mach u/c_s',
@@ -27,7 +27,7 @@ i18n.register({
     'vk.wall.bounceback': 'bounce-back (no slip)', 'vk.wall.specular': 'specular (slip)',
     'vk.box': 'Averaging box (nodes)', 'vk.color': 'Colour', 'vk.color.density': 'density', 'vk.color.speed': 'speed', 'vk.color.vorticity': 'vorticity',
     'vk.arrows': 'Velocity arrows', 'vk.relative': 'Subtract inflow velocity', 'vk.smooth': 'Time-average the field',
-    'vk.cap': 'Flow enters on the left and leaves on the right (periodic channel with an inflow zone imposing density and velocity). The blue plate is perpendicular to the flow. The field is box-averaged; vorticity (red/blue) makes the wake visible.',
+    'vk.cap': 'Flow enters on the left and leaves on the right (periodic channel with an inflow zone imposing density and velocity). The black plate is perpendicular to the flow. The field is box-averaged; vorticity (red/blue) makes the wake visible.',
     'vk.readout': 't = {t} · ⟨u⟩ upstream = {uup} · g(f) = {g} · ν(f) ≈ {nu} · Re = g·u·L/ν ≈ {re} · Mach u/c_s = {mach}',
     'vk.hint': 'At f = 0.5 the Galilean factor g(f) vanishes: there is no nonlinear advection and no vortex street can form (the original used f = 0.5). Use f ≈ 0.2–0.3, u ≈ 0.2–0.3 and wait a few thousand steps; time-averaged vorticity is the best way to see the wake.',
     'vk.eq.g': 'Galilean factor g(f) = (7/12)(1−2f)/(1−f)', 'vk.eq.u': 'measured mean upstream velocity', 'vk.eq.L': 'plate length', 'vk.eq.nu': 'FHP-III kinematic viscosity', 'vk.eq.re': 'effective Reynolds number', 'vk.eq.ma': 'Mach number u/c_s',
@@ -60,7 +60,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const eq = liveEquation(ui.panel, {
     title: 'eq.title',
     equations: [
-      { tex: '\\mathrm{Re} = \\frac{\\htmlId{g}{g(f)}\\,\\htmlId{u}{u}\\,\\htmlId{L}{L}}{\\htmlId{nu}{\\nu(f)}} = \\htmlId{re}{\\mathrm{Re}}', slots: { g: { label: 'vk.eq.g' }, u: { label: 'vk.eq.u' }, L: { label: 'vk.eq.L' }, nu: { label: 'vk.eq.nu' }, re: { label: 'vk.eq.re' } } },
+      { tex: '\\mathrm{Re} = \\frac{\\htmlId{g}{g(f)}\\cdot\\htmlId{u}{u}\\cdot\\htmlId{L}{L}}{\\htmlId{nu}{\\nu(f)}} = \\htmlId{re}{\\mathrm{Re}}', slots: { g: { label: 'vk.eq.g' }, u: { label: 'vk.eq.u' }, L: { label: 'vk.eq.L' }, nu: { label: 'vk.eq.nu' }, re: { label: 'vk.eq.re' } } },
       { tex: 'g(f) = \\frac{7}{12}\\,\\frac{1-2f}{1-f},\\qquad \\mathrm{Ma} = \\frac{u}{c_s} = \\htmlId{ma}{\\mathrm{Ma}}', slots: { ma: { label: 'vk.eq.ma' } } },
     ],
     indicators: [{ key: 're', label: 'vk.ind.re' }, { key: 'ma', label: 'vk.ind.ma' }],
@@ -111,9 +111,11 @@ export function mount(root, { root: base = '../..' } = {}) {
     plot.clear();
     plot.ctx.imageSmoothingEnabled = true;
     plot.drawImage(off, 0, 0, ny * H.S3, nx);
-    plot.color('#1f4e9c'); plot.lineWidth(3);
-    const sx = (ny - 1 - state.plateY) * H.S3;
-    plot.line(sx, H.physX(state.plateX0, state.plateY, nx), sx, H.physX(state.plateX0, state.plateY, nx) + state.plateLen);
+    // Plate: solid dark bar (one lattice row thick) with a white outline so it stands out on any colour map.
+    const sx = (ny - 1 - state.plateY) * H.S3, py0 = H.physX(state.plateX0, state.plateY, nx);
+    const thick = Math.max(2.5, 1.5 * H.S3);
+    plot.color('#ffffff'); plot.lineWidth(2); plot.rect(sx - thick / 2, py0, thick, state.plateLen, false);
+    plot.color('#111111'); plot.rect(sx - thick / 2, py0, thick, state.plateLen, true);
     plot.lineWidth(1);
     if (pArrows.get()) {
       plot.color('rgba(0,0,0,0.75)');
