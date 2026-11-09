@@ -47,6 +47,12 @@ $\vec c\to-\vec c$, giving no-slip; or specular, giving slip) and re-enters the 
 next step. Reflection is applied in both sub-steps of the cycle, so the wall conserves mass
 exactly.
 
+## Questions
+
+1. With f = 0.5 the velocity does not transport momentum (g(f) = 0). What do you see in the wake? Lower f to 0.25 and compare.
+2. Estimate the effective Reynolds number from u, the plate size and the gas viscosity. Is it enough for a clear vortex street?
+3. Increase u towards the speed of sound: which artefacts appear? Why is the FHP unreliable at high Mach?
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

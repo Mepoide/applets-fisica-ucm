@@ -20,6 +20,12 @@ $$\varepsilon_1 \simeq \pi^2 - \frac{15 - \pi^2}{48\pi^4}v^2 \approx \pi^2 - 1.1
 
 Finite differences with $N + 1$ segments: tridiagonal matrix with diagonal $2/s^2 - vu_n$; eigenvalues by Sturm and eigenvectors by inverse iteration; $u_{12}$ by direct summation. Start to sweep the field.
 
+## Questions
+
+1. For a = 150 Å, up to which field do the numerical calculation and second-order perturbation theory agree to 1 %? Express it in v = eFa/E₀.
+2. Check that the Stark shift scales as a⁴ by comparing a = 100 and 200 Å at the same field.
+3. Measure f₁₂ versus field: at which field has it dropped to half? Where does the missing oscillator strength go?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

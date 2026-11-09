@@ -20,6 +20,12 @@ The automaton treats every cell as a small reactor with an integer number of par
 
 Periodic lattice of $n\times n$ cells (20–120). Each step: $s$ diffusion sweeps (every cell hands a random neighbour up to half of its excess) and one reaction with $\Delta t = 0.1$. Limit cycle by 4th-order Runge–Kutta of the homogeneous system (discarding $t < 300$); period from the zero crossings of $c_1$. The indicator compares the amplitude of $\langle c_1\rangle$ over the last period with that of the cycle.
 
+## Questions
+
+1. Compare the mean trajectory of the stochastic simulation with the limit cycle of the deterministic equations. For how many particles per cell do they clearly separate?
+2. Increase the diffusion D: do the cells synchronise sooner or later? What happens with D = 0?
+3. Change the parameter k so that the system has a stable fixed point instead of a limit cycle. How do you recognise it in the simulation?
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc5`, 2002) | Here | Reason |

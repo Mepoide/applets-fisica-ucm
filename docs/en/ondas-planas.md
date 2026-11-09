@@ -16,6 +16,12 @@ and since the only Fourier coefficients of the cosine are $V(\pm2) = V_0/2$, the
 
 Eigenvalues of the symmetric tridiagonal matrix by bisection on the Sturm sequence (`lib/linalg.js`), 121 values of $k$, $M \le 20$. The convergence indicator compares the first gap with that obtained with $M + 4$.
 
+## Questions
+
+1. How many plane waves are needed for the lowest gap to converge to 1 %? And the third one?
+2. With a weak potential, compare the width of the first gap with the perturbative prediction 2|V₁|. Up to which V₁ does perturbation theory hold?
+3. Make the potential very strong: what do the bands look like? Relate it to the tight-binding limit.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

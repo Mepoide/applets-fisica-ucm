@@ -48,6 +48,12 @@ modo rápido). En cada paso se registra el recuento; el histograma, la media, la
 $C(\tau)$ (hasta 300 retardos) se recalculan sobre la serie almacenada. Cambiar la ventana
 borra la serie.
 
+## Preguntas
+
+1. Mide la varianza de N en la ventana para dos tamaños de ventana. ¿Cuándo se acerca más a Poisson y cuándo a la binomial? ¿Por qué?
+2. Comprueba que la fluctuación relativa σ/⟨N⟩ decrece como 1/√⟨N⟩. ¿Qué tamaño de ventana haría la fluctuación menor del 1 %?
+3. Estima el tiempo de correlación de la ocupación y compáralo con el tiempo que tarda un disco en cruzar la ventana a la velocidad térmica.
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

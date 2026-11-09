@@ -14,6 +14,12 @@ con la prima excluyendo el origen. La serie es **condicionalmente convergente**:
 
 Sumas directas sobre $(2k+1)^3 - 1$ términos para $k = 1,\dots,k_{\max} \le 14$, con y sin pesos de Evjen; la carga del cubo se calcula aparte. La vista del cubo muestra una cara con los iones y la opacidad proporcional a su peso de Evjen.
 
+## Preguntas
+
+1. Suma directa en esferas crecientes: ¿converge la constante de Madelung del NaCl? ¿Por qué oscila?
+2. Con el método de Evjen, ¿cuántas capas hacen falta para tres cifras correctas (1.7476)? ¿Por qué converge tanto más deprisa?
+3. Calcula la constante para el CsCl y compárala con el valor tabulado 1.7627. ¿Qué cambia en la asignación de cargas fraccionarias?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

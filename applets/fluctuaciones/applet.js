@@ -53,7 +53,7 @@ export function mount(root, { root: base = '../..', embedded = false } = {}) {
   const box = new Plot(ui.canvas.box, { xmin: 0, xmax: W, ymin: 0, ymax: H });
   const graph = new Plot(ui.canvas.graph, { axes: true });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'P(n) = \\binom{\\htmlId{N}{N}}{n}\\,\\htmlId{p}{p}^{\\,n}(1-\\htmlId{p2}{p})^{\\htmlId{N2}{N}-n}', slots: { N: { label: 'fluct.eq.N' }, N2: { label: 'fluct.eq.N' }, p: { label: 'fluct.eq.p' }, p2: { label: 'fluct.eq.p' } } },
       { tex: '\\langle n\\rangle = Np = \\htmlId{np}{Np},\\qquad \\sigma^2 = Np(1-p) = \\htmlId{vb}{\\sigma^2}\\;\\big(\\text{Poisson: } \\htmlId{vp}{Np}\\big)', slots: { np: {}, vb: {}, vp: {} } },

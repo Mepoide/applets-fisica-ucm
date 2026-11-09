@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const ps = new Plot(ui.canvas.spec, { axes: true, xlabel: 'ħω − E_g (meV)', ylabel: 'α (norm.)' });
   const pe = new Plot(ui.canvas.err, { axes: true, xlabel: 'γ (Ry*)', ylabel: 'error rms' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\alpha(\\hbar\\omega) \\sim \\sum_{n=1}^{\\infty}\\frac{4}{(n-\\frac12)^3}\\,\\frac{\\gamma}{[\\varepsilon + (n-\\frac12)^{-2}]^2 + \\gamma^2} + \\int_0^\\infty \\frac{S_{2D}(\\varepsilon\')\\,\\gamma}{(\\varepsilon\' - \\varepsilon)^2 + \\gamma^2}\\,d\\varepsilon\',\\quad \\varepsilon = \\frac{\\hbar\\omega - E_g}{Ry^*}', slots: {} },
       { tex: 'S_{2D}(\\varepsilon) = \\frac{2}{1 + e^{-2\\pi/\\sqrt\\varepsilon}},\\qquad \\gamma = \\Gamma_0 + \\frac{\\Gamma_{\\rm fon}}{e^{\\hbar\\omega_{LO}/k_BT} - 1} = \\htmlId{g}{\\gamma},\\quad T = \\htmlId{T}{T},\\quad \\Delta E_g = \\htmlId{shift}{\\Delta E_g},\\quad \\text{rms} = \\htmlId{err}{\\sigma}', slots: { g: { label: 'a2d.eq.g' }, T: { label: 'a2d.eq.T' }, shift: { label: 'a2d.eq.shift' }, err: { label: 'a2d.eq.err' } } },

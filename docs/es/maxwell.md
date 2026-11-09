@@ -56,6 +56,12 @@ entonces $t_c = \left[-\vec r\cdot\vec u - \sqrt{\cdot}\right]/u^2$.
 Las posiciones iniciales se sortean sin solapamiento (muestreo por rechazo; si la fracción
 de empaquetamiento es alta se recurre a una red hexagonal).
 
+## Preguntas
+
+1. Parte de todas las velocidades iguales: ¿cuántas colisiones por partícula hacen falta para que el χ² frente a la maxwelliana baje de 2? ¿Depende de N?
+2. Comprueba que la temperatura medida ½m⟨v²⟩ no cambia con el tiempo. ¿Qué se conserva en las colisiones elásticas?
+3. Cambia la masa o el radio de los discos: ¿cambia la forma de la distribución de velocidades? ¿Y el tiempo de relajación?
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

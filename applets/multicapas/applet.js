@@ -43,7 +43,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pR = new Plot(ui.canvas.R, { axes: true, xlabel: 'λ (Å)', ylabel: 'R' });
   const pS = new Plot(ui.canvas.stack, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: 'f_{k-1} = \\frac{r_{k-1} + f_k\\,e^{2i\\mu_k}}{1 + r_{k-1} f_k\\,e^{2i\\mu_k}},\\quad r_k = \\frac{n_{k-1} - n_k}{n_{k-1} + n_k},\\quad \\mu_k = \\frac{2\\pi n_k d_k}{\\lambda};\\qquad R = |f_1|^2', slots: {} },
       { tex: '\\lambda_B = 2(n_1 d_1 + n_2 d_2) = \\htmlId{lb}{\\lambda_B},\\qquad N = \\htmlId{N}{N},\\qquad R_{\\max} = \\htmlId{Rmax}{R_{\\max}}', slots: { lb: { label: 'mul.eq.lb' }, N: { label: 'mul.eq.N' }, Rmax: { label: 'mul.eq.Rmax' } } },

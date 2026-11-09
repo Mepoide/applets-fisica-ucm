@@ -89,7 +89,11 @@ button.icon { padding: 0.2rem 0.55rem; font-size: 1.05rem; line-height: 1; }
 .stage .canvases { margin-top: 0; }
 @media (max-width: 1000px) { .stage { grid-template-columns: 1fr; } }
 .liveeq { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.8rem 1rem; overflow-x: auto; }
-.liveeq h3 { margin: 0 0 0.4rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.liveeq h3 { margin: 0 0 0.4rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: center; }
+.eq-kind { font-size: 0.72rem; letter-spacing: 0.02em; text-transform: none; padding: 0.1rem 0.55rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); cursor: help; }
+.eq-kind.kind-a { border-style: dashed; }
+.eq-kind.kind-b { border-color: #2a9d4a; color: #2a9d4a; }
+.eq-kind.kind-c { border-color: #1f4e9c; color: #1f4e9c; }
 .liveeq .eq { margin: 0.4rem 0; font-size: 1rem; }
 .liveeq .katex { font-size: 1.08em; }
 .liveeq .eq .katex-display { margin: 0.4rem 0; }
@@ -104,6 +108,9 @@ button.icon { padding: 0.2rem 0.55rem; font-size: 1.05rem; line-height: 1; }
 details.sec { border-top: 1px solid var(--line); padding: 0.4rem 0; }
 details.sec summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; }
 details.sec .theory { padding: 0.2rem 0 0.6rem; }
+details.sec.sec-authors { opacity: 0.6; }
+details.sec.sec-authors summary { font-weight: 500; color: var(--muted); }
+details.sec.sec-authors .authors-note { font-size: 0.85rem; font-style: italic; color: var(--muted); margin: 0 0 0.5rem; }
 .theory-sections { margin-top: 1.5rem; max-width: 52rem; }
 .applet .hint { margin-top: 0.3rem; }
 .canvases.stack { grid-template-columns: 1fr; }

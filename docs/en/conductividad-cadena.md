@@ -16,6 +16,12 @@ with $\hbar\omega_D = k_B\Theta_D$ and $\omega_D = 2\sqrt{k/m}$; $\kappa/\kappa_
 
 `transmission` and `conductivity` in `applets/_chain/chain.js`: product of real $2\times2$ matrices with a cutoff when elements exceed $10^{150}$ (negligible transmission) and solution of the complex $2\times2$ system for $t$; Landauer integral by trapezoids over 161 frequencies and 60 temperatures. Average of $\ln T$, the self-averaging variable.
 
+## Questions
+
+1. Measure the thermal conductivity of the ordered chain versus its length: does it grow, decrease or stay? Is it a normal conductor (Fourier's law)?
+2. Add disorder: how does transmission decay with length at fixed frequency? Relate it to the localisation length.
+3. Why do low frequencies still transmit well with disorder? What wavelength compared with the disorder is needed?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

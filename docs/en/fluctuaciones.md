@@ -46,6 +46,12 @@ variance $k_BT$ per component ($m=1$). Time step $dt = 0.1$ (or 1 in fast mode).
 is recorded at every step; histogram, mean, variance and $C(\tau)$ (up to 300 lags) are
 recomputed from the stored series. Changing the window clears the series.
 
+## Questions
+
+1. Measure the variance of N in the window for two window sizes. When is it closer to Poisson and when to the binomial? Why?
+2. Check that the relative fluctuation σ/⟨N⟩ decreases as 1/√⟨N⟩. What window size would make the fluctuation below 1 %?
+3. Estimate the correlation time of the occupation and compare it with the time a disk takes to cross the window at the thermal speed.
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

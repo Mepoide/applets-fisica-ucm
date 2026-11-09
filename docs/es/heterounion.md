@@ -16,6 +16,12 @@ con solución exacta de Airy, $\varepsilon_1 = 2.3381$. La función de prueba ga
 
 Diferencias finitas en ambos casos (`applets/_dc/schrod.js`): el universal en $[0, 12]$ con pared en el origen; el de GaAs con masas $m_A$, $m_B$ en una malla de 1500 puntos de $-15$ nm a $60$ nm. Inicia para barrer $n_{2D}$.
 
+## Preguntas
+
+1. Mueve el parámetro variacional b y comprueba que E(b) nunca baja de 2.3381. ¿Por qué el mínimo variacional está siempre por encima del exacto?
+2. Para n₂D = 5 × 10¹¹ cm⁻² y x = 0.3, ¿cuánto baja el nivel por la barrera finita? ¿Qué fracción de la función de onda está en el AlGaAs?
+3. Dobla n₂D: ¿cómo escala la energía del nivel? Compruébalo con la ley (ħ²K²/2m)^{1/3}.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

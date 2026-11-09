@@ -16,6 +16,12 @@ with exact Airy solution, $\varepsilon_1 = 2.3381$. The Gaussian trial function 
 
 Finite differences in both cases (`applets/_dc/schrod.js`): the universal one on $[0, 12]$ with a wall at the origin; the GaAs one with masses $m_A$, $m_B$ on a 1500-point grid from $-15$ nm to $60$ nm. Start to sweep $n_{2D}$.
 
+## Questions
+
+1. Move the variational parameter b and check that E(b) never drops below 2.3381. Why is the variational minimum always above the exact value?
+2. For n₂D = 5 × 10¹¹ cm⁻² and x = 0.3, how much does the level drop due to the finite barrier? What fraction of the wave function is in the AlGaAs?
+3. Double n₂D: how does the level energy scale? Check with the (ħ²K²/2m)^{1/3} law.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

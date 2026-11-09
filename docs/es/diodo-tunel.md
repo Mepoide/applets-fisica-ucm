@@ -20,6 +20,12 @@ que crece mientras la resonancia recorre la ventana de energías ocupadas del em
 
 Versión discreta $\chi_{n+1} + \chi_{n-1} = [2 - (2m^*s^2/\hbar^2)(V_n - E)]\chi_n$ con $s = 1$ Å, recorrida desde el colector (onda saliente pura) hasta el emisor, donde se separan las amplitudes incidente y reflejada; $T$ incluye el cociente de velocidades de los dos contactos. La corriente se integra con la regla del trapecio. Inicia para barrer el voltaje y construir la I–V.
 
+## Preguntas
+
+1. A voltaje cero, compara la energía de la resonancia con el nivel del pozo aislado. ¿Por qué la transmisión llega a 1 si cada barrera transmite ~10⁻³?
+2. Lanza el barrido de voltaje: ¿a qué V está el máximo de corriente? Compáralo con 2(E₀ − E_F) y explica el factor 2.
+3. Dobla el espesor de las barreras: ¿cómo cambian la anchura de la resonancia y la corriente de pico? ¿Y al subir la temperatura a 300 K?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

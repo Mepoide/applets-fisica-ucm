@@ -56,6 +56,12 @@ is positive; then $t_c = \left[-\vec r\cdot\vec u - \sqrt{\cdot}\right]/u^2$.
 Initial positions are drawn without overlap (rejection sampling; at high packing fraction a
 hexagonal grid is used instead).
 
+## Questions
+
+1. Start with all speeds equal: how many collisions per particle are needed for the χ² against the Maxwellian to drop below 2? Does it depend on N?
+2. Check that the measured temperature ½m⟨v²⟩ does not change in time. What is conserved in elastic collisions?
+3. Change the mass or radius of the disks: does the shape of the speed distribution change? And the relaxation time?
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

@@ -22,6 +22,12 @@ The Metropolis walker with step $\Delta x$ is a discretisation of that diffusion
 
 Lattice of 161 sites on $[-2, 2]$ ($\Delta x = 0.025$), `applets/_walkers/metropolis.js`. $N_{\rm meta}$ counts the particles to the right of the maximum (for $A > 0$). The fitted rate is the slope of the regression of $\ln N_{\rm meta}$ against $t$ while $N_{\rm meta} > N_0 e^{-3}$. The Kramers integrals are evaluated as lattice sums.
 
+## Questions
+
+1. Measure the rate k at three temperatures and plot ln k versus 1/kT. Do you get a straight line? What barrier height comes from the slope?
+2. Compare the three theoretical rates with the fit: which one is right? Why does the original sheet's estimate overestimate k so much?
+3. Make the exit well asymmetric: does the rate change? What does Kramers' formula say about the curvature at the minimum?
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc6`, 2002) | Here | Reason |

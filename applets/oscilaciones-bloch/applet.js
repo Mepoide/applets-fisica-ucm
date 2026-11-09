@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const ppsi = new Plot(ui.canvas.psi, { axes: true, xlabel: 'n', ylabel: '|ψ_n|²' });
   const pr = new Plot(ui.canvas.r, { axes: true, xlabel: 't', ylabel: 'r(t)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'i\\,\\dot\\psi_n = (\\varepsilon_n + \\htmlId{F}{F}\\,n)\\,\\psi_n - \\htmlId{T}{T}\\,(\\psi_{n+1} + \\psi_{n-1}),\\qquad r(t) = \\sqrt{\\textstyle\\sum_n (n-n_0)^2 |\\psi_n|^2} = \\htmlId{r}{r}', slots: { F: { label: 'blo.eq.F' }, T: { label: 'blo.eq.T' }, r: { label: 'blo.eq.r' } } },
       { tex: 'F = 0:\\ r = \\sqrt2\\,T t;\\qquad F > 0:\\ T_B = \\frac{2\\pi}{F} = \\htmlId{TB}{T_B},\\quad L_{WS} = \\frac{4T}{F} = \\htmlId{L}{L}', slots: { TB: { label: 'blo.eq.TB' }, L: { label: 'blo.eq.L' } } },

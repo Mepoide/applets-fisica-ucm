@@ -58,6 +58,12 @@ ansatz with spreading Gaussians.
 No numerical integration: the three functions are evaluated at 601 points every frame. The
 animation loop only advances $t$.
 
+## Questions
+
+1. Separate the thermal mode from the acoustic ones: what fraction of the initial density perturbation stays put? Compare with 1 − 1/γ (Landau–Placzek).
+2. Set γ = 1: what happens to the thermal mode? Which fluid has γ = 1?
+3. Increase the thermal diffusivity D_T: which mode broadens faster? And when Γ is increased?
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

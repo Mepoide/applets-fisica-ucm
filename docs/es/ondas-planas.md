@@ -16,6 +16,12 @@ y como los únicos coeficientes de Fourier del coseno son $V(\pm2) = V_0/2$, la 
 
 Autovalores de la matriz tridiagonal simétrica por bisección sobre la secuencia de Sturm (`lib/linalg.js`), 121 valores de $k$, $M \le 20$. El indicador de convergencia compara el primer gap con el obtenido con $M + 4$.
 
+## Preguntas
+
+1. ¿Cuántas ondas planas hacen falta para que el gap más bajo converja al 1 %? ¿Y el tercero?
+2. Con potencial débil, compara la anchura del primer gap con la predicción perturbativa 2|V₁|. ¿Hasta qué V₁ vale la perturbación?
+3. Haz el potencial muy fuerte: ¿a qué se parecen las bandas? Relaciónalo con el límite de enlace fuerte.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

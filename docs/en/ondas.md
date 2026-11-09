@@ -22,6 +22,12 @@ which is the blue curve. The FHP-III sound speed is exact, $c_s^2 = 3/7$; the at
 
 View A: `applets/onda-lgca` (FHP automaton with rest particle, radial profile by rings, front as the profile minimum). The linear prediction is integrated numerically in $k$ with rational Bessel approximations (`lib/bessel.js`), 600 nodes up to $k_{\max} = 40/R$. View B: `applets/modos-lineales` (analytic solution, Gaussians of variance $\sigma^2 + 2\Gamma t$ and $\sigma^2 + 2 D_T t$).
 
+## Questions
+
+1. In the FHP view measure the front speed and compare it with the overlaid acoustic prediction. Why does the FHP have no thermal mode while a real fluid does?
+2. In the linear view, identify the two Brillouin peaks and the Rayleigh one. Which parameter controls the relative height of the central one?
+3. Reduce the radius of the initial perturbation in the FHP: how does the relative noise change? Which average improves the comparison with theory?
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc2`/`ejerc23`, 2003) | Here | Reason |

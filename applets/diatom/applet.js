@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'log₁₀ T (K)', ylabel: 'c_v / k_B' });
   const lev = new Plot(ui.canvas.lev, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\frac{c_v}{k_B} = \\tfrac32 + c_{\\rm rot}\\!\\Big(\\tfrac{T}{\\htmlId{Tr}{\\Theta_r}}\\Big) + c_{\\rm vib}\\!\\Big(\\tfrac{T}{\\htmlId{Tv}{\\Theta_v}}\\Big) = \\htmlId{cv}{c_v}\\quad (T = \\htmlId{T}{T})', slots: { Tr: { label: 'dia.eq.Tr' }, Tv: { label: 'dia.eq.Tv' }, cv: { label: 'dia.eq.cv' }, T: { label: 'dia.eq.T' } } },
       { tex: 'c_{\\rm vib} = \\frac{x^2 e^{x}}{(e^{x}-1)^2} = \\htmlId{cvib}{c_{\\rm vib}},\\ x = \\Theta_v/T;\\qquad c_{\\rm rot} = \\frac{\\langle\\varepsilon^2\\rangle - \\langle\\varepsilon\\rangle^2}{k_B^2T^2} = \\htmlId{cr}{c_{\\rm rot}},\\ \\varepsilon_J = J(J+1)k_B\\Theta_r', slots: { cvib: { label: 'dia.eq.cvib' }, cr: { label: 'dia.eq.cr' } } },

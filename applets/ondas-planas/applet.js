@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const bands = new Plot(ui.canvas.bands, { axes: true, xlabel: 'k L/π', ylabel: 'E (Ry)' });
   const pot = new Plot(ui.canvas.pot, { axes: true, xlabel: 'x', ylabel: 'V' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: '\\big[(k+2l)^2 - E\\big]\\,b_l + \\tfrac12 \\htmlId{V0}{V_0}\\,(b_{l-1} + b_{l+1}) = 0,\\qquad |l| \\le \\htmlId{M}{M}', slots: { V0: { label: 'opl.eq.V0' }, M: { label: 'opl.eq.M' } } },
       { tex: '\\Delta E_1(k=\\pm1) = \\htmlId{g1}{\\Delta E_1} \\;\\approx\\; 2|V(2)| = \\htmlId{nfe}{V_0}', slots: { g1: { label: 'opl.eq.g1' }, nfe: { label: 'opl.eq.nfe' } } },

@@ -16,6 +16,12 @@ with $V = 0$, $m = m_A$ in the well and $V = V_0$, $m = m_B$ in the barriers. In
 
 The transcendental equations are written in phase form, $\theta - \arctan g(\theta) = n\pi$ (even) or $n\pi + \pi/2$ (odd), monotonic in $\theta$, and solved by bisection branch by branch. Envelopes are $\cos kz$ / $\sin kz$ inside and exponentials $e^{-\kappa(|z| - a/2)}$ outside. Start to sweep the well width.
 
+## Questions
+
+1. For x = 0.3, from which width does the second level appear? And the third? Compare with the condition θ₀ = π/2, π.
+2. Compare the ground level with the infinite-well one for a = 50, 100, 200 Å. When is the error below 10 %?
+3. How does the penetration of the envelope into the barrier change as the level approaches V₀? Relate it to κ.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

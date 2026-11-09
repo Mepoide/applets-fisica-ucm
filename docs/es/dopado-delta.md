@@ -16,6 +16,12 @@ cuya solución exacta es $V(z) = -a^2/(a|z| + z_0)^4$ con $a = 2/15\pi$ y $z_0 =
 
 Malla de $N$ puntos en $[-c, c]$ con paredes infinitas en los extremos; matriz tridiagonal con diagonal $V_n + 2/s^2$ y codiagonal $-1/s^2$; autovalores por bisección sobre la secuencia de Sturm y autovectores por iteración inversa (`lib/linalg.js`). Inicia para barrer $N_D$ y construir la curva de niveles.
 
+## Preguntas
+
+1. ¿Cuántas subbandas están ocupadas para N_D = 1, 5, 10 × 10¹² cm⁻²? ¿Cómo escala la profundidad del pozo con N_D?
+2. Comprueba la neutralidad: suma las poblaciones de las subbandas y compárala con N_D. ¿Mejora el acuerdo al aumentar N_D? ¿Por qué?
+3. Cambia el intervalo c y la malla N: ¿cuándo los niveles dejan de depender de ellos? ¿Qué nivel converge peor?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

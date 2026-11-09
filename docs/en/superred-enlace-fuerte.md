@@ -16,6 +16,12 @@ with $T$ the transfer integral (energy unit). For $E_n = 0$ the Bloch solution g
 
 $N \times N$ tridiagonal matrix (diagonal $E_n$, off-diagonal $-1$): eigenvalues by Sturm bisection, eigenvector of the chosen state by inverse iteration. Start to scan the eigenstates in order of energy.
 
+## Questions
+
+1. Without disorder or field, check that the spectrum is −2cos[jπ/(N+1)]. How many wells does a band-centre state occupy? And a band-edge one?
+2. With W = 2, measure the participation ratio of several states: do the band-centre or the band-edge ones localise more?
+3. With F = 0.5, check that the level spacing is F and that each state spans about 4T/F wells. What happens when F is doubled?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

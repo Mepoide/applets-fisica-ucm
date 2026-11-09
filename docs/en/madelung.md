@@ -14,6 +14,12 @@ the prime excluding the origin. The series is **conditionally convergent**: the 
 
 Direct sums over $(2k+1)^3 - 1$ terms for $k = 1,\dots,k_{\max} \le 14$, with and without Evjen weights; the cube charge is computed separately. The cube view shows one face with the ions, opacity proportional to their Evjen weight.
 
+## Questions
+
+1. Direct summation over growing spheres: does the NaCl Madelung constant converge? Why does it oscillate?
+2. With Evjen's method, how many shells are needed for three correct digits (1.7476)? Why does it converge so much faster?
+3. Compute the constant for CsCl and compare with the tabulated 1.7627. What changes in the assignment of fractional charges?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

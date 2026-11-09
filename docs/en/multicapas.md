@@ -16,6 +16,12 @@ starting from the last interface. Each interface reflects very little ($|r| \sim
 
 Explicit complex arithmetic in `applets/multicapas/model.js`; 500 wavelengths around $\lambda_B$; the number of pairs grows progressively on start. Controls: $N$, $d_1$, $d_2$, $\delta_1$, $\delta_2$, $\beta$.
 
+## Questions
+
+1. Measure the Bragg peak width for N = 10, 20, 40 pairs. Does it scale as 1/N? Up to which N?
+2. Increase the absorption β: what is the maximum attainable reflectivity? How many pairs does the beam really 'see'?
+3. Make d₁ ≠ d₂ keeping the period: does the Bragg peak move? What happens to the second order when d₁ = d₂?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

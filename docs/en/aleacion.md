@@ -16,6 +16,12 @@ where $\xi(E)$ is the localisation length (larger at the centre of the former ba
 
 Same transfer matrix as experiment 5 with $\lambda_n$ drawn per realisation; "versus $E$" mode (300 energies) and "versus $N$" mode (40 lengths at fixed energy, with a linear fit whose slope gives $-1/\xi$). The pure-crystal bands are shaded as reference.
 
+## Questions
+
+1. With weak disorder, how does transmission change when doubling the length? Extract the localisation length.
+2. Compare the band-centre energy with the band edge: where do states localise first?
+3. Is there a metal–insulator transition in 1D as disorder varies, or are all states localised? Check with very small disorder and very long chains.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

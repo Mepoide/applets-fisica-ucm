@@ -16,6 +16,12 @@ con energías de ligadura $E_n = -{\rm Ry}^*/(n - \frac12)^2$ (4 Ry* para el 1s,
 
 Lorentzianas de área π para ambos términos; la integral del continuo se hace con el cambio $\varepsilon' = t^2$ (1200 puntos hasta 60 Ry*). El espectro "medido" se genera con el propio modelo con parámetros ocultos (γ = 0.42 Ry*) más ruido reproducible; no son datos experimentales, que no se conservan del applet original. Inicia para barrer Γ₀ y trazar el error del ajuste.
 
+## Preguntas
+
+1. Barre Γ₀ y localiza el mínimo del error. ¿Qué anchura de línea obtienes en meV? ¿Es compatible con desorden de aleación a 12 K?
+2. Sube la temperatura a 100 y 300 K con Γ_fonón = 5: ¿cuándo deja de distinguirse el pico excitónico del continuo?
+3. ¿Dónde empieza el continuo respecto al pico 1s? ¿Por qué no se ve un escalón limpio en E_g pese a que la densidad de estados 2D es un escalón?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

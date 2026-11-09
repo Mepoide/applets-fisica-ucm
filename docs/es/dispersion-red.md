@@ -16,6 +16,12 @@ con solución real $k$ solo donde el miembro derecho está en $[-1, 1]$: esas so
 
 `applets/_schrod/delta.js`: propagación de amplitudes complejas de derecha a izquierda (estado final $(1,0)$, $T = 1/|a_{\rm izq}|^2$), 1200 energías calculadas por tramos; bordes de banda por bisección de $|\cos qL + (\lambda/2q)\sin qL| = 1$. Potenciales atractivos ($\lambda < 0$) incluidos.
 
+## Preguntas
+
+1. Compara la transmisión por N deltas con las bandas de Kronig–Penney: ¿cuántas resonancias hay dentro de cada banda y por qué?
+2. Aumenta N: ¿qué ocurre con la transmisión en los gaps? Estima cómo decae con N.
+3. Haz la intensidad de las deltas negativa (pozos): ¿aparece una banda por debajo de E = 0? ¿Qué estados son?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

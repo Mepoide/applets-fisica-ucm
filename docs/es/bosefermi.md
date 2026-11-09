@@ -18,6 +18,12 @@ Con pocas partículas la colectividad macrocanónica no es equivalente a la can�
 
 Cadena de Markov sobre las configuraciones de ocupación $\{n_i\}$, que son los estados cuánticos del sistema de partículas idénticas: se elige una partícula al azar (nivel $i$ con probabilidad $n_i/N$), se propone un nivel $j$ uniforme y se acepta con $\min(1, e^{-(\varepsilon_j-\varepsilon_i)/kT}\,(n_j+1)/n_i)$ para bosones (corrección de Metropolis–Hastings por la asimetría de la propuesta) y $\min(1, e^{-\Delta\varepsilon/kT})$ para fermiones si el nivel está vacío. 30 niveles; $N \le 20$.
 
+## Preguntas
+
+1. Con N = 3 partículas y pocos niveles, compara las ocupaciones medias del Monte Carlo con las curvas canónicas y con las gran canónicas de Bose–Einstein y Fermi–Dirac. ¿Cuál describe mejor los datos? ¿Por qué?
+2. Baja la temperatura con bosones: ¿cuándo empieza a acumularse ocupación en el nivel fundamental? ¿Es esto condensación de Bose–Einstein en un sistema tan pequeño?
+3. Con fermiones a T → 0, ¿qué forma toma la ocupación? Identifica la energía de Fermi.
+
 ## Cambios respecto al applet original
 
 | Original (`BEFDApplet`, 2002) | Aquí | Motivo |

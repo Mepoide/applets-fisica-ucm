@@ -113,7 +113,7 @@ index.html                 shell del curso: portada (Ising en vivo), barra later
 lib/shell.js               enrutado por hash (#/, #/<page>, #/s/<sec>, #/<slug>), import() dinámico, montaje/desmontaje
 lib/registry.js            SECTIONS, REGISTRY (número por sección, título ES/EN, ruta del módulo, marca TAD), PAGES
 lib/hero.js                portada: Ising 2D Metrópolis a T_c sobre canvas
-lib/liveeq.js              panel de ecuación viva (KaTeX con huecos \htmlId actualizables, definiciones, indicadores)
+lib/liveeq.js              panel de ecuación viva (KaTeX con huecos \htmlId actualizables, definiciones, indicadores, etiqueta A/B/C del tipo de comparación)
 lib/page.js                esqueleto de applet, página suelta, redimensionado
 lib/docs.js                teoría en secciones desplegables (marked + KaTeX)
 lib/linalg.js              autovalores simétricos (Jacobi), tridiagonales (Sturm) y autovectores (iteración inversa)
@@ -127,7 +127,7 @@ applets/_fhp/fhp.js        autómata FHP-III y coeficientes de transporte
 applets/_chain/chain.js    cadenas armónicas: conteo de nodos, matriz de transferencia, Landauer
 applets/_schrod/delta.js   potenciales δ: transmisión, Kronig–Penney, disparo
 applets/_dc/schrod.js      Schrödinger de masa efectiva (Ben Daniel–Duke) en diferencias finitas, transmisión, corriente Tsu–Esaki
-docs/{es,en}/<slug>.md     ficha por experimento: qué se observa · modelo · algoritmo · cambios · pruebas · evaluación
+docs/{es,en}/<slug>.md     ficha por experimento: qué se observa · modelo · algoritmo · preguntas · pruebas · evaluación · cambios (nota para autores)
 docs/{es,en}/curso/*.md    presentación, bibliografía, enlaces, créditos
 docs/contexto/             el TAD de 2003, inventario del curso original, referencias de R. Brito
 docs/audit/README.md       auditoría física de los applets originales (fases 1–3)

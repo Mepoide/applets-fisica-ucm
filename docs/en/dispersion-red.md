@@ -16,6 +16,12 @@ with a real solution $k$ only where the right-hand side lies in $[-1, 1]$: the *
 
 `applets/_schrod/delta.js`: complex amplitudes propagated right to left (final state $(1,0)$, $T = 1/|a_{\rm left}|^2$), 1200 energies computed in chunks; band edges by bisection of $|\cos qL + (\lambda/2q)\sin qL| = 1$. Attractive potentials ($\lambda < 0$) included.
 
+## Questions
+
+1. Compare transmission through N deltas with the Kronig–Penney bands: how many resonances are there within each band and why?
+2. Increase N: what happens to the transmission in the gaps? Estimate how it decays with N.
+3. Make the delta strengths negative (wells): does a band appear below E = 0? Which states are those?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

@@ -39,7 +39,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pl = new Plot(ui.canvas.lev, { axes: true, xlabel: 'a (Å)', ylabel: 'E (eV)' });
   const pm = new Plot(ui.canvas.m, { axes: true, xlabel: 'E (eV)', ylabel: 'm(E)/m' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: 'm_A(E) = m_A\\Big(1 + \\frac{E}{\\htmlId{EgA}{E_{gA}}}\\Big),\\quad m_B(E) = m_B\\Big(1 + \\frac{E}{E_{gB}}\\Big),\\qquad a = \\htmlId{a}{a}', slots: { EgA: { label: 'tb2.eq.EgA' }, a: { label: 'tb2.eq.a' } } },
       { tex: '\\tan\\frac{k a}{2} = \\frac{m_A(E)}{m_B(E)}\\frac{\\kappa}{k};\\qquad E_1^{(1)} = \\htmlId{E1}{E_1^{(1)}},\\quad E_1^{(2)} = \\htmlId{E2}{E_1^{(2)}}', slots: { E1: { label: 'tb2.eq.E1' }, E2: { label: 'tb2.eq.E2' } } },

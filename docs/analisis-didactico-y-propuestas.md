@@ -15,9 +15,9 @@ Este documento resume qué es hoy la versión web del curso, qué aporta y qué 
 **Qué tiene cada experimento.**
 
 - La simulación con sus controles, animada y reiniciable, con velocidad regulable.
-- Un panel de "ecuación viva": la ecuación que gobierna el sistema escrita con KaTeX, con los símbolos sustituidos en tiempo real por los valores que se están midiendo, la definición de cada magnitud debajo y uno o dos indicadores numéricos de acuerdo con la teoría.
+- Un panel de "ecuación viva": la ecuación que gobierna el sistema escrita con KaTeX, con los símbolos sustituidos en tiempo real por los valores que se están midiendo, la definición de cada magnitud debajo, uno o dos indicadores numéricos de acuerdo con la teoría y una etiqueta que dice qué tipo de comparación es (véase 2.2).
 - La predicción teórica dibujada sobre los datos de la simulación.
-- Una ficha de teoría en secciones desplegables: qué se observa, modelo físico, algoritmo, cambios respecto al applet original, pruebas y evaluación didáctica.
+- Una ficha de teoría en secciones desplegables: qué se observa, modelo físico, algoritmo, preguntas, pruebas, evaluación didáctica y, al final y en gris, una nota para autores con los cambios respecto al applet original.
 - Una página independiente para incrustar la simulación en otro sitio.
 
 **Tecnología.** HTML, JavaScript y Canvas sin dependencias ni compilación; funciona en cualquier navegador actual, también en móvil, y se puede servir desde cualquier carpeta. La única carga externa son las librerías KaTeX y marked desde un CDN.
@@ -56,29 +56,31 @@ Es la pregunta correcta, y la respuesta depende del experimento. Conviene distin
 
 **Tipo C: dos métodos para el mismo problema.** Ejemplos: perturbación frente a numérico en el efecto Stark, variacional frente a exacto en la heterounión, una banda frente a dos bandas, modelo δ frente a Kronig–Penney completo, Evjen frente a sumas directas de Madelung. El panel muestra el error de una aproximación y su rango de validez. Esto es valioso y poco habitual en material docente, porque enseña a desconfiar de las fórmulas con criterio.
 
-Recuento aproximado sobre los 43 experimentos: unos 10 de tipo A, unos 20 de tipo B y unos 13 de tipo C. La conclusión es que la ecuación viva es un buen formato, pero **su valor no es uniforme** y la interfaz hoy no distingue los tres casos: el mismo panel rojo con valores sustituidos aparece en RMN (tipo A) y en Ising frente a Onsager (tipo B). Esa indistinción es la crítica más seria que le haría a la versión actual.
+Recuento sobre las 46 fichas (43 experimentos más los tres applets incrustados): 9 de tipo A, 27 de tipo B y 10 de tipo C. La conclusión es que la ecuación viva es un buen formato pero **su valor no es uniforme**, y esa diferencia debe ser visible. Por eso cada panel lleva ahora una etiqueta junto al título ("ecuación del modelo", "predicción frente a medida", "dos métodos comparados") con una explicación al pasar el ratón, de modo que el estudiante sabe si lo que ve es una lectura, una comprobación o una medida de error. La clasificación es mía y conviene que los autores la revisen experimento a experimento.
 
 ### 2.3 Otras limitaciones
 
-- **No hay preguntas.** El curso original planteaba cuestiones al alumno en cada hoja; la versión web explica pero no pregunta. Una simulación sin tarea tiende a usarse como vídeo.
+- **Preguntas por revisar.** El curso original planteaba cuestiones al alumno en cada hoja. Cada ficha tiene ahora una sección "Preguntas" con tres cuestiones comprobables en la propia simulación (138 en total, en dos idiomas), redactadas por mí a partir de la física de cada experimento. Son un borrador: necesitan la revisión de los autores, que son quienes saben qué confunde a los alumnos.
 - **No hay predicción previa.** El estudiante ve la curva teórica desde el primer segundo. La investigación en enseñanza de la física es bastante unánime en que el beneficio de una simulación crece mucho cuando el alumno predice antes de ver.
 - **Ruido estadístico sin tratar.** Varios experimentos de Monte Carlo muestran una curva ruidosa frente a una teórica lisa sin barras de error. Un indicador de "acuerdo" sin incertidumbre es medio indicador.
 - **Un espectro sintético.** En Absorción óptica 2D los datos "medidos" se generan con el propio modelo porque los datos experimentales del applet original no se conservan. Está declarado en la ficha, pero debería sustituirse por datos reales si existen.
+- **Sección para autores.** Cada ficha termina con "Cambios respecto al applet original", en gris y marcada como nota para los autores: compara con el applet Java y documenta las correcciones. Es candidata a retirarse en la versión que se dé a los alumnos.
 - **Decisiones físicas que necesitan el visto bueno de los autores.** Están listadas en `docs/evaluacion-didactica.md` (fase 3): la masa de barrera en el modelo de dos bandas, el coeficiente exacto de Stark, el término de masas de las minibandas, la ecuación (2) de Arrhenius, el carácter atérmico del FHP en las ondas sonoras.
 
 ---
 
 ## 3. Hacia dónde ir (TO BE)
 
-Ordenado por relación valor/esfuerzo. Lo primero no requiere nueva física.
+Ordenado por relación valor/esfuerzo. Lo primero ya está hecho; lo segundo es revisión, no programación.
 
-1. **Etiquetar el tipo de comparación en cada panel** (A: "la ecuación del modelo", B: "predicción teórica frente a medida", C: "dos métodos"). Un día de trabajo; corrige la crítica principal de 2.2.
-2. **Modo "predice primero".** La curva teórica y los indicadores quedan ocultos hasta que el alumno introduce su predicción (un número o un boceto con el ratón) o pulsa "mostrar". Dos o tres días; afecta a todos los experimentos a través del panel común.
-3. **Preguntas guiadas por experimento**, recuperando el espíritu de las hojas originales: tres o cuatro cuestiones con respuesta comprobable en la propia simulación ("¿a qué kT es máxima la respuesta? Compruébalo con el barrido"). Una semana de redacción para 43 experimentos; es trabajo de los autores más que de programación.
+1. **Hecho: etiqueta del tipo de comparación en cada panel** (A, B, C según 2.2) y **sección de preguntas en cada ficha**. Queda la revisión de ambas por los autores.
+2. **Revisión de textos por los autores**: preguntas, clasificación A/B/C y las decisiones físicas listadas en 2.3. Es la tarea con más valor por hora de las que quedan.
+3. **Modo "predice primero".** La curva teórica y los indicadores quedan ocultos hasta que el alumno introduce su predicción (un número o un boceto con el ratón) o pulsa "mostrar". Dos o tres días; afecta a todos los experimentos a través del panel común.
 4. **Barras de error e incertidumbre** en los indicadores de tipo B (bloques, bootstrap). Dos o tres días.
 5. **Exportación de datos** (CSV de la curva medida y la teórica) para que la simulación sirva de "instrumento" en prácticas con análisis posterior en hoja de cálculo o Python. Un día.
 6. **Cuaderno de laboratorio**: guardar en el navegador los parámetros y resultados de cada sesión, con un informe imprimible. Una semana.
-7. **Datos reales en Absorción 2D** y revisión de las decisiones físicas pendientes con los autores. Depende de la disponibilidad de los datos.
+7. **Datos reales en Absorción 2D**. Depende de la disponibilidad de los datos.
+8. **Versión para alumnos**: retirar la sección de autores de las fichas y decidir qué fichas de "Pruebas" se conservan.
 
 ---
 
@@ -143,6 +145,6 @@ Criterios: que llenen un hueco conceptual del curso, que tengan una comparación
 
 ## 5. Recomendación
 
-Si hubiera que elegir tres cosas para el próximo curso: (1) etiquetar los tipos de comparación y añadir el modo "predice primero", porque multiplican el valor de lo que ya existe sin escribir física nueva; (2) redactar las preguntas guiadas con los autores, que es donde el curso original tenía su fuerza; (3) desarrollar dos simulaciones nuevas de las que cierran huecos conceptuales y tienen tirón, el trinquete de Parrondo en Sistemas fuera del Equilibrio y el paquete de ondas dependiente del tiempo en Dispositivos Cuánticos.
+Si hubiera que elegir tres cosas para el próximo curso: (1) revisar con los autores las preguntas y la clasificación de los paneles, que ya están redactadas y solo necesitan criterio docente; (2) añadir el modo "predice primero", que multiplica el valor de lo que ya existe sin escribir física nueva; (3) desarrollar dos simulaciones nuevas de las que cierran huecos conceptuales y tienen tirón, el trinquete de Parrondo en Sistemas fuera del Equilibrio y el paquete de ondas dependiente del tiempo en Dispositivos Cuánticos.
 
 Todo el material es abierto y está en el repositorio; cualquier cambio en los textos o en la física lo podemos hacer en horas, no en meses.

@@ -39,7 +39,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const g = new Plot(ui.canvas.graph, { axes: true, xlabel: 'θ = ka/2', ylabel: '' });
   const en = new Plot(ui.canvas.env, { axes: true, xlabel: 'z (Å)', ylabel: 'E (meV)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: '-\\frac{\\hbar^2}{2}\\frac{d}{dz}\\Big[\\frac{1}{m(z)}\\frac{d\\chi}{dz}\\Big] + V(z)\\chi = E\\chi,\\qquad x = \\htmlId{x}{x},\\ a = \\htmlId{a}{a},\\ V_0 = \\htmlId{V0}{V_0}', slots: { x: { label: 'qw.eq.x' }, a: { label: 'qw.eq.a' }, V0: { label: 'qw.eq.V0' } } },
       { tex: '\\tan\\theta = \\frac{m_A}{m_B}\\frac{\\kappa}{k}\\ (\\text{par}),\\quad -\\cot\\theta = \\frac{m_A}{m_B}\\frac{\\kappa}{k}\\ (\\text{impar}),\\quad \\theta = \\frac{ka}{2};\\qquad E_1 = \\htmlId{E1}{E_1},\\ n = \\htmlId{n}{n}', slots: { E1: { label: 'qw.eq.E1' }, n: { label: 'qw.eq.n' } } },

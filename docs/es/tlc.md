@@ -16,6 +16,12 @@ independientemente de la forma de la distribución de las $x_i$ (basta que tenga
 
 Cada paso genera $N$ muestras con el generador pseudoaleatorio, suma y acumula en un histograma: bins enteros para dado y moneda, 60 bins en $[\mu_S - 5\sigma_S, \mu_S + 5\sigma_S]$ para la uniforme. Se calculan la media y la varianza muestrales y un $\chi^2/{\rm dof}$ sobre los bins con cuenta esperada $\ge 5$.
 
+## Preguntas
+
+1. Con N = 1 la suma es la propia variable: ¿qué distribución ves? ¿Cuántos sumandos hacen falta para que el histograma de la distribución uniforme sea indistinguible de la gaussiana a ojo? ¿Y para la exponencial, que es asimétrica?
+2. Mide la anchura del histograma para N = 1, 4, 16 y comprueba que crece como √N. ¿Qué pasa con la anchura de la media en lugar de la suma?
+3. Busca una distribución de partida para la que el teorema falle (varianza infinita). ¿Qué condición del teorema se viola?
+
 ## Cambios respecto al applet original
 
 | Original (`TLCApplet`, 2002; inspirado en uno de T. Ogden) | Aquí | Motivo |

@@ -16,6 +16,12 @@ With $B_1 = 0$ and $m_z$ at equilibrium, in reduced time $\tau = t/T_2$ and $\al
 
 Full Bloch equations (with co-rotating $B_1$) integrated by 4th-order Runge–Kutta with step $0.005\,T_2$; the Lorentzian is drawn normalised in an inset. Controls: $\alpha$, $\omega_1T_2$, $\omega/\omega_0$, $T_1/T_2$ and initial state (after a $\pi/2$ pulse or at equilibrium).
 
+## Questions
+
+1. Without B₁, check that |m_⊥| follows e^{−t/T₂} and that the number of turns per unit time is α/2π. What does a spectrometer measure from this signal?
+2. Switch B₁ on at resonance from equilibrium: how long until m_z crosses zero? Compare with π/(2ω₁).
+3. Detune ω/ω₀ to 1.1 and 1.2: what fraction of the absorption remains? Compare with the Lorentzian of width 1/T₂.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

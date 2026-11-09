@@ -16,6 +16,12 @@ con $\hbar\omega_D = k_B\Theta_D$ y $\omega_D = 2\sqrt{k/m}$; se representa $\ka
 
 `transmission` y `conductivity` en `applets/_chain/chain.js`: producto de matrices $2\times2$ reales con corte si los elementos superan $10^{150}$ (transmisión despreciable) y resolución del sistema complejo $2\times2$ para $t$; integral de Landauer por trapecios en 161 frecuencias y 60 temperaturas. Promedio de $\ln T$, la variable autopromediante.
 
+## Preguntas
+
+1. Mide la conductividad térmica de la cadena ordenada frente a su longitud: ¿crece, decrece o se mantiene? ¿Es un conductor normal (ley de Fourier)?
+2. Añade desorden: ¿cómo decae la transmisión con la longitud a frecuencia fija? Relaciónalo con la longitud de localización.
+3. ¿Por qué las frecuencias bajas siguen transmitiendo bien con desorden? ¿Qué longitud de onda comparada con el desorden hace falta?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

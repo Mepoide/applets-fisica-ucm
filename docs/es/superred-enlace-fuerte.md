@@ -16,6 +16,12 @@ con $T$ la integral de transferencia (unidad de energía). Para $E_n = 0$ la sol
 
 Matriz tridiagonal $N \times N$ (diagonal $E_n$, codiagonal $-1$): autovalores por bisección de Sturm, autovector del estado elegido por iteración inversa. Inicia para recorrer los autoestados en orden de energía.
 
+## Preguntas
+
+1. Sin desorden ni campo, comprueba que el espectro es −2cos[jπ/(N+1)]. ¿Cuántos pozos ocupa un estado del centro de la banda? ¿Y uno del borde?
+2. Con W = 2, mide la razón de participación de varios estados: ¿se localizan más los del centro o los de los bordes de la banda?
+3. Con F = 0.5, comprueba que el espaciado de niveles es F y que cada estado ocupa unos 4T/F pozos. ¿Qué pasa al duplicar F?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

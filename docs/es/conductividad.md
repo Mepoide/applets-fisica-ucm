@@ -20,6 +20,12 @@ Un segundo efecto, visible con $\Delta T$ grande, es el gradiente de densidad: e
 
 Motor de discos duros por eventos (`applets/_kinetic/disks.js`) con `walls.left = {thermal: T1}` y `walls.right = {thermal: T2}`. En cada contacto con un foco se acumula $\tfrac12 m(v'^2 - v^2)$ en `heat[lado]`. El perfil por franjas acumula en cada paso la energía cinética y el número de partículas de cada franja; $T(x)$ es la energía media por partícula (dos grados de libertad, $k_B = 1$). "Reiniciar estadística" pone a cero los contadores sin tocar las posiciones, para medir solo en el estado estacionario.
 
+## Preguntas
+
+1. Mide κ para T₁ = 1, T₂ = 2 y para T₁ = 2, T₂ = 4. ¿Cuánto cambia? ¿Es compatible con κ ∝ √T de la teoría cinética?
+2. Comprueba que el perfil de densidad es el inverso del de temperatura: ¿por qué debe ser ρT constante en el estado estacionario?
+3. Compara el calor que entra por una pared con el que sale por la otra. ¿Cuánto tiempo hace falta para que coincidan al 5 %?
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc4`, 2002) | Aquí | Motivo |

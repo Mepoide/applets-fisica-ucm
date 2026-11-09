@@ -53,6 +53,12 @@ spans about two decades: enough to see it in the applet.
 - $P(s)$ is estimated with logarithmic bins (4 per decade), divided by the number of
   integers falling in each bin to get a density comparable with the power law.
 
+## Questions
+
+1. With the fixed threshold, what size are all avalanches in the steady state? Why is there no criticality?
+2. With the Oslo model, measure the exponent τ of P(s) and compare it with 1.55. How many avalanches do you need for a stable fit?
+3. Change the size L: where does the power law cut off? How does the maximum avalanche size scale with L?
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

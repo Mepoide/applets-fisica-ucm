@@ -18,6 +18,12 @@ The box is finite and the grain cannot wander farther than $\sim L$: at long tim
 
 Event-driven hard-disk engine (`applets/_kinetic/disks.js`) with per-particle masses and radii: disk 0 has mass $M$ and radius $R$; the bath has mass 1 and radius 3, Maxwellian velocities at $kT$. The grain's trace is stored every step; the MSD is averaged over time origins; $D$ by least squares of $\langle\Delta r^2\rangle$ against $4t$ in the diffusive window. The grain's kinetic energy is averaged with a 2000-step moving window.
 
+## Questions
+
+1. Measure D from the slope of ⟨Δr²⟩ for two grain masses M. How does D depend on M? And on the bath temperature?
+2. Check equipartition ½M⟨V²⟩ = k_BT for the heavy grain. How much averaging time is needed for 5 % precision?
+3. At short times ⟨Δr²⟩ is not linear but quadratic. Estimate the crossover time and relate it to the time between collisions.
+
 ## Changes with respect to the original applet
 
 | Original (`BrownianApplet`, M. Fowler, U. Virginia) | Here | Reason |

@@ -12,6 +12,12 @@ Sin superficie, el teorema de Bloch exige momento cristalino real y la relación
 
 En lugar de resolver la ecuación trascendente del cristal semi-infinito, se diagonaliza por disparo un cristal largo pero finito ($N$ celdas, pared dura al fondo): se integra desde la pared con $\psi = 0$, $\psi' = 1$, a través de los δ (salto de $\psi'$ en $P\psi$) hasta $z = 0$ y se exige $\psi'(0)/\psi(0) = -\kappa$. Las raíces se buscan por barrido y bisección. Los niveles de banda se densifican al crecer $N$; el superficial no depende de $N$. La función de onda se dibuja normalizada y se mide el peso de $|\psi|^2$ cerca de la superficie.
 
+## Preguntas
+
+1. Con P = −3 y V₀ = 12, localiza el estado de Tamm en el gap y dibuja su función de onda. ¿Cuántas celdas penetra en el cristal? ¿Y en el vacío?
+2. Sube V₀ hasta que el nivel salga del gap: ¿en qué se convierte el estado?
+3. Cambia el signo de P: ¿por qué desaparece el estado superficial en este modelo? ¿Qué terminación lo recuperaría?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

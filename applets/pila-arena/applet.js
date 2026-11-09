@@ -60,7 +60,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pile = new Plot(ui.canvas.pile, { xmin: 0, xmax: 24, ymin: 0, ymax: 24 });
   const graph = new Plot(ui.canvas.graph, { axes: true });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'P(s) \\propto s^{-\\htmlId{tau}{\\tau}},\\qquad z_c = \\htmlId{z}{\\langle h_i - h_{i+1}\\rangle}', slots: { tau: { label: 'pila.eq.tau' }, z: { label: 'pila.eq.z' } } },
       { tex: 'h_i - h_{i+1} \\ge z_i^{c} \\;\\Rightarrow\\; h_i \\to h_i - 1,\\; h_{i+1} \\to h_{i+1} + 1', slots: {} },

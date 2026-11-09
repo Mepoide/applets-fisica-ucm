@@ -69,7 +69,7 @@ export function mount(root, { root: base = '../..', embedded = false } = {}) {
     T: new Plot(ui.canvas.T, { axes: true, xlabel: 'x', ylabel: 'δT' }),
   };
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\delta\\rho(x,t) = \\htmlId{ws}{\\tfrac{1}{\\gamma}}\\,\\tfrac12\\big[G_{\\Gamma}(x - c_s t) + G_{\\Gamma}(x + c_s t)\\big] + \\htmlId{wt}{\\big(1-\\tfrac1\\gamma\\big)}\\,G_{D_T}(x)', slots: { ws: { label: 'modos.eq.ws' }, wt: { label: 'modos.eq.wt' } } },
       { tex: 'G_D(x) = \\frac{e^{-x^2/(2\\sigma_D^2)}}{\\sqrt{2\\pi}\\,\\sigma_D},\\qquad \\sigma_\\Gamma^2 = \\sigma^2 + 2\\Gamma t = \\htmlId{ws2}{\\sigma_\\Gamma^2},\\quad \\sigma_{D_T}^2 = \\sigma^2 + 2 D_T t = \\htmlId{wt2}{\\sigma_{D_T}^2}', slots: { ws2: { label: 'modos.eq.ws2' }, wt2: { label: 'modos.eq.wt2' } } },

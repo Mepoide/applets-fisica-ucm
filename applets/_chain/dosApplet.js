@@ -42,7 +42,7 @@ export function mountDOS(root, { root: base = '../..', kind, slug } = {}) {
   const chain = new Plot(ui.canvas.chain, { xmin: 0, xmax: 40, ymin: -1, ymax: 1 });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'ω', ylabel: 'N(ω)/N' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: 'm_n\\,\\omega^2 U_n = k\\,(2U_n - U_{n-1} - U_{n+1}),\\qquad \\frac{M}{m} = \\htmlId{alpha}{\\alpha},\\quad N = \\htmlId{N}{N}', slots: { alpha: { label: 'chain.eq.alpha' }, N: { label: 'chain.eq.N' } } },
       { tex: 'R_n = \\frac{U_{n+1}}{U_n} = 2 - \\frac{m_n\\omega^2}{k} - \\frac{1}{R_{n-1}},\\qquad \\frac{N(\\omega)}{N} = \\frac{\\#\\{R_n<0\\}}{N};\\quad \\omega_{\\max}^{\\rm mono} = 2\\sqrt{k/m}', slots: {} },

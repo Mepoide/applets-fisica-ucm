@@ -16,6 +16,12 @@ and statistical physics predicts that an ergodic system reaches that maximum (wi
 
 Phases advanced exactly, $\theta_i = \theta_i(0) + \omega_i t \bmod 2\pi$, with $\Delta t = 0.05$. Frequencies: uniform random in $[0.5\omega_0, 1.5\omega_0]$, nearly equal ($\omega_0(1 \pm 0.01)$) or equispaced $\omega_0 i/N$. Radial bars show the occupation of each sector.
 
+## Questions
+
+1. Compare the time average of one oscillator's energy with the ensemble average. For how many oscillators and how long do they agree to 5 %?
+2. Check that the oscillator energy distribution tends to the Boltzmann exponential. Which temperature does it correspond to? Relate it to the total energy.
+3. Compute the entropy from the histogram and watch it grow until saturation. What limits its maximum value in the finite system?
+
 ## Changes with respect to the original applet
 
 | Original (`OsciladoresApplet`, 2002; idea by J. M. R. Parrondo) | Here | Reason |

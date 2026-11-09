@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pT = new Plot(ui.canvas.T, { axes: true, xlabel: 'E (T)', ylabel: 'T(E)' });
   const pp = new Plot(ui.canvas.prof, { axes: true, xlabel: 'n', ylabel: 'E_n (T)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: 'E_n = \\htmlId{E0}{E_0}\\,\\exp\\Big(-\\frac{n^2}{2\\htmlId{S}{S}^2}\\Big)\\ (n\\ \\text{impar}),\\quad E_n = 0\\ (n\\ \\text{par});\\qquad N_b = \\htmlId{Nb}{N_b}', slots: { E0: { label: 'gsl.eq.E0' }, S: { label: 'gsl.eq.S' }, Nb: { label: 'gsl.eq.Nb' } } },
       { tex: '\\begin{pmatrix} C_{n+1} \\\\ C_n \\end{pmatrix} = \\begin{pmatrix} E_n - E & -1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} C_n \\\\ C_{n-1} \\end{pmatrix},\\qquad E = -2T\\cos k,\\qquad T_{\\max} = \\htmlId{Tmax}{T_{\\max}}', slots: { Tmax: { label: 'gsl.eq.Tmax' } } },

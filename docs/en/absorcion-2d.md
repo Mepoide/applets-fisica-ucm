@@ -16,6 +16,12 @@ with binding energies $E_n = -{\rm Ry}^*/(n - \frac12)^2$ (4 Ry* for 1s, four ti
 
 Lorentzians of area π for both terms; the continuum integral uses the substitution $\varepsilon' = t^2$ (1200 points up to 60 Ry*). The "measured" spectrum is generated with the model itself with hidden parameters (γ = 0.42 Ry*) plus reproducible noise; it is not experimental data, which did not survive from the original applet. Start to sweep Γ₀ and trace the fit error.
 
+## Questions
+
+1. Sweep Γ₀ and locate the error minimum. Which linewidth do you obtain in meV? Is it compatible with alloy disorder at 12 K?
+2. Raise the temperature to 100 and 300 K with Γ_phonon = 5: when does the exciton peak stop being distinguishable from the continuum?
+3. Where does the continuum start relative to the 1s peak? Why is there no clean step at E_g even though the 2D density of states is a step?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

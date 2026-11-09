@@ -16,6 +16,12 @@ Con $B_1 = 0$ y $m_z$ en equilibrio, en tiempo reducido $\tau = t/T_2$ y $\alpha
 
 Ecuaciones de Bloch completas (con $B_1$ co-rotatorio) integradas por Runge–Kutta de orden 4 con paso $0.005\,T_2$; la Lorentziana se dibuja normalizada en un recuadro. Controles: $\alpha$, $\omega_1T_2$, $\omega/\omega_0$, $T_1/T_2$ y estado inicial (tras un pulso $\pi/2$ o en equilibrio).
 
+## Preguntas
+
+1. Sin B₁, comprueba que |m_⊥| sigue e^{−t/T₂} y que el número de vueltas por unidad de tiempo es α/2π. ¿Qué mide un espectrómetro de esta señal?
+2. Activa B₁ en resonancia desde el equilibrio: ¿cuánto tarda m_z en pasar por cero? Compáralo con π/(2ω₁).
+3. Desintoniza ω/ω₀ a 1.1 y 1.2: ¿qué fracción de la absorción queda? Compárala con la Lorentziana de anchura 1/T₂.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

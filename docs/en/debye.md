@@ -16,6 +16,12 @@ a universal function of $T/\Theta_D$. For $T \gg \Theta_D$ it tends to 3 (Dulong
 
 Debye integral by composite Simpson with a step adapted to $\Theta_D/T$; for $\Theta_D/T > 60$ the analytic limit is used. Tabulated Debye temperatures (Kittel). Excited modes are drawn as $g(\omega)\min(1,\langle n\rangle)$ with $\langle n\rangle = 1/(e^{\hbar\omega/k_BT}-1)$.
 
+## Questions
+
+1. Compare Einstein and Debye at low temperature: which gives the T³ law? Why does the Einstein model fall exponentially?
+2. Fit θ_D so that the curve passes through the copper data. What value do you get and how does it compare with the tabulated 343 K?
+3. At what temperature, in units of θ_D, does the specific heat reach 90 % of the Dulong–Petit value?
+
 ## Changes with respect to the original applet
 
 | Original (`DebyeApplet`, 2002) | Here | Reason |

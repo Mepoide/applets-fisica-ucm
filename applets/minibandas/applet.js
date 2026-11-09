@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pb = new Plot(ui.canvas.bands, { axes: true, xlabel: 'd_b (nm)', ylabel: 'E (meV)' });
   const pd = new Plot(ui.canvas.disp, { axes: true, xlabel: 'K L / π', ylabel: 'E (meV)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: '\\cos(K L) = \\cos(k d_p)\\cosh(\\kappa d_b) + \\tfrac12\\Big(\\frac{\\kappa m_A}{k m_B} - \\frac{k m_B}{\\kappa m_A}\\Big)\\sin(k d_p)\\sinh(\\kappa d_b),\\quad d_p = \\htmlId{dp}{d_p},\\ d_b = \\htmlId{db}{d_b},\\ x = \\htmlId{x}{x}', slots: { dp: { label: 'mb.eq.dp' }, db: { label: 'mb.eq.db' }, x: { label: 'mb.eq.x' } } },
       { tex: '\\delta:\\ \\cos(KL) = \\cos(kL) + \\frac{m_A V_0 d_b}{\\hbar^2 k}\\sin(kL);\\qquad E_1^{\\rm pozo} = \\htmlId{E1}{E_1},\\quad \\Delta E_1 = \\htmlId{w1}{\\Delta E_1}', slots: { E1: { label: 'mb.eq.E1' }, w1: { label: 'mb.eq.w1' } } },

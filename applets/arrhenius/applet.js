@@ -43,7 +43,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const box = new Plot(ui.canvas.box, { axes: true, xlabel: 'x', ylabel: 'V' });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 't', ylabel: 'N_meta' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'N_{\\rm meta}(t) = N_0\\,e^{-k t},\\qquad k_{\\rm fit} = \\htmlId{kf}{k}', slots: { kf: { label: 'arr.eq.kf' } } },
       { tex: 'k_{\\rm Arr} = \\frac{\\htmlId{wm}{\\omega_{\\rm m}}\\cdot\\htmlId{wM}{\\omega_{\\rm M}}}{2\\pi\\,\\gamma}\\,e^{-\\htmlId{dE}{\\Delta E}/\\htmlId{kT}{kT}} = \\htmlId{kA}{k_{\\rm Arr}}', slots: { wm: { label: 'arr.eq.wm' }, wM: { label: 'arr.eq.wM' }, dE: { label: 'arr.eq.dE' }, kT: { label: 'arr.eq.kT' }, kA: { label: 'arr.eq.kA' } } },

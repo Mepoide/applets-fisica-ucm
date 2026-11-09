@@ -20,6 +20,12 @@ $$\varepsilon_1 \simeq \pi^2 - \frac{15 - \pi^2}{48\pi^4}v^2 \approx \pi^2 - 1.1
 
 Diferencias finitas con $N + 1$ segmentos: matriz tridiagonal con diagonal $2/s^2 - vu_n$; autovalores por Sturm y autovectores por iteración inversa; $u_{12}$ por suma directa. Inicia para barrer el campo.
 
+## Preguntas
+
+1. Para a = 150 Å, ¿hasta qué campo coinciden el cálculo numérico y la perturbación de segundo orden al 1 %? Exprésalo en v = eFa/E₀.
+2. Comprueba que el desplazamiento Stark escala como a⁴ comparando a = 100 y 200 Å al mismo campo.
+3. Mide f₁₂ frente al campo: ¿a qué campo ha caído a la mitad? ¿A dónde va la fuerza de oscilador que falta?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

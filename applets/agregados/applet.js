@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const spec = new Plot(ui.canvas.spec, { axes: true, xlabel: 'E − ε (J)', ylabel: 'A(E)' });
   const st = new Plot(ui.canvas.states, { axes: true, xlabel: 'n', ylabel: '|a_jn|²' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: 'H = \\sum_n \\varepsilon_n |n\\rangle\\langle n| - J\\sum_n \\big(|n\\rangle\\langle n{+}1| + \\text{h.c.}\\big),\\qquad N = \\htmlId{N}{N},\\ W = \\htmlId{W}{W}', slots: { N: { label: 'agr.eq.N' }, W: { label: 'agr.eq.W' } } },
       { tex: 'A(E) = \\sum_j d_j^2\\,\\frac{\\htmlId{gamma}{\\Gamma}/\\pi}{(E - E_j)^2 + \\Gamma^2},\\quad d_j^2 = \\Big(\\sum_n a_{jn}\\Big)^2;\\qquad E_{\\rm b} = \\htmlId{Eb}{E_b},\\ d_{\\rm b}^2 = \\htmlId{fb}{f_b}', slots: { gamma: { label: 'agr.eq.gamma' }, Eb: { label: 'agr.eq.Eb' }, fb: { label: 'agr.eq.fb' } } },

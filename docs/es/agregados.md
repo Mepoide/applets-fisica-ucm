@@ -18,6 +18,12 @@ con la regla de suma $\sum_j d_j^2 = N d_0^2$. Para la cadena periódica $E_k = 
 
 Diagonalización completa (Jacobi, `lib/linalg.js`) del hamiltoniano $N\times N$, $N \le 80$; razón de participación $1/\sum_n a_{jn}^4$ del estado brillante. Energías en unidades de $J$ con $\varepsilon = 0$.
 
+## Preguntas
+
+1. Sin desorden, ¿dónde está la línea de absorción respecto a la molécula aislada (ε = 0)? ¿Cuánto vale su fuerza de oscilador comparada con N moléculas independientes?
+2. Añade desorden W = 1 y W = 3: ¿cuántos estados se reparten la fuerza de oscilador? Mide la razón de participación del estado brillante.
+3. ¿Por qué el estado de k = 0 es el brillante y los demás son oscuros en la cadena periódica? ¿Qué cambia en una cadena abierta?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

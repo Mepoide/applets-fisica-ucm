@@ -39,7 +39,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const last = new Plot(ui.canvas.last, { axes: true, xlabel: 'i', ylabel: 'x_i' });
   const hist = new Plot(ui.canvas.hist, { axes: true, xlabel: 'S', ylabel: 'P(S)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'S = \\sum_{i=1}^{\\htmlId{N}{N}} x_i,\\qquad \\langle x\\rangle = \\htmlId{mu}{\\mu},\\quad \\mathrm{Var}\\,x = \\htmlId{s2}{\\sigma^2}', slots: { N: { label: 'tlc.eq.N' }, mu: { label: 'tlc.eq.mu' }, s2: { label: 'tlc.eq.s2' } } },
       { tex: 'P(S) \\to \\frac{1}{\\sqrt{2\\pi N\\sigma^2}}\\,e^{-(S-N\\mu)^2/2N\\sigma^2},\\qquad N\\mu = \\htmlId{mS}{N\\mu},\\quad \\sigma\\sqrt N = \\htmlId{sS}{\\sigma_S},\\quad \\frac{\\sigma_S}{N\\mu} = \\htmlId{rel}{\\sigma_S/N\\mu}', slots: { mS: { label: 'tlc.eq.mS' }, sS: { label: 'tlc.eq.sS' }, rel: { label: 'tlc.eq.rel' } } },

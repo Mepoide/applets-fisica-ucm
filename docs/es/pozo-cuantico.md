@@ -16,6 +16,12 @@ con $V = 0$, $m = m_A$ en el pozo y $V = V_0$, $m = m_B$ en las barreras. Integr
 
 Las ecuaciones trascendentes se escriben en forma de fase, $\theta - \arctan g(\theta) = n\pi$ (pares) o $n\pi + \pi/2$ (impares), monótonas en $\theta$, y se resuelven por bisección rama a rama. Las envolventes son $\cos kz$ / $\sin kz$ dentro y exponenciales $e^{-\kappa(|z| - a/2)}$ fuera. Inicia para barrer el espesor del pozo.
 
+## Preguntas
+
+1. Para x = 0.3, ¿a partir de qué espesor aparece el segundo nivel? ¿Y el tercero? Compara con la condición θ₀ = π/2, π.
+2. Compara el nivel fundamental con el del pozo infinito para a = 50, 100, 200 Å. ¿Cuándo es el error menor del 10 %?
+3. ¿Cómo cambia la penetración de la función envolvente en la barrera al acercarse el nivel a V₀? Relaciónalo con κ.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

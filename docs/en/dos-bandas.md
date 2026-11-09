@@ -18,6 +18,12 @@ Note: the original sheet writes $m_B(E) = m_A(1 + E/E_{gB})$, which does not rep
 
 The same phase equations of Exercise 1 with masses evaluated at $E$, solved by bisection in $E$. Start to sweep the width and trace $E(a)$ in both models.
 
+## Questions
+
+1. For InAs-GaSb with a = 60 Å, how much does the ground level drop when non-parabolicity is included? And for GaAs-AlAs?
+2. At which width does the one-band error exceed 10 % in each system? Relate it to E/E_g.
+3. Why are the high levels corrected more than the ground one?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

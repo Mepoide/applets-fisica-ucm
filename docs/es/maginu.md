@@ -20,6 +20,12 @@ El autómata trata cada celda como un pequeño reactor con un número entero de 
 
 Red periódica de $n\times n$ celdas (20–120). Cada paso: $s$ barridos de difusión (cada celda cede a un vecino aleatorio hasta la mitad de su exceso) y una reacción con $\Delta t = 0.1$. Ciclo límite por Runge–Kutta 4 del sistema homogéneo (descartando $t < 300$); periodo medido por los cruces por cero de $c_1$. El indicador compara la amplitud de $\langle c_1\rangle$ en el último periodo con la del ciclo.
 
+## Preguntas
+
+1. Compara la trayectoria media de la simulación estocástica con el ciclo límite de las ecuaciones deterministas. ¿Para qué número de partículas por celda se separan claramente?
+2. Aumenta la difusión D: ¿las celdas se sincronizan antes o después? ¿Qué pasa con D = 0?
+3. Cambia el parámetro k para que el sistema tenga un punto fijo estable en lugar de ciclo límite. ¿Cómo lo reconoces en la simulación?
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc5`, 2002) | Aquí | Motivo |

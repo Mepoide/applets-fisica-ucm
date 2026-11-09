@@ -20,6 +20,12 @@ which grows while the resonance sweeps the window of occupied emitter energies a
 
 Discrete version $\chi_{n+1} + \chi_{n-1} = [2 - (2m^*s^2/\hbar^2)(V_n - E)]\chi_n$ with $s = 1$ Å, run from the collector (pure outgoing wave) to the emitter, where incident and reflected amplitudes are separated; $T$ includes the velocity ratio of the two contacts. The current is integrated with the trapezoid rule. Start to sweep the voltage and build the I–V.
 
+## Questions
+
+1. At zero bias, compare the resonance energy with the isolated-well level. Why does the transmission reach 1 if each barrier transmits ~10⁻³?
+2. Run the voltage sweep: at which V is the current maximum? Compare with 2(E₀ − E_F) and explain the factor 2.
+3. Double the barrier thickness: how do the resonance width and the peak current change? And when raising the temperature to 300 K?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

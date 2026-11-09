@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const ring = new Plot(ui.canvas.ring, { xmin: -1.2, xmax: 1.2, ymin: -1.2, ymax: 1.2 });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 't', ylabel: 'S / ln M' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'S = -\\sum_{k=1}^{\\htmlId{M}{M}} f_k \\ln f_k = \\htmlId{S}{S},\\qquad S_{\\max} = \\ln M = \\htmlId{Smax}{\\ln M}', slots: { M: { label: 'osc.eq.M' }, S: { label: 'osc.eq.S' }, Smax: { label: 'osc.eq.Smax' } } },
       { tex: 'S_{\\rm eq} \\simeq \\ln M - \\frac{M-1}{2N} = \\htmlId{Seq}{S_{\\rm eq}},\\qquad T_{\\rm rec} = \\frac{2\\pi N}{\\omega_0} = \\htmlId{T}{T}', slots: { Seq: { label: 'osc.eq.Seq' }, T: { label: 'osc.eq.T' } } },

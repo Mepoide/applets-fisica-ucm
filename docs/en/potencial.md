@@ -20,6 +20,12 @@ which is therefore the stationary distribution, and the dynamics describes relax
 
 `applets/_walkers/metropolis.js`: `L = 81` sites on $x \in [-1, 1]$, $V_{\max} = 4$ at the edges; each step every particle proposes $\pm1$ at random and accepts by Metropolis; the ends are reflecting (a jump outside is rejected). The histogram accumulates the instantaneous occupation at every step and is normalised. $\chi^2/{\rm dof}$ is computed over sites with expected count $\ge 5$ and, since consecutive samples are correlated, it is only indicative (green if $< 3$).
 
+## Questions
+
+1. For the double well, at what temperature is the population of the high well half that of the low one? Check with the Boltzmann factor.
+2. Lower kT until the walkers get trapped in a single well: is the measured distribution still right? What fails, the theory or the measuring time?
+3. With the harmonic potential, measure the width of the distribution versus kT and check the √kT law.
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc1`, 2002) | Here | Reason |

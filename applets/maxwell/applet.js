@@ -60,7 +60,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const hist = new Plot(ui.canvas.hist, { axes: true, xlabel: 'v', ylabel: 'N(v)' });
 
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'f(v)\\,dv = \\frac{m v}{\\htmlId{kT}{kT}}\\,e^{-m v^2/(2\\cdot\\htmlId{kT2}{kT})}\\,dv', slots: { kT: { label: 'maxwell.eq.kT' }, kT2: { label: 'maxwell.eq.kT' } } },
       { tex: '\\htmlId{kT3}{kT} = \\big\\langle \\tfrac12 m v^2 \\big\\rangle,\\qquad N = \\htmlId{N}{N}', slots: { kT3: { label: 'maxwell.eq.kT' }, N: { label: 'maxwell.eq.N' } } },

@@ -16,6 +16,12 @@ hops occur, statistically, once per half period and in phase with the signal: th
 
 Lattice of 41 sites on $[-2, 2]$ ($\Delta x = 0.1$) so that the diffusion time is short compared with the periods; at every step $V$ is recomputed and Metropolis applied (`applets/_walkers/metropolis.js`). $\tau_K$ is evaluated with the lattice Kramers rate of experiment 8 on the untilted well, and the resonant temperature by solving $\tau_K(kT) = T/2$ by bisection. The sweep simulates 20 particles for 8 periods at 15 temperatures and computes $A_\omega$ discarding the first two periods.
 
+## Questions
+
+1. Run the kT sweep and locate the maximum of the response amplitude. Compare it with the condition τ_K(kT) = T/2. How far off is it?
+2. Change the period T of the signal: where does the resonant kT move? Reason with the Arrhenius law for τ_K.
+3. Increase the signal amplitude A until the well stops being double at some instant: is there still stochastic resonance?
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc3`, 2002) | Here | Reason |

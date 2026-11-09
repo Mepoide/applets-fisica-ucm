@@ -47,7 +47,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const map = new Plot(ui.canvas.map, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'k', ylabel: 'χ²/dof' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\begin{pmatrix} x\' \\\\ y\' \\end{pmatrix} = \\begin{pmatrix} \\htmlId{t11}{t_{11}} & \\htmlId{t12}{t_{12}} \\\\ \\htmlId{t21}{t_{21}} & \\htmlId{t22}{t_{22}} \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} \\bmod 1,\\qquad \\det T = 1', slots: { t11: { label: 'baker.eq.t11' }, t12: { label: 'baker.eq.t12' }, t21: { label: 'baker.eq.t21' }, t22: { label: 'baker.eq.t22' } } },
       { tex: '\\lambda_\\pm = \\htmlId{lp}{\\lambda_+},\\ \\htmlId{lm}{\\lambda_-};\\qquad h_{KS} = \\ln\\lambda_+ = \\htmlId{h}{h}', slots: { lp: { label: 'baker.eq.lp' }, lm: { label: 'baker.eq.lm' }, h: { label: 'baker.eq.h' } } },

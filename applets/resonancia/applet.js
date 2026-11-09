@@ -44,7 +44,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const box = new Plot(ui.canvas.box, { axes: true, xlabel: 'x', ylabel: 'V' });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 't', ylabel: 'x' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'V(x,t) = (x^2-1)^2 + A\\,x\\cos\\omega t,\\qquad T = \\frac{2\\pi}{\\omega} = \\htmlId{T}{T}', slots: { T: { label: 'res.eq.T' } } },
       { tex: '\\tau_K(\\htmlId{kT}{kT}) = \\htmlId{tau}{\\tau_K}\\;\\stackrel{?}{=}\\;\\frac{T}{2}\\quad\\Rightarrow\\quad kT_{\\rm res} = \\htmlId{kTr}{kT_{\\rm res}}', slots: { kT: { label: 'res.eq.kT' }, tau: { label: 'res.eq.tau' }, kTr: { label: 'res.eq.kTr' } } },

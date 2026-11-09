@@ -26,6 +26,12 @@ La discrepancia nace de las correlaciones que la propia dinámica crea entre col
 
 Vectores `colors` ($\pm 1$) y `marks` (0/1, la arista $i$ une las casillas $i$ e $i+1$). Un paso: `next[(i+1) % N] = marks[i] ? -colors[i] : colors[i]`. Las marcas se eligen sin repetición barajando los índices. Condiciones iniciales: aleatorio 50/50, aleatorio 70/30, todos azules, alternados. La gráfica guarda $\Delta$ hasta $4N$ pasos y el panel compara $\Delta$ con el campo medio.
 
+## Preguntas
+
+1. Con todas las bolas azules y M = 10 marcas, ¿durante cuántos pasos coincide la predicción de campo medio con la simulación? ¿Por qué deja de hacerlo?
+2. Pon M = N/2. ¿Qué predice el campo medio desde t = 1? ¿Qué hace la simulación? ¿Y con M = N?
+3. Deja correr hasta t = 2N. ¿Por qué el campo medio no puede predecir la recurrencia? ¿Qué hipótesis del caos molecular se rompe en un sistema finito?
+
 ## Cambios respecto al applet original
 
 | Original (`KACApplet`, 2002) | Aquí | Motivo |

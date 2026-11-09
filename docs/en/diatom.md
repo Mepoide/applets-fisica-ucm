@@ -20,6 +20,12 @@ tends to 1 for $T \gg \Theta_r$ (classical equipartition of two degrees of freed
 
 $c_{\rm rot}$ by direct summation of the series until terms are negligible ($J_{\max} \sim 8\sqrt{T/\Theta_r}$); $c_{\rm vib}$ analytic. Characteristic temperatures from Lee, Sears and Turcotte (1963). Plotted populations are $p_J = (2J+1)e^{-\varepsilon_J/k_BT}/Z_{\rm rot}$ and $p_n = e^{-n\Theta_v/T}(1-e^{-\Theta_v/T})$.
 
+## Questions
+
+1. Identify the three plateaus (3/2, 5/2, 7/2 k_B) in the c_V curve. At what temperatures do the rotational and vibrational degrees of freedom of H₂ switch on? And of Cl₂?
+2. Why do the characteristic rotational and vibrational temperatures differ by two orders of magnitude? Relate it to the moment of inertia and the force constant.
+3. Compare the exact rotational c_V (sum over levels) with the classical limit. Below which temperature does the error exceed 10 %?
+
 ## Changes with respect to the original applet
 
 | Original (`DiatomicApplet`, 2002) | Here | Reason |

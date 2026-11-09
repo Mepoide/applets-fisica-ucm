@@ -16,6 +16,12 @@ empezando por la última intercara. Cada intercara refleja muy poco ($|r| \sim \
 
 Aritmética compleja explícita en `applets/multicapas/model.js`; 500 longitudes de onda alrededor de $\lambda_B$; el número de pares aumenta progresivamente al iniciar. Controles: $N$, $d_1$, $d_2$, $\delta_1$, $\delta_2$, $\beta$.
 
+## Preguntas
+
+1. Mide la anchura del pico de Bragg para N = 10, 20, 40 pares. ¿Escala como 1/N? ¿Hasta qué N?
+2. Aumenta la absorción β: ¿cuál es la reflectividad máxima alcanzable? ¿Cuántos pares 've' realmente el haz?
+3. Haz d₁ ≠ d₂ manteniendo el periodo: ¿se mueve el pico de Bragg? ¿Qué pasa con el segundo orden cuando d₁ = d₂?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

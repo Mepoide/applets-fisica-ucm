@@ -20,6 +20,12 @@ and one just counts the negative $R_n$. The curve is self-averaging: it hardly d
 
 `applets/_chain/chain.js`: $R_n$ recursion for 241 frequencies between 0 and 2.2 (units $\sqrt{k/m}$), computed in chunks so the curve appears progressively. $N \le 20000$.
 
+## Questions
+
+1. Compare the density of modes of the ordered chain with the analytic van Hove one. Where is the singularity and why?
+2. Add mass disorder: what happens to the upper band edge? Do modes appear above the maximum ordered frequency?
+3. Check with node counting that the total number of modes is N regardless of disorder.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

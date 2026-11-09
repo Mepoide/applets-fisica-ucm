@@ -16,6 +16,12 @@ with $k = \sqrt{2m_AE}/\hbar$, $\kappa = \sqrt{2m_B(V_0 - E)}/\hbar$ (and $\kapp
 
 The right-hand side is evaluated on a fine energy grid and the crossings of $|{\rm rhs}| = 1$ detected; $K = \arccos({\rm rhs})/L$. Start to sweep $d_b$ and build the miniband diagram.
 
+## Questions
+
+1. For d_p = 6 nm and x = 0.3, at which barrier thickness is the first miniband 10 meV wide? And 1 meV? How does the width scale with d_b?
+2. Compare the δ model with Kronig–Penney: up to which barrier thickness is the error of the miniband centre below 5 %?
+3. What happens to the minibands above V₀? Are there gaps? Why?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

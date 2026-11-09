@@ -16,6 +16,12 @@ la distribución de **Poisson**, cuya varianza es igual a su media. La deducció
 
 Ver la ficha de *Fluctuaciones de ocupación* (`fluctuaciones`): gas ideal con velocidades maxwellianas, ventana arrastrable, histograma, Poisson, binomial y autocorrelación. Tests en `tests/fluctuaciones.test.js`.
 
+## Preguntas
+
+1. ¿Para qué número de partículas en la ventana la fluctuación relativa baja del 10 %? ¿Y del 1 %? Extrapola a un mol.
+2. ¿Por qué la distribución de la ocupación es binomial y no Poisson cuando el número total de partículas es fijo? ¿En qué límite coinciden?
+3. Relaciona la fluctuación de la densidad con la compresibilidad: ¿qué esperarías en un gas con interacción cerca de un punto crítico?
+
 ## Cambios respecto al applet original
 
 | Original (`CanonicaApplet`, M. Castro 2002) | Aquí | Motivo |

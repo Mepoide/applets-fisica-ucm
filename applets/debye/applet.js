@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'T / Θ_D', ylabel: 'c / k_B' });
   const dos = new Plot(ui.canvas.dos, { axes: true, xlabel: 'ω / ω_D', ylabel: 'g(ω)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\frac{c}{k_B} = 9\\Big(\\frac{\\htmlId{T}{T}}{\\htmlId{Theta}{\\Theta_D}}\\Big)^{3}\\!\\int_0^{\\Theta_D/T}\\frac{x^4 e^x}{(e^x-1)^2}\\,dx = \\htmlId{c}{c},\\qquad \\frac{T}{\\Theta_D} = \\htmlId{x}{T/\\Theta_D}', slots: { T: { label: 'deb.eq.T' }, Theta: { label: 'deb.eq.Theta' }, c: { label: 'deb.eq.c' }, x: { label: 'deb.eq.x' } } },
       { tex: 'T \\ll \\Theta_D:\\ \\frac{c}{k_B} \\to \\frac{12\\pi^4}{5}\\Big(\\frac{T}{\\Theta_D}\\Big)^3 = \\htmlId{c3}{c_{T^3}};\\qquad T \\gg \\Theta_D:\\ \\frac{c}{k_B} \\to 3', slots: { c3: { label: 'deb.eq.c3' } } },

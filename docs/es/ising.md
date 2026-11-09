@@ -16,6 +16,12 @@ con exponente crítico $\beta = 1/8$. En una red finita no hay transición estri
 
 Metrópolis con inversiones de un espín: se elige un sitio al azar, $\Delta E = 2Js_ih_i$ con $h_i$ la suma de los cuatro vecinos, y se acepta con $\min(1,e^{-\Delta E/kT})$ (tabla de nueve valores precalculada). Un paso de la animación es un barrido de $L^2$ intentos. Condiciones periódicas; $L$ de 16 a 128.
 
+## Preguntas
+
+1. Mide la magnetización a T = 2.0, 2.2, 2.4 (en unidades de J/k_B) con L = 32 y compárala con la curva de Onsager. ¿Dónde es peor el acuerdo y por qué?
+2. Cerca de T_c la simulación tarda mucho en equilibrarse (ralentización crítica). Mide cuántos barridos necesita |m| para estabilizarse a T = 2.27 frente a T = 1.5.
+3. Comprueba el efecto del tamaño: con L = 8 la magnetización no se anula por encima de T_c. ¿Por qué? ¿Qué cantidad sería mejor medir en un sistema finito?
+
 ## Cambios respecto al applet original
 
 | Original (`IsingApplet`, 2002) | Aquí | Motivo |

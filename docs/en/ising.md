@@ -16,6 +16,12 @@ with critical exponent $\beta = 1/8$. On a finite lattice there is no strict tra
 
 Metropolis single-spin flips: a random site, $\Delta E = 2Js_ih_i$ with $h_i$ the sum of the four neighbours, accepted with $\min(1,e^{-\Delta E/kT})$ (precomputed nine-entry table). One animation step is a sweep of $L^2$ attempts. Periodic boundaries; $L$ from 16 to 128.
 
+## Questions
+
+1. Measure the magnetisation at T = 2.0, 2.2, 2.4 (in units of J/k_B) with L = 32 and compare it with Onsager's curve. Where is the agreement worst and why?
+2. Near T_c the simulation takes long to equilibrate (critical slowing down). Measure how many sweeps |m| needs to settle at T = 2.27 versus T = 1.5.
+3. Check the size effect: with L = 8 the magnetisation does not vanish above T_c. Why? Which quantity would be better to measure in a finite system?
+
 ## Changes with respect to the original applet
 
 | Original (`IsingApplet`, 2002) | Here | Reason |

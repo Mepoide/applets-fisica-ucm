@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const ps = new Plot(ui.canvas.state, { axes: true, xlabel: 'n', ylabel: 'E (T)' });
   const pq = new Plot(ui.canvas.spec, { axes: true, xlabel: 'j', ylabel: 'E (T)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'E_n C_n - C_{n+1} - C_{n-1} = E\\,C_n,\\qquad E_n = \\htmlId{W}{W}\\,(r_n - \\tfrac12) - \\htmlId{F}{F}\\,n', slots: { W: { label: 'tbs.eq.W' }, F: { label: 'tbs.eq.F' } } },
       { tex: 'E_j = \\htmlId{E}{E},\\qquad P = \\frac{1}{\\sum_n |C_n|^4} = \\htmlId{pr}{P};\\qquad W = F = 0:\\ E_j = -2\\cos\\frac{j\\pi}{N+1}', slots: { E: { label: 'tbs.eq.E' }, pr: { label: 'tbs.eq.pr' } } },

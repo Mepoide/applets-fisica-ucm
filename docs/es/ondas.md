@@ -22,6 +22,12 @@ que es la curva azul. La velocidad del sonido del FHP-III es exacta, $c_s^2 = 3/
 
 Vista A: `applets/onda-lgca` (autómata FHP con partícula en reposo, perfil radial por anillos, frente como mínimo del perfil). La predicción lineal se integra numéricamente en $k$ con funciones de Bessel racionales (`lib/bessel.js`), 600 nodos hasta $k_{\max} = 40/R$. Vista B: `applets/modos-lineales` (solución analítica, gaussianas de varianza $\sigma^2 + 2\Gamma t$ y $\sigma^2 + 2 D_T t$).
 
+## Preguntas
+
+1. En la vista FHP mide la velocidad del frente y compárala con la predicción acústica superpuesta. ¿Por qué el FHP no tiene modo térmico y un fluido real sí?
+2. En la vista lineal, identifica los dos picos de Brillouin y el de Rayleigh. ¿Qué parámetro controla la altura relativa del central?
+3. Reduce el radio de la perturbación inicial en el FHP: ¿cómo cambia el ruido relativo? ¿Qué promedio mejora la comparación con la teoría?
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc2`/`ejerc23`, 2003) | Aquí | Motivo |

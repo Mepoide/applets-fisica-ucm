@@ -63,7 +63,7 @@ function mountAB(root, kind) {
   const box = new Plot(ui.canvas.box, { xmin: 0, xmax: L, ymin: 0, ymax: L });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 't', ylabel: 'Δ' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'P(n_{\\rm izq}=n) = \\binom{\\htmlId{N}{N}}{n}\\,2^{-N},\\quad \\Delta = n_{\\rm izq} - n_{\\rm dcha}', slots: { N: { label: 'irrev.eq.N' } } },
       { tex: '\\sigma_\\Delta = \\sqrt{N} = \\htmlId{sigma}{\\sigma_\\Delta},\\qquad \\sigma_\\Delta^{\\rm med} = \\htmlId{sd}{\\sigma}', slots: { sigma: { label: 'irrev.eq.sigma' }, sd: { label: 'irrev.eq.sd' } } },

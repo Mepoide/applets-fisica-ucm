@@ -18,6 +18,12 @@ Nota: la hoja original escribe $m_B(E) = m_A(1 + E/E_{gB})$, lo que no reproduce
 
 Las mismas ecuaciones de fase del Ejercicio 1 con masas evaluadas en $E$, resueltas por bisección en $E$. Inicia para barrer el espesor y trazar $E(a)$ en ambos modelos.
 
+## Preguntas
+
+1. Para InAs-GaSb con a = 60 Å, ¿cuánto baja el nivel fundamental al incluir la no parabolicidad? ¿Y para GaAs-AlAs?
+2. ¿En qué espesor el error del modelo de una banda supera el 10 % en cada sistema? Relaciónalo con E/E_g.
+3. ¿Por qué los niveles altos se corrigen más que el fundamental?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

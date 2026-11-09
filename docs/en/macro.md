@@ -16,6 +16,12 @@ the **Poisson** distribution, whose variance equals its mean. The derivation ass
 
 See the *Occupation fluctuations* sheet (`fluctuaciones`): ideal gas with Maxwellian velocities, draggable window, histogram, Poisson, binomial and autocorrelation. Tests in `tests/fluctuaciones.test.js`.
 
+## Questions
+
+1. For how many particles in the window does the relative fluctuation drop below 10 %? And 1 %? Extrapolate to a mole.
+2. Why is the occupation distribution binomial rather than Poisson when the total particle number is fixed? In which limit do they coincide?
+3. Relate the density fluctuation to compressibility: what would you expect in an interacting gas near a critical point?
+
 ## Changes with respect to the original applet
 
 | Original (`CanonicaApplet`, M. Castro 2002) | Here | Reason |

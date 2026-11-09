@@ -20,6 +20,12 @@ y basta contar los $R_n$ negativos. La curva es autopromediante: casi no depende
 
 `applets/_chain/chain.js`: recursión de $R_n$ para 241 frecuencias entre 0 y 2.2 (unidades $\sqrt{k/m}$), calculada por tramos para que la curva aparezca progresivamente. $N \le 20000$.
 
+## Preguntas
+
+1. Compara la densidad de modos de la cadena ordenada con la de van Hove analítica. ¿Dónde está la singularidad y por qué?
+2. Añade desorden de masas: ¿qué pasa con el borde superior de la banda? ¿Aparecen modos por encima de la frecuencia máxima ordenada?
+3. Comprueba con el conteo de nodos que el número total de modos es N independientemente del desorden.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

@@ -18,6 +18,12 @@ La caja es finita y el grano no puede alejarse más de $\sim L$: a tiempos largo
 
 Motor de discos duros por eventos (`applets/_kinetic/disks.js`) con masas y radios por partícula: el disco 0 tiene masa $M$ y radio $R$; el baño, masa 1 y radio 3, velocidades maxwellianas a $kT$. La traza del grano se guarda cada paso; el MSD se promedia sobre orígenes temporales; $D$ por mínimos cuadrados de $\langle\Delta r^2\rangle$ frente a $4t$ en la ventana difusiva. La energía cinética del grano se promedia con una ventana móvil de 2000 pasos.
 
+## Preguntas
+
+1. Mide D a partir de la pendiente de ⟨Δr²⟩ para dos masas M del grano. ¿Cómo depende D de M? ¿Y de la temperatura del baño?
+2. Comprueba la equipartición ½M⟨V²⟩ = k_BT para el grano pesado. ¿Cuánto tiempo de promedio hace falta para un 5 % de precisión?
+3. A tiempos cortos ⟨Δr²⟩ no es lineal sino cuadrática. Estima el tiempo de cruce y relaciónalo con el tiempo entre colisiones.
+
 ## Cambios respecto al applet original
 
 | Original (`BrownianApplet`, M. Fowler, U. Virginia) | Aquí | Motivo |

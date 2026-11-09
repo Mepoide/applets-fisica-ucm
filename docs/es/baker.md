@@ -22,6 +22,12 @@ El colapso tras ~50 iteraciones no es física: los números de coma flotante de 
 
 Puntos de doble precisión; la cara de gato se genera por rechazo dentro de un disco con orejas, ojos y boca. Uniformidad: $\chi^2/{\rm dof}$ de las cuentas en una rejilla $10\times10$ frente a $n/100$. Para el gato, el cuarto elemento $t_{22} = (1 + t_{12}t_{21})/t_{11}$ se fija con $\det T = 1$.
 
+## Preguntas
+
+1. Dibuja un cuadrado pequeño de puntos y aplica la transformación del panadero paso a paso: ¿cuántas iteraciones tarda en llenar el cuadrado de forma uniforme? ¿Depende del tamaño inicial?
+2. La transformación es biyectiva y conserva el área. ¿Cómo es posible entonces que una mancha compacta termine repartida por todas partes? ¿Qué diferencia hay entre mezcla y pérdida de información?
+3. Invierte la transformación tras unas iteraciones con una pequeña perturbación: ¿se recupera la mancha inicial? Relaciónalo con el exponente de Lyapunov.
+
 ## Cambios respecto al applet original
 
 | Original (`BakerApplet`, `ArnoldApplet`, 2002) | Aquí | Motivo |

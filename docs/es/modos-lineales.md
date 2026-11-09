@@ -59,6 +59,12 @@ habitual del ansatz de modos hidrodinámicos con gaussianas que se ensanchan.
 No hay integración numérica: las tres funciones se evalúan en 601 puntos en cada
 fotograma. El bucle de animación sólo avanza $t$.
 
+## Preguntas
+
+1. Separa el modo térmico de los acústicos: ¿qué fracción de la perturbación inicial de densidad se queda sin propagar? Compárala con 1 − 1/γ (Landau–Placzek).
+2. Haz γ = 1: ¿qué ocurre con el modo térmico? ¿Qué fluido tiene γ = 1?
+3. Aumenta la difusividad térmica D_T: ¿qué modo se ensancha más deprisa? ¿Y al aumentar Γ?
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

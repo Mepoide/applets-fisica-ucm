@@ -20,6 +20,12 @@ tiende a 1 para $T \gg \Theta_r$ (equipartición clásica de dos grados de liber
 
 $c_{\rm rot}$ por suma directa de la serie hasta que los términos son despreciables ($J_{\max} \sim 8\sqrt{T/\Theta_r}$); $c_{\rm vib}$ analítica. Temperaturas características de Lee, Sears y Turcotte (1963). Las poblaciones dibujadas son $p_J = (2J+1)e^{-\varepsilon_J/k_BT}/Z_{\rm rot}$ y $p_n = e^{-n\Theta_v/T}(1-e^{-\Theta_v/T})$.
 
+## Preguntas
+
+1. Identifica en la curva de c_V las tres mesetas (3/2, 5/2, 7/2 k_B). ¿A qué temperaturas se activan los grados rotacionales y vibracionales del H₂? ¿Y del Cl₂?
+2. ¿Por qué las temperaturas características de rotación y vibración difieren en dos órdenes de magnitud? Relaciónalo con el momento de inercia y la constante de fuerza.
+3. Compara el c_V rotacional exacto (suma sobre niveles) con el límite clásico. ¿Por debajo de qué temperatura el error supera el 10 %?
+
 ## Cambios respecto al applet original
 
 | Original (`DiatomicApplet`, 2002) | Aquí | Motivo |

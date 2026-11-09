@@ -16,6 +16,12 @@ con $k = \sqrt{2m_AE}/\hbar$, $\kappa = \sqrt{2m_B(V_0 - E)}/\hbar$ (y $\kappa \
 
 Se evalúa el lado derecho en una malla fina de energías y se detectan los cruces de $|{\rm rhs}| = 1$; $K = \arccos({\rm rhs})/L$. Inicia para barrer $d_b$ y construir el diagrama de minibandas.
 
+## Preguntas
+
+1. Para d_p = 6 nm y x = 0.3, ¿con qué espesor de barrera la primera minibanda tiene 10 meV de anchura? ¿Y 1 meV? ¿Cómo escala la anchura con d_b?
+2. Compara el modelo δ con el de Kronig–Penney: ¿hasta qué espesor de barrera el error del centro de la minibanda es menor del 5 %?
+3. ¿Qué ocurre con las minibandas por encima de V₀? ¿Hay gaps? ¿Por qué?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

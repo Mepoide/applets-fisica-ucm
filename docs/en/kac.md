@@ -26,6 +26,12 @@ The discrepancy comes from the correlations between colours and marks that the d
 
 Arrays `colors` ($\pm 1$) and `marks` (0/1, edge $i$ joins sites $i$ and $i+1$). One step: `next[(i+1) % N] = marks[i] ? -colors[i] : colors[i]`. Marks are chosen without repetition by shuffling indices. Initial conditions: random 50/50, random 70/30, all blue, alternating. The plot keeps $\Delta$ for up to $4N$ steps and the panel compares $\Delta$ with mean field.
 
+## Questions
+
+1. With all balls blue and M = 10 marks, for how many steps does the mean-field prediction match the simulation? Why does it stop doing so?
+2. Set M = N/2. What does mean field predict from t = 1? What does the simulation do? And with M = N?
+3. Let it run to t = 2N. Why can mean field not predict the recurrence? Which molecular-chaos assumption breaks in a finite system?
+
 ## Changes with respect to the original applet
 
 | Original (`KACApplet`, 2002) | Here | Reason |

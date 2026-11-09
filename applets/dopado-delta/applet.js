@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pp = new Plot(ui.canvas.pot, { axes: true, xlabel: 'z (a*)', ylabel: 'E (Ry*)' });
   const pl = new Plot(ui.canvas.lev, { axes: true, xlabel: 'N_D (10¹² cm⁻²)', ylabel: 'E (Ry*)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\frac{d^2V}{dz^2} = -\\frac{8}{3\\pi}\\,[E_F - V]^{3/2} + 8\\pi \\htmlId{ND}{N_D}\\,\\delta(z)\\ \\Rightarrow\\ V(z) = -\\frac{a^2}{(a|z| + \\htmlId{z0}{z_0})^4},\\quad a = \\tfrac{2}{15\\pi}', slots: { ND: { label: 'dd.eq.ND' }, z0: { label: 'dd.eq.z0' } } },
       { tex: '-\\chi_n\'\' + V(z_n)\\chi_n = E\\chi_n\\ \\to\\ \\frac{-\\chi_{n+1} + 2\\chi_n - \\chi_{n-1}}{s^2} + V_n\\chi_n = E\\chi_n;\\qquad E_1 = \\htmlId{E1}{E_1},\\ n_{\\rm sub} = \\htmlId{n}{n}', slots: { E1: { label: 'dd.eq.E1' }, n: { label: 'dd.eq.n' } } },

@@ -16,6 +16,12 @@ donde $\xi(E)$ es la longitud de localización (mayor en el centro de las antigu
 
 Misma matriz de transferencia que el experimento 5 con $\lambda_n$ sorteadas por realización; modo "frente a $E$" (300 energías) y modo "frente a $N$" (40 longitudes a energía fija, con ajuste lineal cuya pendiente da $-1/\xi$). Las bandas del cristal puro se sombrean como referencia.
 
+## Preguntas
+
+1. Con desorden débil, ¿cómo cambia la transmisión al duplicar la longitud? Extrae la longitud de localización.
+2. Compara la energía del centro de banda con la del borde: ¿dónde se localizan antes los estados?
+3. ¿Existe en 1D una transición metal-aislante al variar el desorden, o todos los estados están localizados? Compruébalo con desorden muy pequeño y cadenas muy largas.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

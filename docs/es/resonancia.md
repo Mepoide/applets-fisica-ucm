@@ -16,6 +16,12 @@ los saltos ocurren, estadísticamente, una vez por semiperiodo y en fase con la 
 
 Red de 41 sitios en $[-2, 2]$ ($\Delta x = 0.1$) para que el tiempo de difusión sea corto frente a los periodos; en cada paso se recalcula $V$ y se aplica Metrópolis (`applets/_walkers/metropolis.js`). $\tau_K$ se evalúa con la tasa de Kramers en la red del experimento 8 sobre el pozo sin inclinar, y la temperatura de resonancia resolviendo $\tau_K(kT) = T/2$ por bisección. El barrido simula 20 partículas durante 8 periodos en 15 temperaturas y calcula $A_\omega$ descartando los dos primeros periodos.
 
+## Preguntas
+
+1. Lanza el barrido en kT y localiza el máximo de la amplitud de respuesta. Compáralo con la condición τ_K(kT) = T/2. ¿Cuánto se desvía?
+2. Cambia el periodo T de la señal: ¿hacia dónde se mueve kT de resonancia? Razónalo con la ley de Arrhenius de τ_K.
+3. Aumenta la amplitud A de la señal hasta que el pozo deje de ser doble en algún instante: ¿sigue habiendo resonancia estocástica?
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc3`, 2002) | Aquí | Motivo |

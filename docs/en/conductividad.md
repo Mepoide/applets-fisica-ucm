@@ -20,6 +20,12 @@ A second effect, visible with a large $\Delta T$, is the density gradient: on th
 
 Event-driven hard-disk engine (`applets/_kinetic/disks.js`) with `walls.left = {thermal: T1}` and `walls.right = {thermal: T2}`. At every contact with a reservoir $\tfrac12 m(v'^2 - v^2)$ is added to `heat[side]`. The slab profile accumulates, at every step, the kinetic energy and the particle number of each slab; $T(x)$ is the mean energy per particle (two degrees of freedom, $k_B = 1$). "Reset statistics" zeroes the counters without touching positions, to measure only in the steady state.
 
+## Questions
+
+1. Measure κ for T₁ = 1, T₂ = 2 and for T₁ = 2, T₂ = 4. How much does it change? Is it compatible with κ ∝ √T from kinetic theory?
+2. Check that the density profile is the inverse of the temperature profile: why must ρT be constant in the steady state?
+3. Compare the heat entering through one wall with that leaving through the other. How long until they agree to 5 %?
+
 ## Changes with respect to the original applet
 
 | Original (`ejerc4`, 2002) | Here | Reason |

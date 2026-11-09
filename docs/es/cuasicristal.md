@@ -12,6 +12,12 @@ La secuencia se genera con la regla de sustitución A → B, B → AB (o equival
 
 `fibonacciMasses(F_n, α)` y `integratedDOS` de `applets/_chain/chain.js`; generaciones $8 \le n \le 17$ ($F_{17} = 2584$ átomos).
 
+## Preguntas
+
+1. Compara la densidad de modos de la cadena de Fibonacci con la de la aleación aleatoria de la misma composición. ¿Qué estructura jerárquica de gaps aparece solo en la cuasiperiódica?
+2. Cambia la razón de masas: ¿cómo se abren y cierran los gaps? ¿Qué pasa cuando las masas son iguales?
+3. Aumenta la longitud de la cadena: ¿los gaps se mantienen en la misma frecuencia? ¿Qué indica eso sobre el espectro del cuasicristal infinito?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

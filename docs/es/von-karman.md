@@ -49,6 +49,12 @@ se refleja (rebote, $\vec c\to-\vec c$, que da no deslizamiento; o especular, qu
 deslizamiento) y vuelve al fluido en el paso siguiente. La reflexión se aplica en los dos
 subpasos del ciclo, de modo que la pared conserva la masa exactamente.
 
+## Preguntas
+
+1. Con f = 0.5 la velocidad no transporta momento (g(f) = 0). ¿Qué ves en la estela? Baja f a 0.25 y compara.
+2. Estima el número de Reynolds efectivo a partir de u, el tamaño de la placa y la viscosidad del gas. ¿Es suficiente para una calle de vórtices clara?
+3. Aumenta u hasta acercarte a la velocidad del sonido: ¿qué artefactos aparecen? ¿Por qué el FHP es poco fiable a Mach alto?
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

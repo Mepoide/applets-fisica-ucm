@@ -44,7 +44,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const ring = new Plot(ui.canvas.ring, { xmin: -1.15, xmax: 1.15, ymin: -1.15, ymax: 1.15 });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 't', ylabel: 'Δ' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\Delta(t) = \\Big(1 - \\frac{2\\cdot\\htmlId{M}{M}}{\\htmlId{N}{N}}\\Big)^{\\htmlId{t}{t}}\\,\\htmlId{d0}{\\Delta(0)} = \\htmlId{mf}{\\Delta_{\\rm cm}}', slots: { M: { label: 'kac.eq.M' }, N: { label: 'kac.eq.N' }, t: { label: 'kac.eq.t' }, d0: { label: 'kac.eq.d0' }, mf: { label: 'kac.eq.mf' } } },
       { tex: '\\Delta_{\\rm sim}(t) = N_A - N_R = \\htmlId{d}{\\Delta}', slots: { d: { label: 'kac.eq.d' } } },

@@ -44,7 +44,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const main = new Plot(ui.canvas.main, { axes: true });
   const chain = new Plot(ui.canvas.chain, { xmin: 0, xmax: 60, ymin: -1, ymax: 1 });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: "-\\psi'' + \\sum_n \\lambda_n\\,\\delta(x - nL)\\,\\psi = E\\psi,\\quad \\lambda_n \\in \\{\\htmlId{lA}{\\lambda_A}, \\htmlId{lB}{\\lambda_B}\\},\\quad c = \\htmlId{c}{c}", slots: { lA: { label: 'ale.eq.lA' }, lB: { label: 'ale.eq.lB' }, c: { label: 'ale.eq.c' } } },
       { tex: '\\langle \\ln T\\rangle \\simeq -\\frac{N}{\\xi(E)},\\qquad \\xi(E) = \\htmlId{xi}{\\xi},\\quad N = \\htmlId{N}{N}', slots: { xi: { label: 'ale.eq.xi' }, N: { label: 'ale.eq.N' } } },

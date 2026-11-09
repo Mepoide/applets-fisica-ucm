@@ -16,6 +16,12 @@ regardless of the shape of the distribution of the $x_i$ (finite variance suffic
 
 Each step draws $N$ samples with the pseudo-random generator, adds them and accumulates a histogram: integer bins for die and coin, 60 bins on $[\mu_S - 5\sigma_S, \mu_S + 5\sigma_S]$ for the uniform. Sample mean and variance and a $\chi^2/{\rm dof}$ over bins with expected count $\ge 5$ are computed.
 
+## Questions
+
+1. With N = 1 the sum is the variable itself: what distribution do you see? How many terms are needed for the uniform-distribution histogram to be indistinguishable from the Gaussian by eye? And for the exponential, which is asymmetric?
+2. Measure the histogram width for N = 1, 4, 16 and check that it grows as √N. What happens to the width of the mean instead of the sum?
+3. Find a starting distribution for which the theorem fails (infinite variance). Which condition of the theorem is violated?
+
 ## Changes with respect to the original applet
 
 | Original (`TLCApplet`, 2002; inspired by one by T. Ogden) | Here | Reason |

@@ -20,6 +20,12 @@ que es por tanto la distribución estacionaria, y la dinámica describe la relaj
 
 `applets/_walkers/metropolis.js`: `L = 81` sitios en $x \in [-1, 1]$, $V_{\max} = 4$ en los bordes; cada paso cada partícula propone $\pm1$ al azar y acepta según Metrópolis; los extremos son reflectantes (el salto fuera se rechaza). El histograma acumula la ocupación instantánea en cada paso y se normaliza. $\chi^2/{\rm dof}$ se calcula sobre los sitios con cuenta esperada $\ge 5$ y, como las muestras consecutivas están correlacionadas, solo es orientativo (verde si $< 3$).
 
+## Preguntas
+
+1. Para el pozo doble, ¿a qué temperatura la población del pozo alto es la mitad de la del bajo? Compruébalo con el factor de Boltzmann.
+2. Baja kT hasta que los caminantes queden atrapados en un solo pozo: ¿sigue siendo correcta la distribución medida? ¿Qué falla, la teoría o el tiempo de medida?
+3. Con el potencial armónico, mide la anchura de la distribución frente a kT y comprueba la ley √kT.
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc1`, 2002) | Aquí | Motivo |

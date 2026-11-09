@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pT = new Plot(ui.canvas.T, { axes: true, xlabel: 'E', ylabel: 'T(E)' });
   const pK = new Plot(ui.canvas.kp, { axes: true, xlabel: 'k L / π', ylabel: 'E' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: "-\\psi'' + \\htmlId{lam}{\\lambda}\\sum_{n=1}^{\\htmlId{N}{N}}\\delta(x - nL)\\,\\psi = E\\psi,\\qquad L = \\htmlId{L}{L}", slots: { lam: { label: 'disp.eq.lam' }, N: { label: 'disp.eq.N' }, L: { label: 'disp.eq.L' } } },
       { tex: '\\cos kL = \\cos qL + \\frac{\\lambda}{2q}\\sin qL,\\quad q = \\sqrt{E};\\qquad N_{\\rm bandas} = \\htmlId{nb}{n_b}', slots: { nb: { label: 'disp.eq.nb' } } },

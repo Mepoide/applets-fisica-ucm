@@ -46,7 +46,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const phase = new Plot(ui.canvas.phase, { axes: true, xlabel: 'c₁', ylabel: 'c₂' });
   let off, img;
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\partial_t c_1 = c_1 - \\tfrac13 c_1^3 - c_2 + D\\nabla^2 c_1', slots: {} },
       { tex: '\\partial_t c_2 = \\frac{c_1 - \\htmlId{k}{k}\\,c_2}{\\htmlId{c}{c}} + D\\nabla^2 c_2,\\qquad D \\propto \\htmlId{s}{s}', slots: { k: { label: 'mag.eq.k' }, c: { label: 'mag.eq.c' }, s: { label: 'mag.eq.s' } } },

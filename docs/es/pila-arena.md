@@ -56,6 +56,12 @@ se extiende sobre unas dos décadas: suficiente para verla en el applet.
   número de enteros que caen en cada bin para obtener una densidad comparable con la ley de
   potencias.
 
+## Preguntas
+
+1. Con el umbral fijo, ¿de qué tamaño son todas las avalanchas en el estado estacionario? ¿Por qué no hay criticalidad?
+2. Con el modelo de Oslo, mide el exponente τ de P(s) y compáralo con 1.55. ¿Cuántas avalanchas necesitas para que el ajuste sea estable?
+3. Cambia el tamaño L: ¿dónde se corta la ley de potencias? ¿Cómo escala el tamaño máximo de avalancha con L?
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

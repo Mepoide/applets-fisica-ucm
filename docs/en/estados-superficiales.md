@@ -12,6 +12,12 @@ Without a surface, Bloch's theorem demands a real crystal momentum and the Kroni
 
 Instead of solving the transcendental equation of the semi-infinite crystal, a long but finite crystal ($N$ cells, hard wall at the far end) is diagonalised by shooting: integrate from the wall with $\psi = 0$, $\psi' = 1$ through the δ's ($\psi'$ jumps by $P\psi$) up to $z = 0$ and require $\psi'(0)/\psi(0) = -\kappa$. Roots are found by scanning and bisection. Band levels get denser as $N$ grows; the surface one does not depend on $N$. The wave function is drawn normalised and the weight of $|\psi|^2$ near the surface is measured.
 
+## Questions
+
+1. With P = −3 and V₀ = 12, locate the Tamm state in the gap and draw its wave function. How many cells does it penetrate into the crystal? And into the vacuum?
+2. Raise V₀ until the level leaves the gap: what does the state become?
+3. Change the sign of P: why does the surface state disappear in this model? Which termination would recover it?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

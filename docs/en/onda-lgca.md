@@ -53,6 +53,12 @@ in rings of width 1 around the centre, with Euclidean distances in physical coor
 Strip profile: mean over $\pm20$ rows, binned by physical $x$. The front is located as the
 minimum of the radial profile outside the hole.
 
+## Questions
+
+1. Measure the wave-front speed from two instants and compare it with c_s = √(3/7) in lattice units. Does it depend on the gas density?
+2. Increase the amplitude of the initial perturbation: does the linear prediction still hold? What sign of nonlinearity appears?
+3. Why does the wave damp? Relate the amplitude decay to the viscosity of the FHP gas.
+
 ## Changes with respect to the original applet
 
 | Original | Here | Reason |

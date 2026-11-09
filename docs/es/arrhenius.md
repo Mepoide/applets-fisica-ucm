@@ -22,6 +22,12 @@ El caminante Metrópolis con paso $\Delta x$ es una discretización de esa difus
 
 Red de 161 sitios en $[-2, 2]$ ($\Delta x = 0.025$), `applets/_walkers/metropolis.js`. $N_{\rm meta}$ cuenta las partículas a la derecha del máximo (para $A > 0$). La tasa ajustada es la pendiente de la regresión de $\ln N_{\rm meta}$ frente a $t$ mientras $N_{\rm meta} > N_0 e^{-3}$. Las integrales de Kramers se evalúan como sumas sobre la red.
 
+## Preguntas
+
+1. Mide la tasa k para tres temperaturas y representa ln k frente a 1/kT. ¿Obtienes una recta? ¿Qué altura de barrera sale de la pendiente?
+2. Compara las tres tasas teóricas con el ajuste: ¿cuál acierta? ¿Por qué la estimación de la hoja original sobreestima tanto k?
+3. Haz el pozo de salida asimétrico: ¿cambia la tasa? ¿Qué dice la fórmula de Kramers sobre la curvatura en el mínimo?
+
 ## Cambios respecto al applet original
 
 | Original (`ejerc6`, 2002) | Aquí | Motivo |

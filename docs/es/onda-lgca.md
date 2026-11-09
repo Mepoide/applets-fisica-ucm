@@ -56,6 +56,12 @@ anillos de anchura 1 alrededor del centro, con distancias euclídeas en coordena
 Perfil en franja: media en $\pm20$ filas, binned por $x$ físico. El frente se localiza como
 el mínimo del perfil radial fuera del hueco.
 
+## Preguntas
+
+1. Mide la velocidad del frente de la onda a partir de dos instantes y compárala con c_s = √(3/7) en unidades de red. ¿Depende de la densidad del gas?
+2. Aumenta la amplitud de la perturbación inicial: ¿sigue valiendo la predicción lineal? ¿Qué signo de no linealidad aparece?
+3. ¿Por qué la onda se amortigua? Relaciona la caída de amplitud con la viscosidad del gas FHP.
+
 ## Cambios respecto al applet original
 
 | Original | Aquí | Motivo |

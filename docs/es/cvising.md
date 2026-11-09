@@ -18,6 +18,12 @@ con $K = J/k_BT$, $\kappa = 2\sinh 2K/\cosh^2 2K$, $\kappa' = 2\tanh^2 2K - 1$ y
 
 La matriz de transferencia simétrica $\mathbf T = H^{1/2}VH^{1/2}$ de dimensión $2^{N_x}$ (pesos de los enlaces de una fila en $H$, de los enlaces entre filas en $V$) se diagonaliza por rotaciones de Jacobi; $Z = \sum_i\lambda_i^{N_y}$ y $c$ se obtiene con una diferencia finita de tres puntos en $\beta$. El coste crece como $8^{N_x}$: $N_x \le 7$. Las integrales elípticas se calculan por la media aritmético-geométrica.
 
+## Preguntas
+
+1. Compara la curva de c_V de una tira de N_x = 2 con la de N_x = 7. ¿Hacia dónde se desplaza el máximo y cuánto crece? ¿Tiende hacia la divergencia logarítmica de Onsager?
+2. ¿Por qué en una tira estrecha (1D efectiva) no hay transición de fase, y sin embargo hay un máximo redondeado de c_V?
+3. Estima a partir de las curvas cómo escala la altura del pico con N_x. ¿Es compatible con ln N_x?
+
 ## Cambios respecto al applet original
 
 | Original (`CalorEspecificoApplet`, 2002) | Aquí | Motivo |

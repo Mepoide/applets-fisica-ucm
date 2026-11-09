@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pT = new Plot(ui.canvas.T, { axes: true, xlabel: 'ω', ylabel: 'T(ω)' });
   const pK = new Plot(ui.canvas.k, { axes: true, xlabel: 'T / Θ_D', ylabel: 'κ / κ₀' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\begin{pmatrix} U_{N+1} \\\\ U_N\\end{pmatrix} = \\prod_{n=1}^{\\htmlId{N}{N}} \\begin{pmatrix} 2 - m_n\\omega^2 & -1 \\\\ 1 & 0 \\end{pmatrix}\\begin{pmatrix} U_1 \\\\ U_0\\end{pmatrix},\\qquad \\langle T\\rangle_{\\rm banda} = \\htmlId{T}{T}', slots: { N: { label: 'ccad.eq.N' }, T: { label: 'ccad.eq.T' } } },
       { tex: '\\frac{\\kappa}{\\kappa_0} = \\frac{\\int_0^{\\omega_D} T(\\omega)\\,\\omega^2\\,\\partial_T n_B\\,d\\omega}{\\int_0^{\\omega_D} \\omega^2\\,\\partial_T n_B\\,d\\omega},\\qquad \\frac{\\kappa}{\\kappa_0}\\Big|_{T=\\Theta_D} = \\htmlId{k}{\\kappa/\\kappa_0}', slots: { k: { label: 'ccad.eq.k' } } },

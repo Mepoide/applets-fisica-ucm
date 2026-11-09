@@ -16,6 +16,12 @@ y la Física Estadística predice que un sistema ergódico alcanza ese máximo (
 
 Fases avanzadas exactamente, $\theta_i = \theta_i(0) + \omega_i t \bmod 2\pi$, con $\Delta t = 0.05$. Frecuencias: aleatorias uniformes en $[0.5\omega_0, 1.5\omega_0]$, casi iguales ($\omega_0(1 \pm 0.01)$) o equiespaciadas $\omega_0 i/N$. Las barras radiales muestran la ocupación de cada sector.
 
+## Preguntas
+
+1. Compara la media temporal de la energía de un oscilador con la media sobre el conjunto. ¿Para qué número de osciladores y qué tiempo coinciden al 5 %?
+2. Comprueba que la distribución de energías de los osciladores tiende a la exponencial de Boltzmann. ¿Qué temperatura le corresponde? Relaciónala con la energía total.
+3. Calcula la entropía a partir del histograma y observa cómo crece hasta saturar. ¿Qué limita su valor máximo en el sistema finito?
+
 ## Cambios respecto al applet original
 
 | Original (`OsciladoresApplet`, 2002; idea de J. M. R. Parrondo) | Aquí | Motivo |

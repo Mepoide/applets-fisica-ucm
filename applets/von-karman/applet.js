@@ -58,7 +58,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const plot = new Plot(canvas, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   let off, img;
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\mathrm{Re} = \\frac{\\htmlId{g}{g(f)}\\cdot\\htmlId{u}{u}\\cdot\\htmlId{L}{L}}{\\htmlId{nu}{\\nu(f)}} = \\htmlId{re}{\\mathrm{Re}}', slots: { g: { label: 'vk.eq.g' }, u: { label: 'vk.eq.u' }, L: { label: 'vk.eq.L' }, nu: { label: 'vk.eq.nu' }, re: { label: 'vk.eq.re' } } },
       { tex: 'g(f) = \\frac{7}{12}\\,\\frac{1-2f}{1-f},\\qquad \\mathrm{Ma} = \\frac{u}{c_s} = \\htmlId{ma}{\\mathrm{Ma}}', slots: { ma: { label: 'vk.eq.ma' } } },

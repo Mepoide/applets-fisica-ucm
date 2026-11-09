@@ -46,7 +46,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const box = new Plot(ui.canvas.box, { xmin: 0, xmax: Lx, ymin: 0, ymax: Ly });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'x', ylabel: 'T' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'Q = -\\kappa\\,\\frac{\\partial T}{\\partial x}\\;\\Rightarrow\\;\\kappa = \\frac{\\htmlId{Q}{Q}/\\htmlId{Ly}{L_y}}{\\htmlId{dT}{\\Delta T}/\\htmlId{Lx}{L_x}} = \\htmlId{k}{\\kappa}', slots: { Q: { label: 'cond.eq.Q' }, Ly: { label: 'cond.eq.Ly' }, dT: { label: 'cond.eq.dT' }, Lx: { label: 'cond.eq.Lx' }, k: { label: 'cond.eq.k' } } },
       { tex: '\\kappa_{\\rm cin} \\simeq \\tfrac{1}{3\\sqrt2}\\,\\frac{c\\,\\bar v}{\\sigma} \\propto \\sqrt{T}\\qquad \\frac{\\kappa}{\\sqrt{\\bar T}} = \\htmlId{kred}{\\kappa/\\sqrt{T}}', slots: { kred: { label: 'cond.eq.kred' } } },

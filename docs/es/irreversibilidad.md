@@ -18,6 +18,12 @@ La irreversibilidad no está en la dinámica (la de los discos duros es reversib
 
 A: motor de discos duros por eventos (`applets/_kinetic/disks.js`) con tabique en $x = L/2$ que se abre en el primer paso; velocidades iniciales maxwellianas a la temperatura elegida. B: `left -= 1` con probabilidad `left/N`, si no `left += 1`. La serie $\Delta(t)$ se guarda (hasta 20 000 valores) y el histograma descarta el transitorio inicial (100 pasos en A, $5N$ en B). C: el applet `fluctuaciones` de la fase 1, incrustado.
 
+## Preguntas
+
+1. En la expansión libre con N = 10 discos, ¿cuántas veces vuelven todos al lado izquierdo en un minuto? Repite con N = 100. Compara con la probabilidad 2^{1−N}.
+2. En el modelo de Ehrenfest, mide la fluctuación típica de Δ en equilibrio y comprueba que crece como √N. ¿Cómo cambia la fluctuación relativa Δ/N?
+3. ¿Es la dinámica de los discos reversible? Entonces, ¿de dónde sale la irreversibilidad que observas? Argumenta con el número de microestados.
+
 ## Cambios respecto al applet original
 
 | Original (`HardDisksApplet`, `GasApplet`, `IrreversibilidadApplet`, 2002) | Aquí | Motivo |

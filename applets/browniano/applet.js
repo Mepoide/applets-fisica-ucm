@@ -46,7 +46,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const box = new Plot(ui.canvas.box, { xmin: 0, xmax: L, ymin: 0, ymax: L });
   const plot = new Plot(ui.canvas.plot, { axes: true });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\langle \\Delta r^2 \\rangle = 4\\,\\htmlId{D}{D}\\,t', slots: { D: { label: 'brown.eq.D' } } },
       { tex: '\\tfrac12\\,\\htmlId{M}{M}\\cdot\\langle V^2\\rangle = \\htmlId{K}{K} \\;\\approx\\; kT = \\htmlId{kT}{kT}', slots: { M: { label: 'brown.eq.M' }, K: { label: 'brown.eq.K' }, kT: { label: 'brown.eq.kT' } } },

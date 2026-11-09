@@ -40,7 +40,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pw = new Plot(ui.canvas.wf, { axes: true, xlabel: 'z (Å)', ylabel: 'E (meV)' });
   const pE = new Plot(ui.canvas.E, { axes: true, xlabel: 'F (kV/cm)', ylabel: 'E₁ (meV)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: '-\\chi\'\'(u) - \\htmlId{v}{v}\\,u\\,\\chi = \\varepsilon\\chi,\\quad u = \\tfrac{z}{a}\\in[-\\tfrac12,\\tfrac12],\\quad v = \\frac{eFa}{E_0},\\quad E_0 = \\frac{\\hbar^2}{2m^*a^2} = \\htmlId{E0}{E_0}', slots: { v: { label: 'stk.eq.v' }, E0: { label: 'stk.eq.E0' } } },
       { tex: '\\varepsilon_1 \\simeq \\pi^2 - \\frac{15 - \\pi^2}{48\\pi^4}\\,v^2,\\qquad \\varepsilon_1 = \\htmlId{e1}{\\varepsilon_1};\\qquad f_{12} = (\\varepsilon_2 - \\varepsilon_1)\\Big|\\int\\chi_1 u\\,\\chi_2\\,du\\Big|^2 = \\htmlId{f}{f_{12}}', slots: { e1: { label: 'stk.eq.e1' }, f: { label: 'stk.eq.f' } } },

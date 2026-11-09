@@ -16,6 +16,12 @@ In the uniform superlattice each well contributes a resonance and the transmissi
 
 Amplitude recursion from a pure outgoing wave in the right contact to the left one, where incident and reflected amplitudes are separated; $T = 1/|A|^2$. Start to reduce $S$ from the uniform case.
 
+## Questions
+
+1. With 11 uniform barriers of height 1.5 T, count the transmission minima in the miniband. Why is there one fewer than barriers?
+2. Reduce S to L/4: how many minima remain? How much has the transmission window narrowed?
+3. Make S very small: what is left of the system? What does single-barrier transmission look like in tight binding?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

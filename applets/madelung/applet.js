@@ -38,7 +38,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const cube = new Plot(ui.canvas.cube, { xmin: -1.1, xmax: 1.1, ymin: -1.1, ymax: 1.1 });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'k', ylabel: 'α_k' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: "\\alpha = \\sum_{l,m,n}{}' \\frac{(-1)^{l+m+n+1}}{\\sqrt{l^2+m^2+n^2}},\\qquad k = \\htmlId{k}{k}", slots: { k: { label: 'mad.eq.k' } } },
       { tex: '\\alpha_k^{\\rm cubo} = \\htmlId{naive}{\\alpha_k},\\qquad \\alpha_k^{\\rm Evjen} = \\htmlId{evjen}{\\alpha_k^{E}},\\qquad \\alpha = \\htmlId{exact}{\\alpha}', slots: { naive: { label: 'mad.eq.naive' }, evjen: { label: 'mad.eq.evjen' }, exact: { label: 'mad.eq.exact' } } },

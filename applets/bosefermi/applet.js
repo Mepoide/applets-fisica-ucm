@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pb = new Plot(ui.canvas.bose, { axes: true, xlabel: '⟨n⟩', ylabel: 'ε' });
   const pf = new Plot(ui.canvas.fermi, { axes: true, xlabel: '⟨n⟩', ylabel: 'ε' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\langle n_i\\rangle_{\\rm BE} = \\frac{1}{z^{-1}e^{\\varepsilon_i/kT} - 1},\\quad \\langle n_i\\rangle_{\\rm FD} = \\frac{1}{z^{-1}e^{\\varepsilon_i/kT} + 1},\\qquad \\sum_i \\langle n_i\\rangle = \\htmlId{N}{N}', slots: { N: { label: 'bf.eq.N' } } },
       { tex: 'kT = \\htmlId{kT}{kT},\\quad z_B = \\htmlId{zB}{z_B},\\quad z_F = \\htmlId{zF}{z_F},\\quad \\varepsilon_F = N-1 = \\htmlId{eF}{\\varepsilon_F},\\quad \\langle n_0\\rangle_B^{\\rm MC} = \\htmlId{g0}{n_0}', slots: { kT: { label: 'bf.eq.kT' }, zB: { label: 'bf.eq.zB' }, zF: { label: 'bf.eq.zF' }, eF: { label: 'bf.eq.eF' }, g0: { label: 'bf.eq.g0' } } },

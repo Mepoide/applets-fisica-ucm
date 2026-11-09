@@ -18,6 +18,12 @@ Irreversibility is not in the dynamics (hard-disk dynamics is reversible) but in
 
 A: event-driven hard-disk engine (`applets/_kinetic/disks.js`) with a partition at $x = L/2$ that opens on the first step; Maxwellian initial velocities at the chosen temperature. B: `left -= 1` with probability `left/N`, otherwise `left += 1`. The series $\Delta(t)$ is stored (up to 20 000 values) and the histogram drops the initial transient (100 steps in A, $5N$ in B). C: the phase-1 `fluctuaciones` applet, embedded.
 
+## Questions
+
+1. In the free expansion with N = 10 disks, how many times do all return to the left half in a minute? Repeat with N = 100. Compare with the probability 2^{1−N}.
+2. In the Ehrenfest model, measure the typical fluctuation of Δ at equilibrium and check that it grows as √N. How does the relative fluctuation Δ/N change?
+3. Is the disk dynamics reversible? Then where does the irreversibility you observe come from? Argue with the number of microstates.
+
 ## Changes with respect to the original applet
 
 | Original (`HardDisksApplet`, `GasApplet`, `IrreversibilidadApplet`, 2002) | Here | Reason |

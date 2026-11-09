@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const xy = new Plot(ui.canvas.xy, { xmin: -1.1, xmax: 1.1, ymin: -1.1, ymax: 1.1 });
   const pt = new Plot(ui.canvas.t, { axes: true, xlabel: 't / T₂', ylabel: 'm' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'A',
     equations: [
       { tex: '\\dot{\\mathbf m} = \\gamma\\,\\mathbf m\\times\\mathbf B - \\frac{m_x\\hat x + m_y\\hat y}{T_2} - \\frac{(m_z - 1)\\hat z}{T_1},\\qquad \\omega_0T_2 = \\htmlId{a}{\\alpha},\\ \\omega_1T_2 = \\htmlId{w1}{\\omega_1},\\ \\frac{T_1}{T_2} = \\htmlId{T1}{T_1}', slots: { a: { label: 'rmn.eq.a' }, w1: { label: 'rmn.eq.w1' }, T1: { label: 'rmn.eq.T1' } } },
       { tex: '|m_\\perp|_{\\rm FID} = e^{-t/T_2},\\qquad |m_\\perp| = \\htmlId{mp}{m_\\perp};\\qquad \\chi\'\'(\\omega) \\propto \\frac{1/T_2}{(\\omega-\\omega_0)^2 + 1/T_2^2},\\quad \\omega T_2 = \\htmlId{w}{\\omega}', slots: { mp: { label: 'rmn.eq.mp' }, w: { label: 'rmn.eq.w' } } },

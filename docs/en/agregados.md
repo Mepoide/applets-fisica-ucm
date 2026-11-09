@@ -18,6 +18,12 @@ with the sum rule $\sum_j d_j^2 = N d_0^2$. For the periodic chain $E_k = \varep
 
 Full diagonalisation (Jacobi, `lib/linalg.js`) of the $N\times N$ Hamiltonian, $N \le 80$; participation ratio $1/\sum_n a_{jn}^4$ of the bright state. Energies in units of $J$ with $\varepsilon = 0$.
 
+## Questions
+
+1. Without disorder, where is the absorption line relative to the isolated molecule (ε = 0)? What is its oscillator strength compared with N independent molecules?
+2. Add disorder W = 1 and W = 3: how many states share the oscillator strength? Measure the participation ratio of the bright state.
+3. Why is the k = 0 state the bright one and the others dark in the periodic chain? What changes in an open chain?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

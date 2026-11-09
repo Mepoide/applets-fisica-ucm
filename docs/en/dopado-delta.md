@@ -16,6 +16,12 @@ whose exact solution is $V(z) = -a^2/(a|z| + z_0)^4$ with $a = 2/15\pi$ and $z_0
 
 Grid of $N$ points on $[-c, c]$ with infinite walls at the ends; tridiagonal matrix with diagonal $V_n + 2/s^2$ and off-diagonal $-1/s^2$; eigenvalues by bisection on the Sturm sequence and eigenvectors by inverse iteration (`lib/linalg.js`). Start to sweep $N_D$ and build the level curve.
 
+## Questions
+
+1. How many subbands are occupied for N_D = 1, 5, 10 × 10¹² cm⁻²? How does the well depth scale with N_D?
+2. Check neutrality: add the subband populations and compare with N_D. Does the agreement improve as N_D grows? Why?
+3. Change the interval c and the grid N: when do the levels stop depending on them? Which level converges worst?
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

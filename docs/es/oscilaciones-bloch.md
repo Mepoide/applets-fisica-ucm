@@ -16,6 +16,12 @@ tiene como estados estacionarios la escalera de Wannier–Stark $E_j = Fj$, con 
 
 Diagonalización exacta del hamiltoniano tridiagonal $N\times N$ ($N \le 241$) y evolución $\psi(t) = \sum_j c_j e^{-iE_jt}v_j$, exacta para cualquier $t$ (sin error de integración). Radio $r = \sqrt{\sum_n (n-n_0)^2|\psi_n|^2}$.
 
+## Preguntas
+
+1. Con F = 0 comprueba que el radio crece linealmente con el tiempo, no como √t. ¿Qué distingue este movimiento de la difusión?
+2. Con F = 0.2, mide el periodo de las oscilaciones del radio y compáralo con 2π/F. ¿Cuál es la extensión máxima? Compárala con 4T/F.
+3. Añade desorden con F = 0: ¿el radio satura? Estima la longitud de localización y compárala con la del Ejercicio 6 de Estado Sólido.
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |

@@ -43,7 +43,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const pTp = new Plot(ui.canvas.T, { axes: true, xlabel: 'z (Å)', ylabel: 'E (meV)' });
   const pIV = new Plot(ui.canvas.IV, { axes: true, xlabel: 'V (mV)', ylabel: 'I (u.a.)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: '\\chi_{n+1} + \\chi_{n-1} = \\Big[2 - \\frac{2m^*s^2}{\\hbar^2}\\Big(V_n - \\htmlId{V}{V}\\frac{z_n}{L} - E\\Big)\\Big]\\chi_n\\ \\Rightarrow\\ T(E, V);\\qquad E_r = \\htmlId{Er}{E_r}', slots: { V: { label: 'rtd.eq.V' }, Er: { label: 'rtd.eq.Er' } } },
       { tex: 'I \\propto \\int_0^\\infty T(E,V)\\,\\ln\\frac{1 + e^{(E_F - E)/k_BT}}{1 + e^{(E_F - E - eV)/k_BT}}\\,dE,\\qquad E_F = \\htmlId{EF}{E_F},\\quad I = \\htmlId{I}{I}', slots: { EF: { label: 'rtd.eq.EF' }, I: { label: 'rtd.eq.I' } } },

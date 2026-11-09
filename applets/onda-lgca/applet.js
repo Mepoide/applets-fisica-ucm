@@ -56,7 +56,7 @@ export function mount(root, { root: base = '../..', embedded = false } = {}) {
   const prof = new Plot(ui.canvas.profile, { axes: true, xlabel: 'r', ylabel: '⟨n⟩' });
   latticeCanvas.style.aspectRatio = String(1 / H.S3);
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'c_s = \\sqrt{\\tfrac{3}{7}} = \\htmlId{cs}{c_s}\\ \\text{nodos/paso}', slots: { cs: { label: 'onda.eq.cs' } } },
       { tex: 'r_f^{\\rm lin}(t) = \\htmlId{rf}{r_f},\\qquad r_{\\min}^{\\rm med} = \\htmlId{rmin}{r_{\\min}}', slots: { rf: { label: 'onda.eq.rf' }, rmin: { label: 'onda.eq.rmin' } } },

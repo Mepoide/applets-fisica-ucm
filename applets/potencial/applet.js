@@ -45,7 +45,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const box = new Plot(ui.canvas.box, { axes: true, xlabel: 'x', ylabel: 'V' });
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'x', ylabel: 'p(x)' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'p_i = \\frac{e^{-V_i/\\htmlId{kT}{kT}}}{Z},\\qquad Z = \\sum_j e^{-V_j/kT} = \\htmlId{Z}{Z}', slots: { kT: { label: 'pot.eq.kT' }, Z: { label: 'pot.eq.Z' } } },
       { tex: 'P(i\\to i\\pm1) = \\tfrac12\\min\\big(1,\\,e^{-[V(i\\pm1)-V(i)]/kT}\\big),\\qquad V_{\\max} = \\htmlId{Vmax}{V_{\\max}}', slots: { Vmax: { label: 'pot.eq.Vmax' } } },

@@ -16,6 +16,12 @@ función universal de $T/\Theta_D$. Para $T \gg \Theta_D$ tiende a 3 (ley de Dul
 
 Integral de Debye por Simpson compuesto con paso adaptado a $\Theta_D/T$; para $\Theta_D/T > 60$ se usa el límite analítico. Temperaturas de Debye tabuladas (Kittel). Los modos excitados se representan como $g(\omega)\min(1,\langle n\rangle)$ con $\langle n\rangle = 1/(e^{\hbar\omega/k_BT}-1)$.
 
+## Preguntas
+
+1. Compara Einstein y Debye a baja temperatura: ¿cuál da la ley T³? ¿Por qué el modelo de Einstein cae exponencialmente?
+2. Ajusta θ_D para que la curva pase por los datos del cobre. ¿Qué valor obtienes y cómo se compara con el tabulado (343 K)?
+3. ¿A qué temperatura, en unidades de θ_D, el calor específico alcanza el 90 % del valor de Dulong–Petit?
+
 ## Cambios respecto al applet original
 
 | Original (`DebyeApplet`, 2002) | Aquí | Motivo |

@@ -18,6 +18,12 @@ With few particles the grand canonical ensemble is not equivalent to the canonic
 
 Markov chain over occupation configurations $\{n_i\}$, which are the quantum states of the identical-particle system: a particle is picked at random (level $i$ with probability $n_i/N$), a uniform level $j$ is proposed and accepted with $\min(1, e^{-(\varepsilon_j-\varepsilon_i)/kT}\,(n_j+1)/n_i)$ for bosons (Metropolis–Hastings correction for the asymmetric proposal) and $\min(1, e^{-\Delta\varepsilon/kT})$ for fermions if the level is empty. 30 levels; $N \le 20$.
 
+## Questions
+
+1. With N = 3 particles and few levels, compare the Monte Carlo mean occupations with the canonical curves and with the grand-canonical Bose–Einstein and Fermi–Dirac ones. Which describes the data better? Why?
+2. Lower the temperature with bosons: when does occupation start to pile up in the ground level? Is this Bose–Einstein condensation in such a small system?
+3. With fermions at T → 0, what shape does the occupation take? Identify the Fermi energy.
+
 ## Changes with respect to the original applet
 
 | Original (`BEFDApplet`, 2002) | Here | Reason |

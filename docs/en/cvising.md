@@ -18,6 +18,12 @@ with $K = J/k_BT$, $\kappa = 2\sinh 2K/\cosh^2 2K$, $\kappa' = 2\tanh^2 2K - 1$ 
 
 The symmetric transfer matrix $\mathbf T = H^{1/2}VH^{1/2}$ of dimension $2^{N_x}$ (in-row bond weights in $H$, inter-row bonds in $V$) is diagonalised by Jacobi rotations; $Z = \sum_i\lambda_i^{N_y}$ and $c$ follows from a three-point finite difference in $\beta$. The cost grows as $8^{N_x}$: $N_x \le 7$. Elliptic integrals by the arithmetic–geometric mean.
 
+## Questions
+
+1. Compare the c_V curve of an N_x = 2 strip with that of N_x = 7. Where does the maximum move and how much does it grow? Does it tend to Onsager's logarithmic divergence?
+2. Why is there no phase transition in a narrow (effectively 1D) strip, yet a rounded maximum of c_V?
+3. Estimate from the curves how the peak height scales with N_x. Is it compatible with ln N_x?
+
 ## Changes with respect to the original applet
 
 | Original (`CalorEspecificoApplet`, 2002) | Here | Reason |

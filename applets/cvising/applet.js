@@ -42,7 +42,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const plot = new Plot(ui.canvas.plot, { axes: true, xlabel: 'T', ylabel: 'c' });
   const lat = new Plot(ui.canvas.lat, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'C',
     equations: [
       { tex: 'Z = \\mathrm{Tr}\\,\\mathbf T^{\\htmlId{Ny}{N_y}},\\quad \\mathbf T \\in \\mathbb R^{2^{N_x}\\times 2^{N_x}},\\quad N = \\htmlId{N}{N_xN_y}', slots: { Ny: { label: 'cvi.eq.Ny' }, N: { label: 'cvi.eq.N' } } },
       { tex: 'c = \\frac{\\beta^2}{N}\\,\\frac{\\partial^2 \\ln Z}{\\partial\\beta^2},\\qquad c_{\\max} = \\htmlId{cp}{c} \\text{ en } T = \\htmlId{Tp}{T_{\\max}}', slots: { cp: { label: 'cvi.eq.cp' }, Tp: { label: 'cvi.eq.Tp' } } },

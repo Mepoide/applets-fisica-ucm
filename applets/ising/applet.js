@@ -41,7 +41,7 @@ export function mount(root, { root: base = '../..' } = {}) {
   const spins = new Plot(ui.canvas.spins, { xmin: 0, xmax: 1, ymin: 0, ymax: 1 });
   const mag = new Plot(ui.canvas.mag, { axes: true, xlabel: 't', ylabel: 'm' });
   const eq = liveEquation(ui.panel, {
-    title: 'eq.title',
+    title: 'eq.title', kind: 'B',
     equations: [
       { tex: 'H = -J\\sum_{\\langle ij\\rangle} s_i s_j,\\qquad K = \\frac{J}{k_BT} = \\htmlId{K}{K},\\quad K_c = \\tfrac12\\ln(1+\\sqrt2) = \\htmlId{Kc}{K_c}', slots: { K: { label: 'ising.eq.K' }, Kc: { label: 'ising.eq.Kc' } } },
       { tex: 'm_0 = \\big(1 - \\sinh^{-4} 2K\\big)^{1/8} = \\htmlId{m0}{m_0}\\ (K > K_c),\\qquad \\langle |m| \\rangle_{\\rm MC} = \\htmlId{mabs}{\\langle|m|\\rangle},\\quad L = \\htmlId{L}{L}', slots: { m0: { label: 'ising.eq.m0' }, mabs: { label: 'ising.eq.mabs' }, L: { label: 'ising.eq.L' } } },

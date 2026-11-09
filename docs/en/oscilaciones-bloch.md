@@ -16,6 +16,12 @@ has as stationary states the Wannier–Stark ladder $E_j = Fj$, with eigenfuncti
 
 Exact diagonalisation of the tridiagonal $N\times N$ Hamiltonian ($N \le 241$) and evolution $\psi(t) = \sum_j c_j e^{-iE_jt}v_j$, exact for any $t$ (no integration error). Radius $r = \sqrt{\sum_n (n-n_0)^2|\psi_n|^2}$.
 
+## Questions
+
+1. With F = 0 check that the radius grows linearly in time, not as √t. What distinguishes this motion from diffusion?
+2. With F = 0.2, measure the period of the radius oscillations and compare it with 2π/F. What is the maximum extent? Compare with 4T/F.
+3. Add disorder with F = 0: does the radius saturate? Estimate the localisation length and compare it with Solid State experiment 6.
+
 ## Changes with respect to the original applet
 
 | Original (2002) | Here | Reason |

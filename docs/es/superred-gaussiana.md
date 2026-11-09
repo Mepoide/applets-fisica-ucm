@@ -16,6 +16,12 @@ En la superred uniforme cada pozo aporta una resonancia y entre ellas la transmi
 
 Recursión de la amplitud desde una onda saliente pura en el contacto derecho hasta el izquierdo, donde se separan las amplitudes incidente y reflejada; $T = 1/|A|^2$. Inicia para reducir $S$ desde el caso uniforme.
 
+## Preguntas
+
+1. Con 11 barreras uniformes de altura 1.5 T, cuenta los mínimos de transmisión en la minibanda. ¿Por qué hay uno menos que barreras?
+2. Reduce S hasta L/4: ¿cuántos mínimos quedan? ¿Cuánto se ha estrechado la ventana de transmisión?
+3. Haz S muy pequeña: ¿qué queda del sistema? ¿Cómo es la transmisión de una sola barrera en enlace fuerte?
+
 ## Cambios respecto al applet original
 
 | Original (2002) | Aquí | Motivo |
