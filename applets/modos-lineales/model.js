@@ -11,7 +11,7 @@
 //   δT  = (T/ρ)[(γ−1) δρ_s − δρ_T]        (ideal gas: adiabatic sound, isobaric heat mode)
 // With these weights δT(x,0) = 0 identically, which is what fixes 1/γ and 1−1/γ.
 
-export const DEFAULTS = { cs: 1, gammaS: 0.5, DT: 0.5, gamma: 5 / 3, sigma: 2, rho: 1, T: 1 };
+export const DEFAULTS = { cs: 1, gammaS: 0.1, DT: 0.1, gamma: 5 / 3, sigma: 2, rho: 1, T: 1 };
 
 function gauss(x, v) { return Math.exp(-x * x / (2 * v)) / Math.sqrt(2 * Math.PI * v); }
 function dgauss(x, v) { return -x / v * gauss(x, v); } // ∂_x G

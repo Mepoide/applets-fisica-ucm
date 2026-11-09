@@ -22,7 +22,7 @@ test('mass is conserved and the initial profile is the Gaussian of width sigma',
 });
 
 test('initial temperature perturbation vanishes; u(x,0) is only the small diffusive term; u is antisymmetric', () => {
-  const p = { gammaS: 0.5, DT: 0.5, gamma: 5 / 3, sigma: 2, cs: 1 };
+  const p = { gammaS: 0.1, DT: 0.1, gamma: 5 / 3, sigma: 2, cs: 1 };
   for (const x of [-3, 0, 1.7, 10]) {
     const f = L.fields(x, 0, p);
     assert.ok(Math.abs(f.dT) < 1e-12, `dT(x,0)=${f.dT}`);
