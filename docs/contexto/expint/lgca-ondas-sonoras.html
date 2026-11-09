@@ -1,0 +1,137 @@
+<HEAD>
+<TITLE>Ondas sonoras en un fluido</TITLE>
+<meta name="description" value="No Title">
+<meta name="keywords" value="lgca">
+<meta name="resource-type" value="document">
+<meta name="distribution" value="global">
+<link REL="STYLESHEET" HREF="../../expint.css">
+
+<script LANGUAGE="JavaScript">
+<!-- Begin
+function NewWindow(mypage, myname, w, h, scroll) {
+var winl = (screen.width - w) / 2;
+var wint = (screen.height - h) / 2;
+winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+win = window.open(mypage, myname, winprops)
+if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+//  End -->
+
+</script>
+
+
+</HEAD>
+<BODY>
+  
+<table ALIGN=LEFT BORDER=0 CELLSPACING=20 CELLPADDING=0 WIDTH="470">
+
+<tr>
+<td>
+
+<h2>Experimento Interactivo 4 de Sistemas fuera del Equilibrio</h2>
+
+<h1>Ondas sonoras en un fluido </h1>
+
+
+
+<P>
+Consideremos un fluido ordinario preparado incialmente de manera
+que la densidad no es uniforme y por tanto existen gradientes de
+densidad. En el transcurso del tiempo el fluido se uniformiza, o
+dicho de otro modo, las inhomogeneidades desaparecen. ¿Cu&#225;les son
+los mecanismos que hacen que se recupere la homogeneidad? El
+objetivo de este applet es mostrar este fen&#243;meno.
+<P>
+<p>
+La evoluci&#243;n temporal de un fluido viene descrito por las
+ecuaciones de Navier--Stokes, un conjunto de <b>d</b>+2 ecuaciones no lineales, 
+una
+para la densidad del fluido, <IMG BORDER=0 ALIGN=MIDDLE ALT="" SRC="img1.gif">, otra para su
+temperatura, <IMG BORDER=0 ALIGN=MIDDLE ALT="" SRC="img2.gif"> y <b>d</b> ecuaciones para el momento <IMG BORDER=0 ALIGN=MIDDLE ALT="" SRC="img3.gif">. Si suponemos que las variaciones de densidad, temperatura y
+momento a lo largo del fluido son pequeñas, la linealizaci&#243;n de
+las ecuaciones anteriores respecto al estado de equilibrio
+(densidad y temperatura constantes, y fluido en reposo), y su
+posterior transformada de Fourier en la variable espacial <IMG BORDER=0 ALIGN=BOTTOM ALT="" SRC="img4.gif"> permite resolver las ecuaciones anteriores. En concreto, para
+las desviaciones de densidad respecto a la densidad media,
+denotadas por <IMG BORDER=0 ALIGN=MIDDLE ALT="" SRC="img5.gif">, resulta ser:
+<P>
+<P><A NAME=sol>&#160;</A><IMG BORDER=0 ALIGN=BOTTOM ALT="" SRC="img6.gif"><P>
+<p>
+ donde:
+ <P><IMG BORDER=0 ALIGN=BOTTOM ALT="" SRC="img7.gif"><P>
+<P>
+<p>
+En la ecuaci&#243;n (<A HREF="lgca.html#sol">1</A>) aparecen dos sumandos: el segundo de
+ellos exponencialmente decreciente, describe la difusi&#243;n de calor,
+y es poco importante en el caso que nos ocupa. Sin embargo, el
+primer t&#233;rmino representa una contribuci&#243;n oscilante debida a la
+funci&#243;n coseno y amortiguada debida a la exponencial negativa. La
+oscilaci&#243;n describe indica que la densidad crece y decrece en la
+evoluci&#243;n temporal, aunque dichas oscilaciones son cada vez m&#225;s
+pequeñas, dado que la amplitud decrece exponencialmente. Este
+t&#233;rmino representa las <em> ondas sonoras</em>.
+<P>
+<p>
+El applet que presentamos muestra el fen&#243;meno descrito
+anteriormente: se prepara un fluido con una zona de alta densidad
+en su parte central y se deja evolucionar libremente. La materia
+se deplaza a zonas adyacentes de densidad m&#225;s baja, dejando un
+'hueco' en la zona que ocupaba incialmente. Este hueco llega a
+tener densidad m&#225;s baja que sus alrededores y se invierte el
+fen&#243;meno: la materia en las zonas de alrededor se desplaza hacia
+el centro, increment&#225;ndose de nuevo y repetiendo el proceso. Se
+crea así una <em> onda</em> que se propaga hacia el exterior.
+<P>
+<hr>
+<p align="center">
+<applet code=ejerc2.class width=600 height=300>
+</applet>
+<hr>
+
+
+
+<P>
+<p>
+Esta onda es la que se observa en el applet como una corona de
+materia que se desplaza hacia el exterior. Para hacerlo m&#225;s
+cualitativo, dibujamos en el panel de la derecha la densidad en el cuadradito
+rojo. Inicialmente es m&#225;xima, pero cuando la materia se comienza a
+expandir (a zonas de menor densidad puesto que la presi&#243;n es
+menor), disminuye hasta hacerse casi nula. En ese momento,
+partículas de los alrededores comienzan a fluir hacia el centro
+(dado que al no haber materia es una zona de menor presi&#243;n),
+increment&#225;ndose la densidad de nuevo. El proceso se repite, pero
+la presencia de una exponencial atenuadora impide ver m&#225;s de dos
+m&#225;ximos.
+<P>
+<p>
+En la ventana de densidad se puede variar la densidad del fluido
+circundante (normalizada entre 0 y 1). Con ello se pueden cambiar
+los coeficientes de transporte y, por tanto, las propiedades de
+evoluci&#243;n de la onda sonora.
+<P>
+<p>
+Esta onda de densidad tambi&#233;n puede verse si la densidad en la
+parte central es <em> menor</em> que en los alrededores. Pulsa 
+<a HREF=ejerc23.html  onclick="NewWindow(this.href,'name','700','500','yes');return false;">
+aquí</a> para abrir otro  applet.
+<P>
+<p>
+El fen&#243;meno aquí descrito se puede observar tambi&#233;n en el
+<A HREF="../irrever/fluc.html" target=derecha>
+Experimento Interactivo número 2</a> en el que la inhomogeneidad de
+materia aparece en las dos mitades de la caja, pero la evoluci&#243;n
+temporal posterior est&#225; tambi&#233;n descrita por la ecuaci&#243;n
+(<A HREF="lgca.html#sol">1</A>).
+
+
+<p>&nbsp;
+
+<center>
+<a href="../../portada.html" target="derecha"><< P&aacute;gina principal</a>
+</center>
+</td>
+</tr>
+</table>
+
+</BODY>

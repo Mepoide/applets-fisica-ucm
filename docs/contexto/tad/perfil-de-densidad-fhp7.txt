@@ -1,0 +1,15 @@
+﻿Un modelo de fluido discreto: Lattice Gas FHP7
+
+Red de nodos hexagonal.
+			(imagen de red hexagonal)
+
+ Cada nodo puede estar poblado por un máximo de 7 partículas: una en reposo y el resto dirigidas según uno de los seis canales de movimiento:
+			(un nodo y sus canales)
+El estado de un nodo de la red puede codificarse con un número binario de siete bits, cada 1 situado en la posición n significa ocupación del canal n (n=0,1,2,3,4,5,6).
+
+El estado de un nodo particular se construye a partir del estado de los nodos vecinos, investigando qué partículas se dirigen hacia él desde éstos.
+
+El siguiente paso es definir matrices de cambio de estado que asocian dos estados equivalentes relacionados a través de una colisión, que conserva el momento lineal y el número de partículas. (La energía cinética, y por ende, la temperatura, es una cantidad conservada trivialmente, no a través del mecanismo de colisiones, pues el módulo de la velocidad de cada partícula es siempre el mismo. Esto implica que el modelo es atérmico).
+
+(tabla de colisiones FHP7)
+(para colisiones ambiguas se definen dos matrices de colisión, así en cada paso del programa se realizan dos colisiones por nodo)

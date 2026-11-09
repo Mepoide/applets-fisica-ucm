@@ -1,0 +1,56 @@
+﻿Acercamiento al equilibrio: La Maxwelliana
+
+Ecuación de Boltzmann (sin fuerza externa)
+
+
+
+J(f,f) : operador de colisión
+
+
+Ecuación cinética para gases diluidos. 
+Obtenida bajo las hipótesis:
+    • Ctr  ; r>>rC .Las colisiones son eventos bien definidos en el espacio y en el tiempo: no hay solapamiento entre colisiones sucesivas (sólo colisiones binarias).
+    • . Se han roto las correlaciones que pudieran introducir las interacciones entre partículas. Causa de la irreversibilidad.
+
+La solución de equilibrio local viene dada por la distribución de Maxwell, que es el invariante de colisión más general (J(f0,f0)=0):
+
+
+
+Linealización de la ecuación de Boltzmann. Tiempo de relajación
+
+Pequeñas desviaciones respecto al estado de equilibrio:
+
+
+Ec. Boltzmann linealizada
+
+
+C():operador de colisión linealizado.
+
+ es autoadjunto respecto a un producto escalar de peso (f0)-1. Por tanto, de autovalores reales, y, además negativos.
+
+Problema de autovalores:    nC j=jj   
+
+Modos lentos: 1=2=3=4=5=0; 1= f0 ;
+ ; 
+Modos rápidos: 
+
+
+Solución a la ecuación Boltzmann linealizada (caso homogéneo):
+
+Entonces:
+
+f0(v,t):Maxwelliana de equilibrio global
+
+Los autovalores miden la velocidad de acercamiento al equilibrio. En particular, el mayor de todos ellos fija el tiempo de relajación, (r)-1=-6.
+
+SIMULACIÓN
+
+Gas de discos duros
+
+
+    • Las colisiones están perfectamente definidas en espacio y tiempo. Sólo se implementan colisiones binarias.
+    • Las interacciones son  puntuales  correlaciones nulas
+
+Estos hechos avalan que el gas de discos duros se rige por la ecuación de Boltzmann. Las colisiones exclusivamente binarias introducen una limitación para densidades altas, donde pueden darse colisiones a más de dos partículas.
+
+Sobre un gas de discos duros homogéneo se introducen distribuciones de velocidad iniciales distintas de la de equilibrio. 

@@ -1,0 +1,548 @@
+<HTML>
+<HEAD>
+<TITLE>fluc</TITLE>
+<META NAME="description" CONTENT="fluc">
+<META NAME="keywords" CONTENT="fluc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.1 release">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+  <link REL="STYLESHEET" HREF="../../expint.css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function NewWindow(mypage, myname, w, h, scroll) {
+var winl = (screen.width - w) / 2;
+var wint = (screen.height - h) / 2;
+winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable'
+win = window.open(mypage, myname, winprops)
+if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+}
+//  End -->
+
+</script>
+
+
+
+</HEAD>
+
+<BODY >
+
+<table ALIGN=LEFT BORDER=0 CELLSPACING=20 CELLPADDING=0 WIDTH="470">
+
+<tr>
+<td>
+
+<h2>Experimento Interactivo 2 de Sistemas fuera del Equilibrio </h2>
+
+<h1>Irreversibilidad y Fluctuaciones en Equilibrio</h1>
+
+<P>
+La expansión libre de una gas es un experimento tradicional en las materias
+de Termodinámica y Física Estadística  útil para explicar
+el concepto de irreversibilidad.
+En dicho experimento  se toma un recipiente que contiene un gas que se mantiene
+en una de las mitades del mismo
+mediante un pistón o una pared.  
+En un instante determinado se rompe la pared o se libera el 
+pistón y se estudia la evolución del gas. 
+La experiencia nos dice que el gas se expande hasta ocupar todo el
+recinto, y que nunca se observa que el gas se vuelva a concentrar en una parte
+del recipiente. Se argumenta así que la evolución temporal 
+nos conduce de un estado inicial con el gas concentrado
+en una región a un estado final con el gas ocupando todo el recinto,  
+pero nunca a la inversa. Por ello, la secuencia de estados tiene
+una dirección  temporal determinada y se dice que el proceso es irreversible.
+
+<P>
+En este experimento interactivo  queremos estudiar este sistema, con el 
+objeto de verificar que una de las condiciones necesarias para
+que se produzca un comportamiento irreversible es que el sistema 
+esté compuesto por un número elevado de
+grados de libertad. En otras palabras, <EM> si el sistema está compuesto
+por pocas partículas, podríamos ver la secuencia inversa</EM>, junto con la secuencia 
+ordinaria. No habría, por tanto una caracterización bien definida de irreversibilidad. 
+
+<P>
+También pretendemos discutir las fluctuaciones de densidad 
+que se producen en el equilibrio. 
+
+<P>
+Para ello, el applet que presentamos a continuación 
+simula el experimento descrito anteriormente. Se parte de un
+recipiente  bidimensional en el que hay un gas en la mitad izquierda del mismo
+y por tanto la mitad derecha está vacía. 
+Pulsando <IMG
+ WIDTH="37" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ > comienza la evolución en la que 
+el gas se expande  y llena la totalidad del recipiente. 
+Las moléculas del gas interaccionan con un potencial de discos duros. 
+En el panel de la derecha se dibuja la diferencia entre el
+número de partículas de la izquierda y de la derecha.
+
+<P>
+
+<HR> 
+
+<p align="center">
+<applet 
+code="HardDisksApplet.class" align="baseline" width="500" height="350">
+</applet>
+
+<HR>
+
+<P>
+El botón <IMG
+ WIDTH="71" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ > abre una ventana con la
+distribución de la diferencia entre el número de partículas en 
+la zona izquierda y derecha. Volveremos sobre esta distribución al 
+<A HREF="fluc.html#fin">final</A> del texto.
+
+<P>
+Puede observarse que si el gas consta, por ejemplo, de 20 partículas, 
+en número de partículas en ambas regiones se equilibra rápidamente
+(momento en el que se habría alcanzado una "situación de
+equilibrio"), 
+y luego comienza a fluctuar alrededor de 0, situación en la
+que hay el mismo número de partículas en ambas regiones. 
+La amplitud de las fluctuaciones puede llegar a ser de 10 
+partículas, y entonces hay 5 partículas en una región y 15 en la otra.
+Sin embargo, muy raramente se verá que las 20 partículas
+están en una región y la otra se ha quedado vacía. 
+
+<P>
+Si ahora disminuimos el número de partículas hasta 6
+observaremos  la misma evolución incial en la cual 
+algunas partículas pasan a la parte derecha.  
+La diferencia en el número de partículas se mueve en torno a cero,
+esto es, vemos frecuentemente que la diferencia 
+toma los valores +2 o -2 y +4 o -4. 
+Sin embargo
+no es raro en absoluto ver que todas las 
+partículas se concentren en un lado de la caja, y, por
+tanto, se observa un proceso imposible desde el punto de la
+Termodinámica: una proceso en el que  se invierte el evolución 
+temporal en el que la entropía crece. Las partículas, de manera
+natural, pasan de llenar todo el volumen accesible, a
+concentrarse en una región, dejando otra vacía. 
+
+<P>
+Para hacer un análisis más cuantitativo de estos procesos, 
+podemos considerar las partículas independientes entre sí y 
+estudiar la probabilidad de que haya <IMG
+ WIDTH="19" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ > en el lado
+derecho y <IMG
+ WIDTH="18" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ > en el lado izquierdo. Dado que ambas regiones
+tienen el mismo volumen y que las partículas son independientes, la 
+probabilidad de que cada una de las partícula se encuentre en uno
+de los lados es <IMG
+ WIDTH="47" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ >.  Entonces, la probabilidad 
+de encontrar <IMG
+ WIDTH="19" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ > y <IMG
+ WIDTH="18" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ > viene dada por la distribución binomial: 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+p(N_d,N_i)=\left(\begin{array}{c}N_d+N_i \\N_d \end{array}\right)
+p^{N_d} (1-p)^{N_i} = \left(\begin{array}{c}N \\N_d \end{array}\right)
+\left(\frac{1}{\,2\,}\right)^N
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="binomial"></A><IMG
+ WIDTH="329" HEIGHT="40" BORDER="0"
+ SRC="img6.gif"
+></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P> 
+donde hemos utilizado que <IMG
+ WIDTH="79" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ > y que <IMG
+ WIDTH="47" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ >.
+
+<P>
+De esta expresión ya podemos extraer consecuencias muy importantes. 
+Dado que el número combinatorio <IMG
+ WIDTH="15" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ > sobre <IMG
+ WIDTH="19" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ > 
+máximo cuando <IMG
+ WIDTH="60" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ >, encontramos que 
+la situación <B> más probable</B> es aquella en la que <IMG
+ WIDTH="60" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ >,
+esto es, en la que hay el mismo número de partículas en ambos lados.
+Igualmente, dado que el número combinatorio <IMG
+ WIDTH="15" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ > sobre <IMG
+ WIDTH="19" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ > es mínimo cuando
+<IMG
+ WIDTH="43" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ > o <IMG
+ WIDTH="49" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ >, estas situaciones son las 
+<B> más improbables</B>, que corresponden a uno de los 
+lados vacíos y todas las partículas en el otro lado. 
+
+<P>
+ 
+¿Cuán grande es la diferencia entre ambas probabilidades? 
+Para ello, calculamos el cociente entre <IMG
+ WIDTH="43" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ > y 
+<IMG
+ WIDTH="73" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ >: 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\frac{p(N,0)}{p(N/2,N/2)}
+=\frac{N!/(N!0!)}{N!/[(N/2)!(N/2)!]}=\frac{[(N/2)!]^2}{N!}.
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="cociente"></A><IMG
+ WIDTH="271" HEIGHT="37" BORDER="0"
+ SRC="img14.gif"
+></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P> 
+Para evaluar este cociente, utilizamos la aproximación de 
+Stirling para 
+<!-- MATH
+ $n!\simeq n^ne^{-n}\sqrt{2\pi n}$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ >, válida con un 
+error menor del 1% para <IMG
+ WIDTH="35" HEIGHT="22" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ >. Obtenemos entonces que: 
+<BR>
+<DIV ALIGN="RIGHT">
+
+
+<!-- MATH
+ \begin{equation}
+\frac{p(N,0)}{p(N/2,N/2)}\simeq
+\sqrt{\frac{\pi N}{2}}\, 2^{-N}.
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="cociente2"></A><IMG
+ WIDTH="154" HEIGHT="41" BORDER="0"
+ SRC="img17.gif"
+></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P> 
+Observamos que la probabilidad de encontrar todo
+el gas concentrado en una región, disminuye <EM> 
+exponencialmente con el número de partículas</EM>.
+Por ejemplo, para <IMG
+ WIDTH="39" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ >, evaluación de la fórmula 
+(<A HREF="fluc.html#cociente">2</A>) nos da un valor: 
+<BR><P> 
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\frac{p(6,0)}{p(3,3)} = 0.05
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="78" HEIGHT="36" BORDER="0"
+ SRC="img19.gif"
+>
+</DIV>
+<BR CLEAR="ALL">
+<P> 
+esto es, un 5% de las veces observamos una concentración de 
+partículas. Este número es pequeño pero todavía apreciable en el applet. 
+Sin embargo, para <IMG
+ WIDTH="45" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ >, el valor disminuye hasta: 
+<BR><P> 
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\frac{p(20,0)}{p(10,10)}= 5.4\times 10^{-6}.
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="131" HEIGHT="36" BORDER="0"
+ SRC="img21.gif"
+>
+</DIV>
+<BR CLEAR="ALL">
+<P> 
+Para el número máximo de partículas que el applet
+puede simular, <IMG
+ WIDTH="52" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.gif"
+ >: <BR><P> 
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\frac{p(100,0)}{p(50,50)}= 9.9\times 10^{-30}
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="132" HEIGHT="36" BORDER="0"
+ SRC="img23.gif"
+>
+</DIV>
+<BR CLEAR="ALL">
+<P> 
+y para <IMG
+ WIDTH="52" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ >, <BR><P> 
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{displaymath}
+\frac{p(300,0)}{p(150,150)}= 6.8\times 10^{-90}.
+\end{displaymath}
+ -->
+
+
+<IMG
+ WIDTH="149" HEIGHT="36" BORDER="0"
+ SRC="img25.gif"
+>
+</DIV>
+<BR CLEAR="ALL">
+<P> 
+Aunque estos números son extraordinariamente pequeños,
+<IMG
+ WIDTH="52" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ > todavía está infinitamente lejos del número de Avogadro de partículas, 
+
+<!-- MATH
+ $N=6.023\times 10^{23}$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ >. 
+
+<P>
+Así pues, este cálculo tan sencillo muestra que la irreversibilidad
+aparece como consecuencia del enorme número de partículas que 
+componen un sistema macroscópico, 100 en nuestro
+experimento y del orden del número de Avogadro en un sistema real. 
+
+<P>
+La ecuación (<A HREF="fluc.html#binomial">1</A>) nos 
+permite calcular las fluctuaciones respecto al estado 
+más probable, <IMG
+ WIDTH="92" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ >. Para ello, definimos <IMG
+ WIDTH="10" HEIGHT="10" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ > como 
+la desviación relativa  respecto a dicho estado: <IMG
+ WIDTH="102" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ >, que junto 
+con la relación <IMG
+ WIDTH="79" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ >, nos permite escribir que:
+<IMG
+ WIDTH="102" HEIGHT="25" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ >. Sustituyendo esta expresión en la ecuación (<A HREF="fluc.html#binomial">1</A>)
+y utilizando el desarrollo de Stirling obtenemos que la probabilidad
+de encontrar una desviación <IMG
+ WIDTH="10" HEIGHT="10" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ > sigue una distribución
+gaussiana
+<A NAME="fin">: 
+<BR><P> 
+<DIV ALIGN="CENTER">
+
+
+<!-- MATH
+ \begin{equation}
+p_N(x)\simeq \sqrt{\frac{2}{\pi N}}\, e^{-(N-1)x^2/2}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="pN"></A><IMG
+ WIDTH="153" HEIGHT="34" BORDER="0"
+ SRC="img31.gif"
+ ALT="p_N(x)\simeq \sqrt{\frac{2}{\pi N}} exp{-(N-1)x^2/2}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P> 
+de dispersión
+<!-- MATH
+ $\sigma^2=1/(N-1)$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ >, esto es,  más estrecha
+cuantas más partículas haya en el sistema. Así pues,
+una fluctuación es tanto más improbable
+cuanto más grande sea el sistema.
+
+<P>
+La ecuación (<A HREF="fluc.html#pN">4</A>) se puede volver a escribir en
+función de
+<!-- MATH
+ $N_d-N_i=\Delta$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="23" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ >, obteniéndose que:
+<BR>
+<DIV ALIGN="RIGHT">
+
+<!-- MATH
+ \begin{equation}
+p_N(\Delta)\simeq \sqrt{\frac{2}{\pi N}}\, e^{-\Delta^2/(2N)}
+\end{equation}
+ -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="pN2"></A><IMG
+ WIDTH="146" HEIGHT="34" BORDER="0"
+ SRC="img34.gif"
+></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P> 
+así pues,  la dispersión en la variable <IMG
+ WIDTH="14" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.gif"
+ > es:
+
+<!-- MATH
+ $\sigma^2_\Delta = N$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ >.
+
+<P>
+Finalmente, en el applet hemos dibujado con dos líneas horizontales
+el valor de
+<!-- MATH
+ $\pm \sqrt{\sigma^2_\Delta}$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ > (entre el que <IMG
+ WIDTH="10" HEIGHT="10" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ > se encuentra el
+68% de las veces) y el valor
+<!-- MATH
+ $\pm 3\sqrt{ \sigma^2_\Delta}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ >
+(99.7% de las veces).
+
+
+
+<P>
+El applet que hemos presentado simula un sistema de partículas
+con interacción tipo disco duro. Sin embargo, todas las 
+consideraciones anteriores se aplican a un sistema
+compuesto por 
+
+<A HREF=gas.html  onclick="NewWindow(this.href,'name','600','400','yes');return false;">
+partículas sin interacción.</A>
+
+<P>
+Incluso, se puede construir un modelo 
+
+<A HREF=modelo.html  onclick="NewWindow(this.href,'name','600','460','yes');return false;">
+mucho más sencillo</A>
+con las mismas propiedades. 
+
+<p>&nbsp;
+
+<center>
+<a href="../../portada.html" target="derecha"><< P&aacute;gina principal</a>
+</center>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

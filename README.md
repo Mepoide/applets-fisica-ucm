@@ -58,9 +58,13 @@ modificación, la codificación y el estilo de cada fichero (ver el README de la
 | Código | Autor | Fecha |
 |---|---|---|
 | Base: `CanonicaApplet` (discos duros, colectivo canónico) y librería de dibujo `CuadroMath`, `GraficoAuxiliar`, `VentanaAuxiliar` | Mario Castro | jul. 2002 |
-| Applets de pila de arena, Maxwell, modos lineales (`Lineal`) y autocorrelación (`Autocor`) | Mario Encinar | feb.–jun. 2003 |
+| Applets de pila de arena, Maxwell, modos lineales (`Lineal`) y autocorrelación (`Autocor`), dentro del Trabajo Académicamente Dirigido supervisado por Ricardo Brito (UCM) | Mario Encinar | feb.–jun. 2003 |
 | Familia de gas reticular FHP: Von Kármán (`VK*`) y perfil de densidad (`Perfildens*`) | Mario Encinar | abr.–jun. 2003 |
 | Puerto a JavaScript, auditoría de física, documentación y pruebas | Mario Encinar, con Claude (Anthropic) | 2026 |
+
+Contexto completo (el TAD de 2003, el curso *Experimentos Interactivos* de la UCM del que
+forman parte, referencias de R. Brito): [`docs/contexto/`](docs/contexto/). Fuente pública de la
+autoría: créditos del curso, <http://valbuena.fis.ucm.es/expint/html/desarrollado.html>.
 
 **EN.** The sources were never under version control; attribution comes from file
 modification dates, encoding and coding style (see the `legacy-java` README). Base
