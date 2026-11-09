@@ -3,72 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Applets de Física · UCM</title>
+<title>Sistemas fuera del Equilibrio · Experimentos interactivos</title>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:,">
 </head>
-<body>
-<header class="site">
-  <h1 data-i18n="app.title">Applets de Física · UCM</h1>
-  <span class="muted" data-i18n="app.subtitle"></span>
+<body class="course">
+<header class="site course-head">
+  <button id="nav-toggle" class="icon" type="button" aria-label="Menú">☰</button>
+  <h1><a href="#/" data-i18n="course.title">Sistemas fuera del Equilibrio</a></h1>
+  <span class="muted" id="exp-title"></span>
   <span class="spacer"></span>
-  <button class="lang" type="button" data-i18n="lang.switch">English</button>
+  <button id="theme-toggle" class="icon" type="button" aria-label="Tema">☾</button>
+  <button id="lang-toggle" class="lang" type="button" data-i18n="lang.switch">English</button>
 </header>
-<main>
-  <div class="cards" id="cards"></div>
-  <footer class="site">
-    <span data-i18n="home.footer"></span>
-    <a href="https://github.com/Mepoide/applets-fisica-ucm">GitHub</a> ·
-    <a href="https://github.com/Mepoide/applets-fisica-ucm/tree/legacy-java"><code>legacy-java</code></a>
-  </footer>
-</main>
+<div class="course-body">
+  <nav id="sidebar" class="sidebar" aria-label="Experimentos"></nav>
+  <main id="content" class="content"></main>
+</div>
+<template id="home-template">
+  <section class="home">
+    <p class="lead" data-i18n="course.lead"></p>
+    <p data-i18n-html="course.intro"></p>
+    <p class="muted" data-i18n-html="course.credits"></p>
+    <p class="muted"><a href="https://github.com/Mepoide/applets-fisica-ucm">GitHub</a> ·
+      <a href="https://github.com/Mepoide/applets-fisica-ucm/tree/legacy-java"><code>legacy-java</code></a> ·
+      <a href="http://valbuena.fis.ucm.es/expint/html/frame.html" data-i18n="course.original"></a></p>
+  </section>
+</template>
 <script type="module">
 import { i18n } from './lib/i18n.js';
-i18n.register({
-  es: {
-    'home.footer': 'Applets Java originales (UCM, 2002-2003) de Mario Encinar, sobre una base de Mario Castro. Puerto a JavaScript 2026.',
-    'home.area.gas': 'Gases de partículas', 'home.area.lgca': 'Gases reticulares e hidrodinámica', 'home.area.soc': 'Sistemas complejos',
-    'maxwell.title': 'Discos duros y distribución de Maxwell',
-    'maxwell.desc': 'Discos que chocan elásticamente en una caja. El histograma de velocidades converge a la distribución de Maxwell bidimensional.',
-    'pila.title': 'Pila de arena y criticalidad autoorganizada',
-    'pila.desc': 'Granos que caen en una columna y se redistribuyen cuando la pendiente supera un umbral. Modelo de umbral fijo y modelo de Oslo.',
-    'fluct.title': 'Fluctuaciones de ocupación',
-    'fluct.desc': 'Gas ideal: cuenta las partículas dentro de una ventana que dibujas con el ratón. Histograma frente a Poisson y binomial; autocorrelación.',
-    'onda.title': 'Gas reticular FHP: onda sonora',
-    'onda.desc': 'Autómata celular de gas reticular en red hexagonal. Un hueco de densidad emite una onda sonora cilíndrica; perfil de densidad en tiempo real.',
-    'modos.title': 'Modos de la hidrodinámica linealizada',
-    'modos.desc': 'Solución analítica para una perturbación de densidad: dos modos sonoros que se propagan y un modo térmico que difunde.',
-    'vk.title': 'Gas reticular con obstáculo: Von Kármán',
-    'vk.desc': 'Flujo FHP contra una placa plana. Campo de velocidad promediado y estela.',
-  },
-  en: {
-    'home.footer': 'Original Java applets (UCM, 2002-2003) by Mario Encinar, on a base by Mario Castro. JavaScript port 2026.',
-    'home.area.gas': 'Particle gases', 'home.area.lgca': 'Lattice gases and hydrodynamics', 'home.area.soc': 'Complex systems',
-    'maxwell.title': 'Hard disks and the Maxwell distribution',
-    'maxwell.desc': 'Disks colliding elastically in a box. The speed histogram converges to the two-dimensional Maxwell distribution.',
-    'pila.title': 'Sandpile and self-organized criticality',
-    'pila.desc': 'Grains dropped on one column redistribute when the slope exceeds a threshold. Fixed-threshold and Oslo models.',
-    'fluct.title': 'Occupation fluctuations',
-    'fluct.desc': 'Ideal gas: count the particles inside a window you draw with the mouse. Histogram vs Poisson and binomial; autocorrelation.',
-    'onda.title': 'FHP lattice gas: sound wave',
-    'onda.desc': 'Lattice-gas cellular automaton on a hexagonal lattice. A density hole emits a cylindrical sound wave; live density profile.',
-    'modos.title': 'Linearized hydrodynamics modes',
-    'modos.desc': 'Analytic solution for a density perturbation: two propagating sound modes and one diffusing thermal mode.',
-    'vk.title': 'Lattice gas with an obstacle: Von Kármán',
-    'vk.desc': 'FHP flow past a flat plate. Coarse-grained velocity field and wake.',
-  },
-});
-const lang = i18n.init();
-const applets = [
-  ['maxwell', 'maxwell', 'home.area.gas'], ['fluctuaciones', 'fluct', 'home.area.gas'],
-  ['pila-arena', 'pila', 'home.area.soc'],
-  ['onda-lgca', 'onda', 'home.area.lgca'], ['modos-lineales', 'modos', 'home.area.lgca'], ['von-karman', 'vk', 'home.area.lgca'],
-];
-document.getElementById('cards').innerHTML = applets.map(([slug, k, area]) =>
-  `<a class="card" href="applets/${slug}/index.html?lang=${lang}"><h2>${i18n.t(k + '.title')}</h2><p>${i18n.t(k + '.desc')}</p><span class="tag">${i18n.t(area)}</span></a>`).join('');
-document.querySelector('button.lang').addEventListener('click', () => {
-  const u = new URL(location.href); u.searchParams.set('lang', lang === 'es' ? 'en' : 'es'); location.href = u.toString();
-});
+import { createShell } from './lib/shell.js';
+i18n.init();
+createShell({ root: '.' });
 </script>
 </body>
 </html>

@@ -9,6 +9,10 @@
     --accent: #e05a4f; --link: #7fb0ff;
   }
 }
+:root[data-theme="dark"] {
+  --bg: #15161a; --panel: #1f2126; --fg: #ececea; --muted: #9c9c98; --line: #33363d;
+  --accent: #e05a4f; --link: #7fb0ff;
+}
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 a { color: var(--link); }
@@ -52,3 +56,53 @@ footer.site { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--l
 .card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .card .tag { display: inline-block; font-size: 0.75rem; color: var(--accent); margin-top: 0.5rem; }
 .hint { font-size: 0.9rem; color: var(--muted); }
+
+/* ---- course shell ---- */
+button.icon { padding: 0.2rem 0.55rem; font-size: 1.05rem; line-height: 1; }
+.course-head { position: sticky; top: 0; z-index: 5; }
+.course-head h1 a { color: inherit; text-decoration: none; }
+.course-head #exp-title .num { display: inline-block; min-width: 1.5em; margin-right: 0.4em; padding: 0 0.3em; border-radius: 4px; background: var(--accent); color: var(--accent-fg); font-size: 0.8rem; text-align: center; }
+.course-body { display: grid; grid-template-columns: 250px minmax(0, 1fr); min-height: calc(100vh - 3.2rem); }
+.sidebar { border-right: 1px solid var(--line); background: var(--panel); padding: 1rem 0.8rem 2rem; position: sticky; top: 3.2rem; align-self: start; max-height: calc(100vh - 3.2rem); overflow: auto; }
+.sidebar h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 1rem 0.4rem 0.4rem; }
+.sidebar ol, .sidebar ul { list-style: none; margin: 0; padding: 0; }
+.sidebar a { display: flex; gap: 0.5rem; align-items: baseline; padding: 0.35rem 0.5rem; border-radius: 6px; color: inherit; text-decoration: none; font-size: 0.92rem; }
+.sidebar a:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.sidebar a[aria-current="page"] { background: color-mix(in srgb, var(--accent) 16%, transparent); font-weight: 600; }
+.sidebar a .num { min-width: 1.4em; color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 600; }
+.sidebar a.home { font-weight: 600; margin-bottom: 0.3rem; }
+.content { padding: 1rem 16px 3rem; max-width: 1200px; }
+.home .lead { font-size: 1.15rem; max-width: 46rem; }
+.home p { max-width: 46rem; }
+#nav-toggle { display: none; }
+@media (max-width: 900px) {
+  .course-body { grid-template-columns: 1fr; }
+  #nav-toggle { display: inline-block; }
+  .sidebar { display: none; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--line); }
+  body.nav-open .sidebar { display: block; }
+}
+/* ---- applet layout inside the shell ---- */
+.stage { display: grid; grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr); gap: 1rem; align-items: start; margin-top: 0.5rem; }
+.stage .canvases { margin-top: 0; }
+@media (max-width: 1000px) { .stage { grid-template-columns: 1fr; } }
+.liveeq { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 0.8rem 1rem; overflow-x: auto; }
+.liveeq h3 { margin: 0 0 0.4rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.liveeq .eq { margin: 0.3rem 0; font-size: 0.95rem; }
+.liveeq .eq .katex-display { margin: 0.4rem 0; }
+.liveeq .slot { color: var(--accent); font-weight: 600; border-bottom: 1px dotted var(--accent); }
+.indicators { display: grid; grid-template-columns: auto auto; gap: 0.15rem 0.8rem; margin: 0.6rem 0 0; font-size: 0.9rem; }
+.indicators dt { color: var(--muted); }
+.indicators dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 600; }
+.indicators dd.ok { color: #2e8b57; } .indicators dd.warn { color: #c77a00; }
+.legend { display: flex; gap: 1rem; font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+.legend i { display: inline-block; width: 1.4em; height: 0.25em; vertical-align: middle; margin-right: 0.3em; border-radius: 2px; }
+.legend i.theory { background: #1f4e9c; } .legend i.measured { background: rgba(181,40,30,0.75); }
+details.sec { border-top: 1px solid var(--line); padding: 0.4rem 0; }
+details.sec summary { cursor: pointer; font-weight: 600; padding: 0.3rem 0; }
+details.sec .theory { padding: 0.2rem 0 0.6rem; }
+.theory-sections { margin-top: 1.5rem; max-width: 52rem; }
+.applet .hint { margin-top: 0.3rem; }
+.canvases.stack { grid-template-columns: 1fr; }
+.canvases.stack canvas { aspect-ratio: 3 / 1; }
+.canvases.single { grid-template-columns: 1fr; }
+.toggles button[aria-pressed="true"] { border-color: var(--accent); font-weight: 600; }

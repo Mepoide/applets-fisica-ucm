@@ -1,8 +1,8 @@
-// Browser smoke test: serves the repo, opens every applet in both languages,
-// presses Start, waits, checks for console errors and that the canvas changed,
-// and saves a screenshot per applet. Usage: node tests/browser/smoke.mjs [slug ...]
-// Set BASE_URL (e.g. https://mepoide.github.io/applets-fisica-ucm) to test a deployed
-// site instead of a local server; screenshots are then skipped.
+// Browser smoke test. Serves the repo (or uses BASE_URL for a deployed site),
+// opens every applet standalone page in both languages and every course route
+// in the shell, presses Start, checks for console errors, that the canvas
+// changed, that the live-equation panel and the theory rendered. Saves one
+// screenshot per applet and of the course. Usage: node tests/browser/smoke.mjs [slug ...]
 import { spawn } from 'node:child_process';
 import { chromium } from 'playwright-core';
 import { readdirSync, existsSync } from 'node:fs';
@@ -13,6 +13,7 @@ const BASE = (process.env.BASE_URL || `http://127.0.0.1:${PORT}`).replace(/\/$/,
 const root = new URL('../../', import.meta.url).pathname;
 const slugs = process.argv.slice(2).length ? process.argv.slice(2)
   : readdirSync(`${root}applets`).filter((d) => !d.startsWith('_') && existsSync(`${root}applets/${d}/index.html`));
+const { REGISTRY } = await import(`${root}lib/registry.js`);
 
 const server = process.env.BASE_URL ? null
   : spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: root, stdio: 'ignore' });
@@ -22,52 +23,83 @@ const exe = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-b
 const browser = await chromium.launch({ executablePath: exe, headless: true });
 let failures = 0;
 const canvasHash = (page) => page.evaluate(() => [...document.querySelectorAll('canvas')].map((c) => c.toDataURL().length + ':' + c.toDataURL().slice(-64)).join('|'));
+const md5 = (s) => createHash('md5').update(s).digest('hex');
 
+// Run the standard checks on a page where an applet is visible.
+async function exercise(page, label, errors, { screenshot } = {}) {
+  await page.waitForSelector('button.primary', { timeout: 15000 });
+  await page.waitForTimeout(300);
+  const before = await canvasHash(page);
+  await page.click('button.primary');
+  await page.waitForTimeout(1200);
+  const after = await canvasHash(page);
+  const changed = md5(before) !== md5(after);
+  let theoryText = '';
+  const hasSections = await page.$('.theory-sections');
+  if (hasSections) {
+    await page.waitForSelector('.theory-sections details.sec', { timeout: 15000 }).catch(() => {});
+    theoryText = await page.$eval('.theory-sections', (el) => el.textContent.trim().slice(0, 60)).catch(() => '');
+  } else {
+    await page.click('button[data-tab="theory"]');
+    await page.waitForTimeout(1500);
+    theoryText = await page.$eval('#theory .theory', (el) => el.textContent.trim().slice(0, 60)).catch(() => '');
+  }
+  const hasEq = (await page.$('.liveeq')) != null;
+  const eqRendered = hasEq ? (await page.$('.liveeq .katex')) != null : true;
+  const ok = errors.length === 0 && changed && theoryText.length > 0 && eqRendered;
+  if (!ok) failures++;
+  console.log(`${ok ? 'OK  ' : 'FAIL'} ${label} canvasChanged=${changed} errors=${errors.length} liveeq=${hasEq ? (eqRendered ? 'katex' : 'fallback') : 'none'} theory="${theoryText.replace(/\s+/g, ' ')}"`);
+  for (const e of errors) console.log(`      ${e}`);
+  if (screenshot && !process.env.BASE_URL) {
+    if (!hasSections) { await page.click('button[data-tab="sim"]'); await page.waitForTimeout(300); }
+    await page.screenshot({ path: screenshot, fullPage: true });
+  }
+}
+
+// Standalone pages.
 for (const slug of slugs) {
   for (const lang of ['es', 'en']) {
     const page = await browser.newPage({ viewport: { width: 1100, height: 900 } });
     const errors = [];
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
     page.on('pageerror', (e) => errors.push(String(e)));
-    const url = `${BASE}/applets/${slug}/index.html?lang=${lang}`;
     try {
-      await page.goto(url, { waitUntil: 'networkidle' });
-      await page.waitForTimeout(300);
-      const before = await canvasHash(page);
-      await page.click('button.primary');
-      await page.waitForTimeout(1200);
-      const after = await canvasHash(page);
+      await page.goto(`${BASE}/applets/${slug}/index.html?lang=${lang}`, { waitUntil: 'networkidle' });
       const title = await page.title();
-      const changed = createHash('md5').update(before).digest('hex') !== createHash('md5').update(after).digest('hex');
-      // Theory tab must render without errors too.
-      await page.click('button[data-tab="theory"]');
-      await page.waitForTimeout(1500);
-      const theoryText = await page.$eval('#theory .theory', (el) => el.textContent.trim().slice(0, 60));
-      const ok = errors.length === 0 && changed && theoryText.length > 0;
-      if (!ok) failures++;
-      console.log(`${ok ? 'OK  ' : 'FAIL'} ${slug} [${lang}] title="${title}" canvasChanged=${changed} errors=${errors.length} theory="${theoryText.replace(/\s+/g, ' ')}"`);
-      for (const e of errors) console.log(`      ${e}`);
-      if (lang === 'es' && !process.env.BASE_URL) {
-        await page.click('button[data-tab="sim"]');
-        await page.waitForTimeout(400);
-        await page.screenshot({ path: `${root}docs/screenshots/${slug}.png`, fullPage: true });
-      }
-    } catch (e) {
-      failures++; console.log(`FAIL ${slug} [${lang}] ${e.message}`);
-    }
+      await exercise(page, `${slug} [${lang}] title="${title}"`, errors, { screenshot: lang === 'es' ? `${root}docs/screenshots/${slug}.png` : null });
+    } catch (e) { failures++; console.log(`FAIL ${slug} [${lang}] ${e.message}`); }
     await page.close();
   }
 }
-// Landing page
+
+// Course shell: home, then every registered route in one page (tests destroy/mount).
 {
-  const page = await browser.newPage();
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const errors = [];
+  page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
-  const n = await page.$$eval('a.card', (a) => a.length);
-  console.log(`${errors.length === 0 && n === 6 ? 'OK  ' : 'FAIL'} index cards=${n} errors=${errors.length}`);
-  if (!(errors.length === 0 && n === 6)) failures++;
-  await page.screenshot({ path: `${root}docs/screenshots/index.png`, fullPage: true });
+  const links = await page.$$eval('#sidebar a[data-slug]', (a) => a.length);
+  const homeOk = errors.length === 0 && links === REGISTRY.length && (await page.$('.home')) != null;
+  console.log(`${homeOk ? 'OK  ' : 'FAIL'} course home links=${links}/${REGISTRY.length} errors=${errors.length}`);
+  if (!homeOk) failures++;
+  const routes = REGISTRY.filter((r) => !slugs.length || process.argv.length <= 2 || slugs.includes(r.slug));
+  for (const r of routes) {
+    errors.length = 0;
+    try {
+      await page.evaluate((h) => { location.hash = h; }, `#/${r.slug}`);
+      await page.waitForSelector(`#sidebar a[data-slug="${r.slug}"][aria-current="page"]`, { timeout: 10000 });
+      await exercise(page, `course #/${r.slug}`, errors, { screenshot: r.slug === routes[0].slug ? `${root}docs/screenshots/course.png` : null });
+    } catch (e) { failures++; console.log(`FAIL course #/${r.slug} ${e.message}`); }
+  }
+  // Mobile layout: sidebar hidden until toggled.
+  await page.setViewportSize({ width: 420, height: 800 });
+  await page.waitForTimeout(300);
+  const hidden = await page.$eval('#sidebar', (el) => getComputedStyle(el).display === 'none');
+  await page.click('#nav-toggle');
+  const shown = await page.$eval('#sidebar', (el) => getComputedStyle(el).display !== 'none');
+  console.log(`${hidden && shown ? 'OK  ' : 'FAIL'} mobile nav hidden=${hidden} toggled=${shown}`);
+  if (!(hidden && shown)) failures++;
   await page.close();
 }
 await browser.close();
