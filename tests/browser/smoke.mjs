@@ -13,7 +13,7 @@ const BASE = (process.env.BASE_URL || `http://127.0.0.1:${PORT}`).replace(/\/$/,
 const root = new URL('../../', import.meta.url).pathname;
 const slugs = process.argv.slice(2).length ? process.argv.slice(2)
   : readdirSync(`${root}applets`).filter((d) => !d.startsWith('_') && existsSync(`${root}applets/${d}/index.html`));
-const { REGISTRY } = await import(`${root}lib/registry.js`);
+const { REGISTRY, SECTIONS, PAGES } = await import(`${root}lib/registry.js`);
 
 const server = process.env.BASE_URL ? null
   : spawn('python3', ['-m', 'http.server', String(PORT), '--bind', '127.0.0.1'], { cwd: root, stdio: 'ignore' });
@@ -79,10 +79,28 @@ for (const slug of slugs) {
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
-  const links = await page.$$eval('#sidebar a[data-slug]', (a) => a.length);
-  const homeOk = errors.length === 0 && links === REGISTRY.length && (await page.$('.home')) != null;
-  console.log(`${homeOk ? 'OK  ' : 'FAIL'} course home links=${links}/${REGISTRY.length} errors=${errors.length}`);
+  const links = await page.$$eval('#sidebar a[data-slug]', (a) => new Set(a.map((x) => x.dataset.slug)).size);
+  await page.waitForTimeout(600);
+  const hero = (await page.$('.hero canvas')) != null;
+  const homeOk = errors.length === 0 && links === REGISTRY.length && (await page.$('.home')) != null && hero;
+  console.log(`${homeOk ? 'OK  ' : 'FAIL'} course home links=${links}/${REGISTRY.length} hero=${hero} errors=${errors.length}`);
   if (!homeOk) failures++;
+  for (const p of PAGES) {
+    errors.length = 0;
+    await page.evaluate((h) => { location.hash = h; }, `#/${p.id}`);
+    await page.waitForSelector('article.page h1, article.page h2', { timeout: 20000 }).catch(() => {});
+    const txt = await page.$eval('article.page', (el) => el.textContent.trim().length).catch(() => 0);
+    const ok = errors.length === 0 && txt > 200;
+    console.log(`${ok ? 'OK  ' : 'FAIL'} course page #/${p.id} chars=${txt} errors=${errors.length}`); if (!ok) failures++;
+  }
+  for (const s of SECTIONS) {
+    errors.length = 0;
+    await page.evaluate((h) => { location.hash = h; }, `#/s/${s.id}`);
+    await page.waitForSelector('.section-index', { timeout: 10000 }).catch(() => {});
+    const n = await page.$$eval('.section-index a.card', (a) => a.length).catch(() => -1);
+    const ok = errors.length === 0 && n >= 0;
+    console.log(`${ok ? 'OK  ' : 'FAIL'} course section #/s/${s.id} cards=${n} errors=${errors.length}`); if (!ok) failures++;
+  }
   const routes = REGISTRY.filter((r) => !slugs.length || process.argv.length <= 2 || slugs.includes(r.slug));
   for (const r of routes) {
     errors.length = 0;
@@ -90,6 +108,7 @@ for (const slug of slugs) {
       await page.evaluate((h) => { location.hash = h; }, `#/${r.slug}`);
       await page.waitForSelector(`#sidebar a[data-slug="${r.slug}"][aria-current="page"]`, { timeout: 10000 });
       await exercise(page, `course #/${r.slug}`, errors, { screenshot: r.slug === routes[0].slug ? `${root}docs/screenshots/course.png` : null });
+      if (r.slug === routes[0].slug && !process.env.BASE_URL) { await page.evaluate(() => { location.hash = '#/'; }); await page.waitForSelector('.hero canvas'); await page.waitForTimeout(900); await page.screenshot({ path: `${root}docs/screenshots/home.png`, fullPage: true }); }
     } catch (e) { failures++; console.log(`FAIL course #/${r.slug} ${e.message}`); }
   }
   // Mobile layout: sidebar hidden until toggled.

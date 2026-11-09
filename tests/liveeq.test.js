@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { formatValue, fallbackText, slotTex } from '../lib/liveeq.js';
+import { formatValue, fallbackText, slotTex, symbolOf } from '../lib/liveeq.js';
 
 test('formatValue: 3 significant digits, exponent for large/small, dash for NaN', () => {
   assert.equal(formatValue(0.123456), '0.123');
@@ -24,4 +24,10 @@ test('fallbackText substitutes slot names by their formatted values', () => {
 test('slotTex wraps a symbol as an htmlId slot', () => {
   assert.equal(slotTex('kT', 'kT'), '\\htmlId{kT}{kT}');
   assert.equal(slotTex('nu', '\\nu'), '\\htmlId{nu}{\\nu}');
+});
+
+test('symbolOf extracts the wrapped symbol with nested braces', () => {
+  assert.equal(symbolOf('a = \\htmlId{kT}{kT}', 'kT'), 'kT');
+  assert.equal(symbolOf('\\htmlId{s}{\\sigma_{\\Delta}^{2}} + 1', 's'), '\\sigma_{\\Delta}^{2}');
+  assert.equal(symbolOf('x', 'nope'), null);
 });

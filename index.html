@@ -3,31 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sistemas fuera del Equilibrio · Experimentos interactivos</title>
+<title>Experimentos Interactivos en Sistemas Físicos Complejos</title>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:,">
 </head>
 <body class="course">
 <header class="site course-head">
   <button id="nav-toggle" class="icon" type="button" aria-label="Menú">☰</button>
-  <h1><a href="#/" data-i18n="course.title">Sistemas fuera del Equilibrio</a></h1>
+  <h1><a href="#/" data-i18n="course.title">Experimentos Interactivos</a></h1>
   <span class="muted" id="exp-title"></span>
   <span class="spacer"></span>
   <button id="theme-toggle" class="icon" type="button" aria-label="Tema">☾</button>
   <button id="lang-toggle" class="lang" type="button" data-i18n="lang.switch">English</button>
 </header>
 <div class="course-body">
-  <nav id="sidebar" class="sidebar" aria-label="Experimentos"></nav>
+  <nav id="sidebar" class="sidebar" aria-label="Secciones y experimentos"></nav>
   <main id="content" class="content"></main>
 </div>
 <template id="home-template">
   <section class="home">
-    <p class="lead" data-i18n="course.lead"></p>
+    <div class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-text">
+        <h2 data-i18n="course.fullTitle"></h2>
+        <p data-i18n="course.lead"></p>
+      </div>
+      <nav class="hero-map" aria-label="Mapa">
+        <a class="hm hm-top" href="#/presentacion" data-i18n="page.presentacion"></a>
+        <a class="hm hm-left" href="#/s/fises" data-i18n="course.experiments.cap"></a>
+        <a class="hm hm-right" href="#/creditos" data-i18n="page.creditos"></a>
+        <a class="hm hm-bl" href="#/bibliografia" data-i18n="page.bibliografia"></a>
+        <a class="hm hm-br" href="#/enlaces" data-i18n="page.enlaces"></a>
+      </nav>
+    </div>
+    <p class="muted hero-caption" data-i18n="course.heroCaption"></p>
+    <div class="cards hero-sections"></div>
     <p data-i18n-html="course.intro"></p>
     <p class="muted" data-i18n-html="course.credits"></p>
-    <p class="muted"><a href="https://github.com/Mepoide/applets-fisica-ucm">GitHub</a> ·
-      <a href="https://github.com/Mepoide/applets-fisica-ucm/tree/legacy-java"><code>legacy-java</code></a> ·
-      <a href="http://valbuena.fis.ucm.es/expint/html/frame.html" data-i18n="course.original"></a></p>
   </section>
 </template>
 <script type="module">
