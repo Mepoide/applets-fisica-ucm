@@ -36,10 +36,10 @@ i18n.register({
 
 const XMAX = 60, NX = 601, TMAX = 50;
 
-export function mount(root, { root: base = '../..' } = {}) {
+export function mount(root, { root: base = '../..', embedded = false } = {}) {
   const ui = appletSkeleton(root, {
     canvases: [{ id: 'rho', caption: 'modos.cap.rho', cls: 'wide' }, { id: 'u', caption: 'modos.cap.u', cls: 'wide' }, { id: 'T', caption: 'modos.cap.T', cls: 'wide' }],
-    hintKey: 'modos.hint',
+    hintKey: 'modos.hint', theory: !embedded,
   });
   root.querySelector('.canvases').classList.add('stack');
   const xs = M.linspace(-XMAX, XMAX, NX);

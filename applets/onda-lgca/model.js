@@ -2,6 +2,7 @@
 // density) is carved in a uniform gas; the rarefaction front propagates
 // outward at the lattice sound speed c_s = sqrt(3/7).
 import * as H from '../_fhp/fhp.js';
+import { besselJ0, besselJ1 } from '../../lib/bessel.js';
 
 export function create({ nx = 200, ny = 200, f = 0.7, holeRadius = 12, rng = Math.random } = {}) {
   const L = H.createLattice(nx, ny);
@@ -56,3 +57,33 @@ export function frontRadius(profile, rmin = 1) {
 }
 
 export const SOUND_SPEED = H.SOUND_SPEED;
+
+export const transportFHP = H.transportFHP;
+
+// Linear (acoustic) prediction for the cylindrical hole. The initial perturbation
+// δn(r,0) = −n0 for r < R has Hankel transform F(k) = −n0·2πR J1(kR)/k; each mode
+// oscillates as cos(c_s k t) and damps as exp(−Γ k² t), so
+//   δn(r,t) = −n0 R ∫₀^∞ J1(kR) J0(kr) cos(c_s k t) e^{−Γ k² t} dk.
+// Returns the predicted occupation n0 + δn on the radii `r` (n0 = 7f). Linear theory
+// of an O(1) perturbation: shape and front position are meaningful, amplitude only roughly.
+export function linearPrediction(s, r, t, { Gamma = transportFHP(s.f).Gamma, cs = SOUND_SPEED, nk = 600 } = {}) {
+  const R = s.holeRadius, n0 = 7 * s.f;
+  const kmax = 40 / R, dk = kmax / nk;
+  const G = Math.max(Gamma, 0.02); // small floor smooths the truncation ripple at t = 0
+  const out = new Float64Array(r.length);
+  const w = new Float64Array(nk + 1);
+  for (let j = 0; j <= nk; j++) { const k = j * dk; w[j] = (j === 0 || j === nk ? 0.5 : 1) * dk * besselJ1(k * R) * Math.cos(cs * k * t) * Math.exp(-G * k * k * t); }
+  for (let i = 0; i < r.length; i++) {
+    let acc = 0;
+    for (let j = 1; j <= nk; j++) acc += w[j] * besselJ0(j * dk * r[i]);
+    out[i] = n0 - n0 * R * acc;
+  }
+  return out;
+}
+
+// Position of the minimum of a predicted/measured profile beyond rmin.
+export function profileMinimum(r, rho, rmin = 1) {
+  let best = -1, bv = Infinity;
+  for (let i = 0; i < r.length; i++) if (r[i] >= rmin && !Number.isNaN(rho[i]) && rho[i] < bv) { bv = rho[i]; best = i; }
+  return best < 0 ? NaN : r[best];
+}

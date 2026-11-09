@@ -134,3 +134,15 @@ export function diskMask(L, cx, cy, r) {
 
 // Sound speed of the 7-state model in lattice units per step: c_s² = (6/7)(1/2).
 export const SOUND_SPEED = Math.sqrt(3 / 7);
+
+// Transport coefficients of the FHP-III model (rest particle, all collisions),
+// in lattice units (Frisch et al. 1987; Grosfils, Boon, Brito, Ernst 1993).
+// f: mean occupation per channel. g(f): non-Galilean factor multiplying the
+// advective term; nu(f): kinematic shear viscosity (Boltzmann approximation,
+// including the propagation correction -1/8).
+export function galileanFactor(f) { return (7 / 12) * (1 - 2 * f) / (1 - f); }
+export function viscosityFHP3(f) { return (1 / 28) / (f * (1 - f) ** 3 * (1 - 8 * f * (1 - f) / 7)) - 1 / 8; }
+// Sound attenuation coefficient for an athermal 2D lattice gas: Gamma = (nu + zeta)/2 with the
+// bulk viscosity zeta of FHP-III approximated by nu (the exact value is of the same order).
+export function soundAttenuation(f) { return viscosityFHP3(f); }
+export function transportFHP(f) { return { cs: SOUND_SPEED, nu: viscosityFHP3(f), Gamma: soundAttenuation(f), g: galileanFactor(f) }; }

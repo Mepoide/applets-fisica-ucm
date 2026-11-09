@@ -83,6 +83,6 @@ export function meanAlongVelocity(s, iy0, iy1) {
 }
 
 // Reference transport coefficients of 7-bit FHP models (Frisch et al. 1987), d = f.
-export function galileanFactor(f) { return (7 / 12) * (1 - 2 * f) / (1 - f); }
-export function viscosityFHP3(f) { return (1 / 28) / (f * (1 - f) ** 3 * (1 - 8 * f * (1 - f) / 7)) - 1 / 8; }
+export const galileanFactor = H.galileanFactor;
+export const viscosityFHP3 = H.viscosityFHP3;
 export function reynolds(s) { const nu = viscosityFHP3(s.f); return nu > 0 ? galileanFactor(s.f) * s.u * s.plateLen / nu : NaN; }
