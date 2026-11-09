@@ -29,8 +29,31 @@ npm run test:browser   # Playwright smoke tests + screenshots
 | `applets/modos-lineales` | Modos de la hidrodinámica linealizada | Linearized hydrodynamics modes |
 | `applets/von-karman` | Gas reticular con obstáculo: calle de Von Kármán | Lattice gas with obstacle: Von Kármán street |
 
-Documentación por applet en `docs/es/` y `docs/en/`; auditoría física en `docs/audit/`.
-El código Java original está congelado en la rama `legacy-java`.
+## Documentación / Documentation
 
-Per-applet docs in `docs/es/` and `docs/en/`; physics audit in `docs/audit/`. The original
-Java code is frozen on the `legacy-java` branch.
+- Teoría, algoritmo, cambios y evaluación por applet / per-applet theory, algorithm, changes
+  and evaluation: [`docs/es/`](docs/es/), [`docs/en/`](docs/en/) (también en la pestaña
+  "Teoría" de cada página / also in each page's "Theory" tab).
+- Auditoría física de los originales / physics audit: [`docs/audit/README.md`](docs/audit/README.md).
+- Evaluación didáctica y propuestas / didactic evaluation and proposals:
+  [`docs/evaluacion-didactica.md`](docs/evaluacion-didactica.md).
+- Diseño y plan de esta fase / design and plan: [`docs/superpowers/`](docs/superpowers/).
+- Capturas / screenshots: [`docs/screenshots/`](docs/screenshots/).
+
+El código Java original (2002-2005) está congelado, sin modificar, en la rama
+[`legacy-java`](https://github.com/Mepoide/applets-fisica-ucm/tree/legacy-java). The original
+Java code is frozen, untouched, on the `legacy-java` branch.
+
+## Estructura / Layout
+
+```
+index.html            portada / landing
+lib/                  plot, loop, ui, i18n, stats, rng, docs, page (sin dependencias / no deps)
+applets/<slug>/       model.js (física pura / pure physics) · view.js (canvas + controles) · index.html
+applets/_fhp/fhp.js   gas reticular FHP compartido / shared FHP lattice gas
+docs/es, docs/en      Markdown con LaTeX (KaTeX) / Markdown with LaTeX
+tests/*.test.js       node:test · tests/browser/smoke.mjs Playwright
+```
+
+Requisitos / requirements: cualquier servidor estático para la web; Node ≥ 20 para los tests;
+Chrome o Chromium para `test:browser` (usa `playwright-core` como dependencia de desarrollo).
