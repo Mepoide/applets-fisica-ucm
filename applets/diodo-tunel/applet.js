@@ -31,7 +31,7 @@ i18n.register({
 });
 
 export function mount(root, { root: base = '../..' } = {}) {
-  const ui = appletSkeleton(root, { canvases: [{ id: 'T', caption: 'rtd.cap.T', cls: 'wide' }, { id: 'IV', caption: 'rtd.cap.IV' }], hintKey: 'rtd.hint' });
+  const ui = appletSkeleton(root, { canvases: [{ id: 'T', caption: 'rtd.cap.T' }, { id: 'IV', caption: 'rtd.cap.IV', cls: 'wide' }], hintKey: 'rtd.hint' });
   let prof, Es, Ts, res, iv = [], Imax = 1e-12;
   const pb = numberField({ label: 'rtd.b', value: 30, min: 10, max: 80, step: 5, onChange: () => { iv = []; compute(); draw(); } });
   const pw = numberField({ label: 'rtd.w', value: 50, min: 20, max: 120, step: 5, onChange: () => { iv = []; compute(); draw(); } });

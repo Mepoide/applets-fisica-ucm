@@ -104,3 +104,38 @@ walk were absorbed by experiments 1–2 and 6–7. Every experiment now has at l
 check on screen (table above). A phase 3, if agreed with R. Brito, would cover *Statistical
 Physics* (11 experiments, two already covered) and, with F. Domínguez-Adame, *Solid State* and
 *Quantum Devices*.
+
+
+---
+
+## Fase 3 (2026-11-09): curso completo, 4 secciones / Phase 3: the whole course, 4 sections
+
+**ES.** Se añadieron la portada (Ising 2D en vivo con el mapa de entrada original), las páginas
+estáticas y las tres secciones restantes. Todos los experimentos siguen el mismo contrato: panel de
+ecuación viva con la definición de cada magnitud, indicadores de acuerdo con la teoría y una curva
+teórica superpuesta.
+
+| Sección | Experimentos | Qué aporta frente al original | Comprobación cuantitativa típica |
+|---|---|---|---|
+| Física Estadística (11) | tlc, kac, baker, osciladores, cvising, diatom, debye, irreversibilidad, macro, bosefermi, ising | Los que eran fórmulas animadas (Debye, diatómicas, cvising) se convierten en comparaciones exactas; Ising 2D con Onsager; bosones/fermiones Monte Carlo frente a ocupaciones canónicas exactas | $c_V$ por matriz de transferencia frente a Onsager; $m(T)$ de Onsager; TLC con $\chi^2$ |
+| Estado Sólido (12) | madelung, cadena-desordenada, cuasicristal, conductividad-cadena, dispersion-red, aleacion, ondas-planas, estados-superficiales, rmn, agregados, oscilaciones-bloch, multicapas | Conteo de nodos, Kronig–Penney, Landauer, Bloch/Wannier–Stark y Rouard implementados desde cero con tests analíticos | Evjen frente a sumas directas; bandas de KP frente a transmisión; FID analítico; $\lambda_B$ de Bragg |
+| Dispositivos Cuánticos (10) | pozo-cuantico, dopado-delta, diodo-tunel, dos-bandas, stark, heterounion, minibandas, superred-enlace-fuerte, superred-gaussiana, absorcion-2d | Módulo común de Schrödinger de masa efectiva en diferencias finitas; corriente de Tsu–Esaki; Airy frente a variacional; coeficiente exacto del efecto Stark de segundo orden | Pozo finito analítico frente a diferencias finitas; Thomas–Fermi exacto; cero de Airy 2.338; escalera de Wannier–Stark |
+
+Limitaciones y decisiones a revisar con los autores: (i) en *Absorción óptica 2D* el espectro
+"medido" es sintético porque los datos de InGaAs del applet original no se conservan; (ii) en el
+*modelo de dos bandas* se usa $m_B(E) = m_B(1 + E/E_{gB})$, no la expresión de la hoja original;
+(iii) la fórmula perturbativa del *efecto Stark* se muestra con su coeficiente exacto
+$(15-\pi^2)/48\pi^4$ en lugar de la aproximación $1/100\pi^2$ del curso; (iv) la ecuación (2) de
+*Arrhenius* y el modo térmico de *Ondas sonoras* ya se discutieron en la fase 2.
+
+Propuestas siguientes: revisar con R. Brito y F. Domínguez-Adame los textos y las decisiones
+anteriores; recuperar, si existen, los datos experimentales de absorción; añadir un modo "guía"
+con preguntas por experimento (las hojas del curso original incluían cuestiones al alumno).
+
+**EN.** The landing page (live 2D Ising with the original entry map), the static pages and the
+three remaining sections were added; every experiment keeps the same contract (live equation with
+definitions, agreement indicators, theoretical overlay). Points to review with the authors: the
+synthetic "measured" spectrum in 2D absorption, the barrier-mass prefactor in the two-band model,
+the exact second-order Stark coefficient, and the phase-2 remarks on Arrhenius and sound waves.
+Next: review texts with R. Brito and F. Domínguez-Adame, recover the original absorption data if
+they exist, and add a guided-questions mode per experiment.

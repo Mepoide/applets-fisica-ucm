@@ -14,7 +14,7 @@ Original credits page: <http://valbuena.fis.ucm.es/expint/html/desarrollado.html
 
 ## This version (2026)
 
-- JavaScript rewrite of the 21 experiments published so far, physics audit, sheet texts, tests and deployment: **Mario Encinar**, assisted by Claude (Anthropic).
+- JavaScript rewrite of the 42 course experiments and the 3 from the 2003 TAD, physics audit, sheet texts, tests and deployment: **Mario Encinar**, assisted by Claude (Anthropic).
 - The sheets are new texts; the original course is cited as the source of each experiment and its texts are not reproduced.
 - Open source at <https://github.com/Mepoide/applets-fisica-ucm>. The 2002-2003 Java code is preserved unchanged on the `legacy-java` branch.
 

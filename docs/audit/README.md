@@ -65,3 +65,27 @@ experiments reimplemented from the physics in the course pages.
 | 8 Arrhenius | La tasa de la ec. (2) del curso cuenta como escape toda llegada a la barrera: sobreestima $k$ en una red fina (factor ~25 con $\Delta x = 0.025$). | A | Test `lattice Kramers rate fits the measured decay`: $k_{\rm fit}/k_{\rm Kramers} = 0.94$, $k_{\rm curso}/k_{\rm Kramers} \approx 25$ | Tasa de Kramers exacta en la red (flujo sobre población) y aproximación armónica; la del curso se muestra punteada y se explica |
 | 9 Resonancia | Solo traza $x(t)$ frente al mínimo; sin medida de la resonancia. | C | Campos de `ejerc3` | Amplitud de respuesta $A_\omega$, $\tau_K$, $kT_{\rm res}$ y barrido; test de máximo en $kT_{\rm res}$ |
 | 1 Kac | Correcto. Solo se añaden la recurrencia explícita y campo medio para todas las condiciones iniciales. | ✓ | Test de periodicidad exacta $2N$ | — |
+
+
+## Fase 3: Física Estadística, Estado Sólido y Dispositivos Cuánticos / Phase 3
+
+Solo se conservan las páginas de teoría del curso original (los applets Java de estas secciones no
+están disponibles ni como bytecode); los experimentos se reimplementaron desde la física de esas
+páginas y se contrastaron con resultados analíticos. Hallazgos sobre los textos originales:
+
+| Experimento | Hallazgo / Finding | Grav. | Evidencia | Corrección |
+|---|---|---|---|---|
+| FE 5 cvising | El pico de $c_V$ en redes finitas se compara con Onsager sin aviso de que $N_x \le 7$ es lo accesible por matriz de transferencia exacta. | C | Coste $2^{N_x}$ | Límite explícito y comparación con $c$ de Onsager; test con red 6×32 |
+| FE 10 bosefermi | Comparar un Monte Carlo de $N$ partículas con ocupaciones gran canónicas da desacuerdos sistemáticos para $N$ pequeño. | B | Test `canonical occupations` | Ocupaciones canónicas exactas por programación dinámica; factor de aceptación $(n_j+1)/n_i$ |
+| ES 2–3 cadenas | La densidad de modos por conteo de nodos requiere el signo correcto de la recurrencia; el cuasicristal de Fibonacci tenía las letras pesada/ligera intercambiadas en el texto. | B | Tests de conteo frente a diagonalización | Recurrencia de Sturm; convención documentada |
+| ES 8 superficiales | El estado de Tamm solo existe en el modelo δ con potenciales atractivos ($P<0$); el texto sugiere que aparece en general. | B | Test de existencia | Valor por defecto $P=-3$ y nota en la ficha |
+| ES 11 Bloch | Para un estado inicial localizado en un sitio el centroide no oscila: el paquete "respira"; el texto habla de oscilación del centro. | B | Test `centroid stays` | Ficha y lectura de $r(t)$ frente a $T_B$ |
+| DC 4 dos bandas | $m_B(E) = m_A(1 + E/E_{gB})$ en la hoja no reproduce la masa parabólica de la barrera. | B | Límite $E\to0$ | $m_B(E) = m_B(1 + E/E_{gB})$, documentado |
+| DC 5 Stark | La corrección de segundo orden se aproxima por $(v/10\pi)^2$; el coeficiente exacto es $(15-\pi^2)/48\pi^4$, un 8 % mayor. | B | Suma de la serie perturbativa; test frente a diferencias finitas | Coeficiente exacto, con la aproximación citada en la ficha |
+| DC 6 heterounión | $K = 1.37\,n_{2D}$ "eV nm" en la hoja: son meV/nm. | B | Ley de Gauss con $\varepsilon_r = 13.2$ | Unidades corregidas |
+| DC 7 minibandas | El término de masas de la relación de dispersión aparece como $\kappa m_B/k m_A$; la continuidad de $\chi'/m$ da $\kappa m_A/k m_B$. | A | Test frente a la matriz de transferencia de un periodo construida con las condiciones de contorno | Fórmula corregida |
+| DC 10 absorción | Los datos experimentales de In₀.₅₃Ga₀.₄₇As no se conservan. | C | — | Espectro sintético declarado como tal |
+
+Todos los experimentos de la fase 3 tienen tests numéricos (`tests/fises*.test.js`,
+`tests/fes*.test.js`, `tests/dc.test.js`; 127 tests en total) y prueba de humo en navegador. All
+phase-3 experiments have numerical tests and a browser smoke test.

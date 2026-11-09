@@ -14,7 +14,7 @@ Página de créditos original: <http://valbuena.fis.ucm.es/expint/html/desarroll
 
 ## Esta versión (2026)
 
-- Reescritura en JavaScript de los 21 experimentos publicados hasta ahora, auditoría física, textos de las fichas, pruebas y despliegue: **Mario Encinar**, con la asistencia de Claude (Anthropic).
+- Reescritura en JavaScript de los 42 experimentos del curso y los 3 del TAD de 2003, auditoría física, textos de las fichas, pruebas y despliegue: **Mario Encinar**, con la asistencia de Claude (Anthropic).
 - Los textos de las fichas son nuevos; el curso original se cita como fuente de cada experimento y sus textos no se reproducen.
 - Código abierto en <https://github.com/Mepoide/applets-fisica-ucm>. El código Java de 2002-2003 se conserva sin cambios en la rama `legacy-java`.
 
