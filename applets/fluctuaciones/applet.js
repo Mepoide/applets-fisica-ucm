@@ -40,8 +40,8 @@ i18n.register({
 
 const W = 200, H = 200;
 
-export function mount(root, { root: base = '../..' } = {}) {
-  const ui = appletSkeleton(root, { canvases: [{ id: 'box', caption: 'fluct.cap.box' }, { id: 'graph', caption: 'fluct.cap.plot' }], hintKey: 'fluct.hint' });
+export function mount(root, { root: base = '../..', embedded = false } = {}) {
+  const ui = appletSkeleton(root, { canvases: [{ id: 'box', caption: 'fluct.cap.box' }, { id: 'graph', caption: 'fluct.cap.plot' }], hintKey: 'fluct.hint', theory: !embedded });
   let state;
   const pN = numberField({ label: 'fluct.N', value: 50, min: 1, max: 500, integer: true });
   const pkT = numberField({ label: 'fluct.kT', value: 100, min: 0.01, max: 10000 });

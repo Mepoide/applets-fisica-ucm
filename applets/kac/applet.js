@@ -46,8 +46,9 @@ export function mount(root, { root: base = '../..' } = {}) {
   const eq = liveEquation(ui.panel, {
     title: 'eq.title',
     equations: [
-      { tex: '\\Delta(t) = \\Big(1 - \\frac{2\\,\\htmlId{M}{M}}{\\htmlId{N}{N}}\\Big)^{\\htmlId{t}{t}}\\,\\htmlId{d0}{\\Delta(0)} = \\htmlId{mf}{\\Delta_{\\rm cm}}', slots: { M: { label: 'kac.eq.M' }, N: { label: 'kac.eq.N' }, t: { label: 'kac.eq.t' }, d0: { label: 'kac.eq.d0' }, mf: { label: 'kac.eq.mf' } } },
-      { tex: '\\Delta_{\\rm sim}(t) = N_A - N_R = \\htmlId{d}{\\Delta},\\qquad T_{\\rm rec} = 2N = \\htmlId{T}{2N}', slots: { d: { label: 'kac.eq.d' }, T: {} } },
+      { tex: '\\Delta(t) = \\Big(1 - \\frac{2\\cdot\\htmlId{M}{M}}{\\htmlId{N}{N}}\\Big)^{\\htmlId{t}{t}}\\,\\htmlId{d0}{\\Delta(0)} = \\htmlId{mf}{\\Delta_{\\rm cm}}', slots: { M: { label: 'kac.eq.M' }, N: { label: 'kac.eq.N' }, t: { label: 'kac.eq.t' }, d0: { label: 'kac.eq.d0' }, mf: { label: 'kac.eq.mf' } } },
+      { tex: '\\Delta_{\\rm sim}(t) = N_A - N_R = \\htmlId{d}{\\Delta}', slots: { d: { label: 'kac.eq.d' } } },
+      { tex: 'T_{\\rm rec} = 2N = \\htmlId{T}{2N}', slots: { T: {} } },
     ],
     indicators: [{ key: 'err', label: 'kac.ind.err' }, { key: 'T', label: 'kac.ind.T' }],
   });
