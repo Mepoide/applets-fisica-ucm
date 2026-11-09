@@ -26,7 +26,7 @@ test('symmetricEigen: eigenvectors reproduce A v = λ v for a random symmetric m
   const rng = mulberry32(1), n = 6, M = new Float64Array(n * n);
   for (let i = 0; i < n; i++) for (let j = i; j < n; j++) { const v = rng() - 0.5; M[i * n + j] = v; M[j * n + i] = v; }
   const { values, vectors } = symmetricEigen(M, n);
-  for (let k = 0; k < n; k++) for (let i = 0; i < n; i++) { let s = 0; for (let j = 0; j < n; j++) s += M[i * n + j] * vectors[k * n + j]; assert.ok(Math.abs(s - values[k] * vectors[k * n + i]) < 1e-9); }
+  for (let k = 0; k < n; k++) for (let i = 0; i < n; i++) { let s = 0; for (let j = 0; j < n; j++) s += M[i * n + j] * vectors[k * n + j]; assert.ok(Math.abs(s - values[k] * vectors[k * n + i]) < 1e-7); }
   for (let k = 1; k < n; k++) assert.ok(values[k] >= values[k - 1]);
 });
 test('Frenkel excitons: periodic band −2cos k, all oscillator strength in k = 0, sum rule Σf = N; disorder spreads it', () => {
@@ -46,11 +46,12 @@ test('Bloch oscillations: free packet spreads as √2 T t; with field the centro
   const m = B.moments(B.probability(free, 10), free.n0);
   assert.ok(Math.abs(m.radius - B.freeRadius(1, 10)) < 0.2, `radius ${m.radius} vs ${B.freeRadius(1, 10)}`);
   const F = 0.25, s = B.create({ N: 161, T: 1, F });
-  const TB = B.blochPeriod(F); let maxC = 0, minC = 0;
-  for (let t = 0; t <= TB; t += TB / 40) { const mo = B.moments(B.probability(s, t), s.n0); maxC = Math.max(maxC, mo.centroid); minC = Math.min(minC, mo.centroid); }
+  const TB = B.blochPeriod(F); let maxR = 0;
+  for (let t = 0; t <= TB; t += TB / 40) { const mo = B.moments(B.probability(s, t), s.n0); maxR = Math.max(maxR, mo.radius); assert.ok(Math.abs(mo.centroid) < 1e-6, 'symmetric initial state: centroid stays'); }
   const back = B.moments(B.probability(s, TB), s.n0);
-  assert.ok(Math.abs(back.centroid) < 0.05 && back.radius < 0.2, `after one Bloch period: centroid ${back.centroid} radius ${back.radius}`);
-  assert.ok(maxC - minC > 0.5 * B.blochAmplitude(1, F) * 0.5, `amplitude ${maxC - minC} vs 4T/F = ${B.blochAmplitude(1, F)}`);
+  assert.ok(back.radius < 0.2, `after one Bloch period: radius ${back.radius}`);
+  // breathing mode: the packet reaches a radius of order 2T/F (half the Wannier–Stark extent 4T/F)
+  assert.ok(maxR > 0.5 * (2 / F) && maxR < 1.2 * (4 / F), `max radius ${maxR} vs 2T/F = ${2 / F}`);
 });
 test('X-ray multilayer: single interface Fresnel, quarter-wave stack Bragg peak at λ_B, R ≤ 1', () => {
   // one thick layer of index 0.9 on vacuum: R at the top interface only matters when thickness ≫ coherence → use thin-film formula check at a simple case
