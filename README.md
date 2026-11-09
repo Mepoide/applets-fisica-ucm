@@ -1,12 +1,14 @@
 # Applets de Física · UCM / UCM Physics Applets
 
 **ES.** Simulaciones interactivas de física estadística y sistemas complejos, escritas
-originalmente como applets Java (2002-2005, Mario Castro Ponce, UCM) y portadas a
+originalmente como applets Java en la UCM (2002-2003, Mario Encinar sobre una base de
+Mario Castro; ver [Autoría](#autoría--authorship)) y portadas a
 HTML + JavaScript + Canvas para navegadores actuales. Sin dependencias ni paso de
 compilación: basta servir la carpeta.
 
 **EN.** Interactive simulations in statistical physics and complex systems, originally
-written as Java applets (2002-2005, Mario Castro Ponce, UCM) and ported to
+written as Java applets at UCM (2002-2003, Mario Encinar on a base by Mario Castro; see
+[Authorship](#autoría--authorship)) and ported to
 HTML + JavaScript + Canvas for modern browsers. No dependencies and no build step: just
 serve the folder.
 
@@ -40,9 +42,29 @@ npm run test:browser   # Playwright smoke tests + screenshots
 - Diseño y plan de esta fase / design and plan: [`docs/superpowers/`](docs/superpowers/).
 - Capturas / screenshots: [`docs/screenshots/`](docs/screenshots/).
 
-El código Java original (2002-2005) está congelado, sin modificar, en la rama
+El código Java original (2002-2003) está congelado, sin modificar, en la rama
 [`legacy-java`](https://github.com/Mepoide/applets-fisica-ucm/tree/legacy-java). The original
 Java code is frozen, untouched, on the `legacy-java` branch.
+
+## Autoría / Authorship
+
+**ES.** Los fuentes no tienen control de versiones; la atribución sale de las fechas de
+modificación, la codificación y el estilo de cada fichero (ver el README de la rama
+`legacy-java`).
+
+| Código | Autor | Fecha |
+|---|---|---|
+| Base: `CanonicaApplet` (discos duros, colectivo canónico) y librería de dibujo `CuadroMath`, `GraficoAuxiliar`, `VentanaAuxiliar` | Mario Castro | jul. 2002 |
+| Applets de pila de arena, Maxwell, modos lineales (`Lineal`) y autocorrelación (`Autocor`) | Mario Encinar | feb.–jun. 2003 |
+| Familia de gas reticular FHP: Von Kármán (`VK*`) y perfil de densidad (`Perfildens*`) | Mario Encinar | abr.–jun. 2003 |
+| Puerto a JavaScript, auditoría de física, documentación y pruebas | Mario Encinar, con Claude (Anthropic) | 2026 |
+
+**EN.** The sources were never under version control; attribution comes from file
+modification dates, encoding and coding style (see the `legacy-java` README). Base
+hard-disk applet and plotting library: Mario Castro (July 2002). All simulation applets
+(sandpile, Maxwell, linear modes, autocorrelation, FHP lattice gas family): Mario Encinar
+(February–June 2003). JavaScript port, physics audit, docs and tests: Mario Encinar with
+Claude (Anthropic), 2026.
 
 ## Estructura / Layout
 

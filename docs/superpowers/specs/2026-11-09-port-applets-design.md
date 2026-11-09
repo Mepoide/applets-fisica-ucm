@@ -5,7 +5,7 @@ familias, interfaz y documentación bilingüe ES/EN, commits directos a `main` c
 
 ## 1. Objetivo
 
-Recuperar seis applets Java AWT (2002-2005, tesis/docencia UCM, física estadística y
+Recuperar seis applets Java AWT (2002-2003, docencia UCM, Mario Encinar sobre base de Mario Castro; física estadística y
 sistemas complejos) como páginas web estáticas que funcionen hoy, auditar su física,
 corregir y documentar, y evaluar su valor didáctico. El código original queda congelado en
 la rama `legacy-java`. Fuera de alcance en esta fase: applets nuevos.
