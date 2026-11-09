@@ -46,8 +46,8 @@ export function mount(root, { root: base = '../..' } = {}) {
     title: 'eq.title',
     equations: [
       { tex: 'N_{\\rm meta}(t) = N_0\\,e^{-k t},\\qquad k_{\\rm fit} = \\htmlId{kf}{k}', slots: { kf: { label: 'arr.eq.kf' } } },
-      { tex: 'k_{\\rm Arr} = \\frac{\\htmlId{wm}{\\omega_{\\rm m}}\\,\\htmlId{wM}{\\omega_{\\rm M}}}{2\\pi\\,\\gamma}\\,e^{-\\htmlId{dE}{\\Delta E}/\\htmlId{kT}{kT}} = \\htmlId{kA}{k_{\\rm Arr}},\\qquad \\gamma = \\frac{kT}{\\htmlId{D}{D}}', slots: { wm: { label: 'arr.eq.wm' }, wM: { label: 'arr.eq.wM' }, dE: { label: 'arr.eq.dE' }, kT: { label: 'arr.eq.kT' }, kA: { label: 'arr.eq.kA' }, D: { label: 'arr.eq.D' } } },
-      { tex: 'k_{\\rm Kramers} = \\frac{D}{\\int_{\\rm pozo} e^{-V/kT}dx\\int_{\\rm barrera} e^{V/kT}dx} = \\htmlId{kK}{k_{\\rm K}}', slots: { kK: { label: 'arr.eq.kK' } } },
+      { tex: 'k_{\\rm Arr} = \\frac{\\htmlId{wm}{\\omega_{\\rm m}}\\cdot\\htmlId{wM}{\\omega_{\\rm M}}}{2\\pi\\,\\gamma}\\,e^{-\\htmlId{dE}{\\Delta E}/\\htmlId{kT}{kT}} = \\htmlId{kA}{k_{\\rm Arr}}', slots: { wm: { label: 'arr.eq.wm' }, wM: { label: 'arr.eq.wM' }, dE: { label: 'arr.eq.dE' }, kT: { label: 'arr.eq.kT' }, kA: { label: 'arr.eq.kA' } } },
+      { tex: '\\gamma = \\frac{kT}{\\htmlId{D}{D}},\\qquad k_{\\rm Kramers} = \\frac{D}{\\int_{\\rm pozo} e^{-V/kT}dx\\int_{\\rm barr.} e^{V/kT}dx} = \\htmlId{kK}{k_{\\rm K}}', slots: { D: { label: 'arr.eq.D' }, kK: { label: 'arr.eq.kK' } } },
     ],
     indicators: [{ key: 'fit', label: 'arr.ind.fit' }, { key: 'ratio', label: 'arr.ind.ratio' }],
   });
