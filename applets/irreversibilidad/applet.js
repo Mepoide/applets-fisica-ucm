@@ -55,7 +55,7 @@ function mountAB(root, kind) {
   const ui = appletSkeleton(root, { canvases: [{ id: 'box', caption: 'irrev.cap.box' }, { id: 'plot', caption: 'irrev.cap.plot' }], hintKey: 'irrev.hint', theory: false });
   let state;
   const pN = numberField({ label: 'irrev.N', value: 20, min: 1, max: kind === 'gas' ? 100 : 1000, integer: true });
-  const pkT = numberField({ label: 'irrev.kT', value: 1, min: 0.01, max: 100 });
+  const pkT = numberField({ label: 'irrev.kT', value: 2, min: 0.01, max: 100 });
   const pPlot = select({ label: 'irrev.plot', value: 'series', options: [{ value: 'series', label: 'irrev.plot.series' }, { value: 'hist', label: 'irrev.plot.hist' }], onChange: () => draw() });
   ui.params.append(pN.el); if (kind === 'gas') ui.params.append(pkT.el); ui.params.append(pPlot.el);
 
@@ -65,7 +65,7 @@ function mountAB(root, kind) {
   const eq = liveEquation(ui.panel, {
     title: 'eq.title',
     equations: [
-      { tex: 'P(n_{\\rm izq}=n) = \\binom{\\htmlId{N}{N}}{n}\\,2^{-N},\\qquad \\Delta = n_{\\rm izq} - n_{\\rm dcha}', slots: { N: { label: 'irrev.eq.N' } } },
+      { tex: 'P(n_{\\rm izq}=n) = \\binom{\\htmlId{N}{N}}{n}\\,2^{-N},\\quad \\Delta = n_{\\rm izq} - n_{\\rm dcha}', slots: { N: { label: 'irrev.eq.N' } } },
       { tex: '\\sigma_\\Delta = \\sqrt{N} = \\htmlId{sigma}{\\sigma_\\Delta},\\qquad \\sigma_\\Delta^{\\rm med} = \\htmlId{sd}{\\sigma}', slots: { sigma: { label: 'irrev.eq.sigma' }, sd: { label: 'irrev.eq.sd' } } },
       { tex: 'P(|\\Delta| = N) = 2^{\\,1-N} = \\htmlId{pall}{P}', slots: { pall: { label: 'irrev.eq.pall', fmt: (v) => (v < 1e-4 ? v.toExponential(1) : formatValue(v)) } } },
     ],
@@ -137,7 +137,7 @@ function mountAB(root, kind) {
     eq.setIndicator('ratio', ratio, Number.isNaN(ratio) ? 'none' : Math.abs(ratio - 1) < 0.2 ? 'ok' : 'warn');
     eq.setIndicator('all', st.n > 20 ? tails.allOneSide : NaN);
   }
-  const loop = new Loop({ step, draw, reset, stepsPerFrame: kind === 'gas' ? 1 : 4 });
+  const loop = new Loop({ step, draw, reset, stepsPerFrame: kind === 'gas' ? 3 : 4 });
   ui.loopctl.append(loopControls(loop, { speedMin: 1, speedMax: kind === 'gas' ? 10 : 200 }).el);
   reset();
   const off = autoResize([box, plot], draw);
