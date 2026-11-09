@@ -32,7 +32,15 @@ export function occupancy(s) {
 }
 // Accumulate the instantaneous histogram into s.occ (time average).
 export function accumulate(s) { const h = occupancy(s); for (let i = 0; i < s.L; i++) s.occ[i] += h[i]; s.nAcc++; }
-export function resetAccumulator(s) { s.occ.fill(0); s.nAcc = 0; }
+export function resetAccumulator(s) { s.occ.fill(0); s.nAcc = 0; if (s.pEma) { s.pEma.fill(0); s.nEma = 0; } }
+// Exponential moving average of the occupation probability with memory `tau` steps; follows the
+// relaxation instead of freezing the transient in. nEma is the effective number of averaged steps.
+export function accumulateEma(s, tau = 400) {
+  if (!s.pEma) { s.pEma = new Float64Array(s.L); s.nEma = 0; }
+  const h = occupancy(s), a = 1 / Math.min(tau, s.nEma + 1);
+  for (let i = 0; i < s.L; i++) s.pEma[i] += a * (h[i] / s.N - s.pEma[i]);
+  s.nEma = Math.min(tau, s.nEma + 1);
+}
 // Normalised accumulated occupation (probability per site).
 export function meanOccupation(s) {
   const p = new Float64Array(s.L);

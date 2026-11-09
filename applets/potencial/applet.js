@@ -13,20 +13,20 @@ i18n.register({
   es: {
     'pot.N': 'Partículas (1–2000)', 'pot.kT': 'Temperatura kT', 'pot.V': 'Potencial', 'pot.V.parabolic': 'Parabólico', 'pot.V.sawSym': 'Diente de sierra simétrico', 'pot.V.sawAsym': 'Diente de sierra asimétrico', 'pot.reset': 'Borrar histograma',
     'pot.cap.box': 'Partículas brownianas independientes (puntos) sobre el potencial V(x) (línea negra). La barra naranja mide kT en la misma escala de energía: las partículas rara vez suben más que eso.',
-    'pot.cap.plot': 'Rojo: histograma de posiciones acumulado en el tiempo. Azul: estado de Boltzmann p_i = e^{−V_i/kT}/Z.',
-    'pot.readout': 't = {t} · muestras acumuladas = {n} · kT = {kT} · Z = {Z} · χ²/dof = {chi2}',
+    'pot.cap.plot': 'Rojo: histograma de posiciones promediado sobre los últimos ~500 pasos (media móvil exponencial). Azul: estado de Boltzmann p_i = e^{−V_i/kT}/Z.',
+    'pot.readout': 't = {t} · muestras efectivas = {n} · kT = {kT} · Z = {Z} · χ²/dof = {chi2}',
     'pot.hint': 'Baja kT hacia 0: todas las partículas acaban en el mínimo (si el potencial es asimétrico, por la pendiente que sea). Súbela mucho: el potencial deja de notarse y el histograma se aplana. El tiempo de relajación crece al bajar kT; usa "Borrar histograma" después de cambiar la temperatura.',
     'pot.eq.kT': 'temperatura (energía térmica)', 'pot.eq.Z': 'función de partición Σ e^{−V_i/kT}', 'pot.eq.Vmax': 'altura del potencial en los bordes',
-    'pot.ind.chi2': 'χ²/dof histograma vs Boltzmann', 'pot.ind.n': 'muestras acumuladas',
+    'pot.ind.chi2': 'χ²/dof histograma vs Boltzmann', 'pot.ind.n': 'muestras efectivas',
   },
   en: {
     'pot.N': 'Particles (1–2000)', 'pot.kT': 'Temperature kT', 'pot.V': 'Potential', 'pot.V.parabolic': 'Parabolic', 'pot.V.sawSym': 'Symmetric sawtooth', 'pot.V.sawAsym': 'Asymmetric sawtooth', 'pot.reset': 'Clear histogram',
     'pot.cap.box': 'Independent Brownian particles (dots) on the potential V(x) (black line). The orange bar measures kT on the same energy scale: particles rarely climb higher than that.',
-    'pot.cap.plot': 'Red: time-accumulated position histogram. Blue: Boltzmann state p_i = e^{−V_i/kT}/Z.',
-    'pot.readout': 't = {t} · accumulated samples = {n} · kT = {kT} · Z = {Z} · χ²/dof = {chi2}',
+    'pot.cap.plot': 'Red: position histogram averaged over the last ~500 steps (exponential moving average). Blue: Boltzmann state p_i = e^{−V_i/kT}/Z.',
+    'pot.readout': 't = {t} · effective samples = {n} · kT = {kT} · Z = {Z} · χ²/dof = {chi2}',
     'pot.hint': 'Lower kT towards 0: every particle ends in the minimum (for an asymmetric potential, down whichever slope). Raise it a lot: the potential stops mattering and the histogram flattens. The relaxation time grows as kT decreases; use "Clear histogram" after changing the temperature.',
     'pot.eq.kT': 'temperature (thermal energy)', 'pot.eq.Z': 'partition function Σ e^{−V_i/kT}', 'pot.eq.Vmax': 'potential height at the edges',
-    'pot.ind.chi2': 'χ²/dof histogram vs Boltzmann', 'pot.ind.n': 'accumulated samples',
+    'pot.ind.chi2': 'χ²/dof histogram vs Boltzmann', 'pot.ind.n': 'effective samples',
   },
 });
 
@@ -55,7 +55,8 @@ export function mount(root, { root: base = '../..' } = {}) {
 
   function setV() { V = W.POTENTIALS[pV.get()](L, VMAX); if (state) W.setPotential(state, V); eq.update({ kT, Z: W.partitionFunction(V, kT), Vmax: VMAX }); }
   function reset() { setV(); kT = 10 ** pkT.get(); state = W.createWalkers({ N: pN.get(), V, kT }); }
-  function step() { W.stepWalkers(state); W.accumulate(state); }
+  const TAU = 500;
+  function step() { W.stepWalkers(state); W.accumulateEma(state, TAU); }
   function drawBox() {
     box.setScales(-1, 1, -0.3, VMAX * 1.1); box.clear();
     // kT bar
@@ -67,23 +68,23 @@ export function mount(root, { root: base = '../..' } = {}) {
     box.end();
   }
   function drawPlot() {
-    const p = W.meanOccupation(state), q = W.boltzmann(V, kT);
+    const p = state.pEma ?? new Float64Array(L), q = W.boltzmann(V, kT);
     const pmax = Math.max(...q, ...p) * 1.15 || 1;
     plot.setScales(-1, 1, 0, pmax); plot.clear();
     const dx = 2 / (L - 1);
     plot.color('rgba(181,40,30,0.7)');
-    if (state.nAcc) for (let i = 0; i < L; i++) plot.bar(xs[i] - dx / 2, xs[i] + dx / 2, p[i]);
+    if (state.nEma) for (let i = 0; i < L; i++) plot.bar(xs[i] - dx / 2, xs[i] + dx / 2, p[i]);
     plot.color('#1f4e9c'); plot.lineWidth(2); plot.polyline(Array.from(xs), Array.from(q)); plot.lineWidth(1);
     plot.end();
-    const n = state.nAcc * state.N;
-    const c2 = state.nAcc > 5 ? W.chi2Reduced(p, q, n) : NaN;
+    const n = Math.round((state.nEma ?? 0) * state.N); // effective samples in the moving average
+    const c2 = (state.nEma ?? 0) > 20 ? W.chi2Reduced(p, q, n) : NaN;
     ui.readout.textContent = i18n.t('pot.readout', { t: state.t, n, kT: kT.toFixed(2), Z: W.partitionFunction(V, kT).toExponential(2), chi2: Number.isNaN(c2) ? '–' : c2.toFixed(2) });
     eq.setIndicator('chi2', c2, Number.isNaN(c2) ? 'none' : c2 < 3 ? 'ok' : 'warn');
     eq.setIndicator('n', n);
   }
   function draw() { drawBox(); drawPlot(); }
-  const loop = new Loop({ step, draw, reset, stepsPerFrame: 2 });
-  ui.loopctl.append(loopControls(loop, { speedMin: 1, speedMax: 50 }).el);
+  const loop = new Loop({ step, draw, reset, stepsPerFrame: 10 });
+  ui.loopctl.append(loopControls(loop, { speedMin: 1, speedMax: 100 }).el);
   reset();
   const off = autoResize([box, plot], draw);
   if (ui.theory) mountSections(ui.theory, meta.slug, base);
