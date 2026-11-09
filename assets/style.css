@@ -106,3 +106,5 @@ details.sec .theory { padding: 0.2rem 0 0.6rem; }
 .canvases.stack canvas { aspect-ratio: 3 / 1; }
 .canvases.single { grid-template-columns: 1fr; }
 .toggles button[aria-pressed="true"] { border-color: var(--accent); font-weight: 600; }
+.sidebar .tad, .course-head .tad { color: var(--accent); font-weight: 700; margin-left: 0.15em; }
+.sidebar .tad-legend { font-size: 0.75rem; color: var(--muted); margin: 1rem 0.5rem 0; line-height: 1.35; }

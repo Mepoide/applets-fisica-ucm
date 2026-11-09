@@ -43,7 +43,11 @@ sin barra lateral. Every experiment also exists as a standalone page to embed, w
 | 7 | `#/potencial` | Difusión en un potencial externo | Diffusion in an external potential | p_i = e^{−V_i/kT}/Z; regla de Metrópolis |
 | 8 | `#/arrhenius` | Procesos de activación: ley de Arrhenius | Activation processes: Arrhenius law | N(t) = N₀e^{−kt}; k de Kramers (red), Arrhenius y la estimación del curso |
 | 9 | `#/resonancia` | Resonancia estocástica | Stochastic resonance | τ_K(kT) = T/2; amplitud de respuesta A_ω; barrido en kT |
-| + | `#/maxwell`, `#/pila-arena`, `#/von-karman` | Material adicional del TAD de 2003 | Additional material from the 2003 TAD | Maxwell 2D y χ²; P(s) ∝ s^{−τ}; Re = g u L/ν |
+| 10* | `#/maxwell` | Discos duros y distribución de Maxwell | Hard disks and the Maxwell distribution | f(v) Maxwell 2D con kT medido; χ²/dof |
+| 11* | `#/pila-arena` | Pila de arena y criticalidad autoorganizada | Sandpile and self-organized criticality | P(s) ∝ s^{−τ}, τ ajustado (Oslo: 1.55) |
+| 12* | `#/von-karman` | Gas reticular con obstáculo: calle de Von Kármán | Lattice gas with an obstacle: Von Kármán street | Re = g(f) u L/ν, Mach |
+
+\* Experimentos del TAD de 2003, no incluidos en el curso original. / Experiments from the 2003 TAD, not in the original course.
 
 Las páginas `applets/onda-lgca`, `applets/modos-lineales` y `applets/fluctuaciones` siguen
 existiendo como applets independientes; el curso las incrusta dentro de los experimentos 4 y 2.
