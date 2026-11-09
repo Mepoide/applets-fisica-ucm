@@ -20,24 +20,8 @@ export function transferMatrix(Nx, beta) {
   for (let s = 0; s < dim; s++) for (let t = 0; t < dim; t++) M[s * dim + t] = hw[s] * Math.exp(beta * (Nx - 2 * pop[s ^ t])) * hw[t];
   return { M, dim };
 }
-// Eigenvalues of a dense symmetric matrix by cyclic Jacobi rotations.
-export function symmetricEigenvalues(M, n, tol = 1e-12) {
-  const A = Float64Array.from(M);
-  for (let sweep = 0; sweep < 60; sweep++) {
-    let off = 0; for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) off += A[i * n + j] ** 2;
-    if (off < tol) break;
-    for (let p = 0; p < n; p++) for (let q = p + 1; q < n; q++) {
-      const apq = A[p * n + q]; if (Math.abs(apq) < 1e-300) continue;
-      const theta = (A[q * n + q] - A[p * n + p]) / (2 * apq);
-      const t = Math.sign(theta || 1) / (Math.abs(theta) + Math.sqrt(theta * theta + 1));
-      const c = 1 / Math.sqrt(t * t + 1), s = t * c;
-      for (let k = 0; k < n; k++) { const akp = A[k * n + p], akq = A[k * n + q]; A[k * n + p] = c * akp - s * akq; A[k * n + q] = s * akp + c * akq; }
-      for (let k = 0; k < n; k++) { const apk = A[p * n + k], aqk = A[q * n + k]; A[p * n + k] = c * apk - s * aqk; A[q * n + k] = s * apk + c * aqk; }
-    }
-  }
-  const ev = new Float64Array(n); for (let i = 0; i < n; i++) ev[i] = A[i * n + i];
-  return ev;
-}
+import { symmetricEigenvalues } from '../../lib/linalg.js';
+export { symmetricEigenvalues };
 // ln Z = ln Σ_i λ_i^Ny (Nx ≤ 8 is practical; Nx ≤ 6 is instantaneous).
 export function lnZ(Nx, Ny, beta) {
   const { M, dim } = transferMatrix(Nx, beta);
