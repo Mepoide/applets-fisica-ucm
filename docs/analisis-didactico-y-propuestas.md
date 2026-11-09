@@ -27,7 +27,7 @@ Este documento resume qué es hoy la versión web del curso, qué aporta y qué 
 | Comprobación | Resultado |
 |---|---|
 | Tests de física y unidad (`npm test`) | 127 de 127 correctos |
-| Prueba de humo en navegador (todas las rutas, dos idiomas, móvil) | 145 de 145 rutas correctas, en local y contra el sitio desplegado |
+| Prueba de humo en navegador (todas las rutas, dos idiomas, móvil, sin desbordamiento horizontal) | 146 de 146 comprobaciones correctas, en local y contra el sitio desplegado |
 | Acceso al sitio desplegado (portada, registro, applets, fichas, estilos) | HTTP 200 en todas las rutas probadas, 0.2 s por recurso |
 | GitHub Pages | Publicado desde `main`, HTTPS forzado, repositorio público |
 
