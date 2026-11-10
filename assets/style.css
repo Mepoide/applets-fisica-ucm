@@ -29,10 +29,10 @@ button.primary { background: var(--accent); color: var(--accent-fg); border-colo
 button:disabled { opacity: 0.5; cursor: default; }
 button.lang { padding: 0.2rem 0.6rem; }
 .controls, .params { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; padding: 0.6rem 0; }
-label.ctl { display: inline-flex; align-items: center; gap: 0.4rem; }
+label.ctl { display: inline-flex; align-items: center; gap: 0.4rem; max-width: 100%; min-width: 0; }
 label.ctl span { color: var(--muted); font-size: 0.95rem; }
 label.ctl input[type=number] { width: 5.5em; font: inherit; padding: 0.2rem 0.4rem; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--fg); }
-label.ctl select { font: inherit; padding: 0.2rem 0.4rem; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--fg); }
+label.ctl select { min-width: 0; max-width: 100%; text-overflow: ellipsis; font: inherit; padding: 0.2rem 0.4rem; border: 1px solid var(--line); border-radius: 4px; background: var(--panel); color: var(--fg); }
 label.ctl output { min-width: 2.5em; font-variant-numeric: tabular-nums; }
 .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--line); margin-top: 0.5rem; }
 .tabs button { border: none; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 0.5rem 1rem; }
