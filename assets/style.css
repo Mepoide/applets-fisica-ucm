@@ -48,7 +48,11 @@ canvas.plot.tall { aspect-ratio: 3 / 4; }
 .readout { font-variant-numeric: tabular-nums; color: var(--fg); font-size: 0.95rem; padding: 0.4rem 0; }
 .theory { max-width: 48rem; }
 .theory pre.raw-md { white-space: pre-wrap; }
-.theory table { border-collapse: collapse; }
+/* Long URLs and words wrap; wide equations, tables and code scroll inside their own box. */
+.theory, .theory-sections, article.page, .readout, .hint, figcaption { overflow-wrap: anywhere; }
+.theory .katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.1rem 0; }
+.theory pre { overflow-x: auto; }
+.theory table { border-collapse: collapse; display: block; max-width: 100%; overflow-x: auto; }
 .theory td, .theory th { border: 1px solid var(--line); padding: 0.2rem 0.6rem; }
 .theory img { max-width: 100%; }
 footer.site { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
@@ -74,7 +78,7 @@ button.icon { padding: 0.2rem 0.55rem; font-size: 1.05rem; line-height: 1; }
 .sidebar a[aria-current="page"] { background: color-mix(in srgb, var(--accent) 16%, transparent); font-weight: 600; }
 .sidebar a .num { min-width: 1.4em; color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 600; }
 .sidebar a.home { font-weight: 600; margin-bottom: 0.3rem; }
-.content { padding: 1rem 16px 3rem; max-width: 1280px; }
+.content { padding: 1rem 16px 3rem; width: 100%; max-width: 1280px; min-width: 0; }
 .home .lead { font-size: 1.15rem; max-width: 46rem; }
 .home p { max-width: 46rem; }
 #nav-toggle { display: none; }
@@ -157,7 +161,6 @@ article.page { max-width: 52rem; }
   .hm-left { left: 4%; } .hm-right { right: 4%; }
   .hm-bl { left: 4%; bottom: 5%; } .hm-br { right: 4%; bottom: 5%; }
   .canvases { grid-template-columns: 1fr; }
-  html, body { overflow-x: hidden; }
 }
 .eq-defs { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.7rem; margin: 0.6rem 0 0; padding-top: 0.5rem; border-top: 1px dashed var(--line); font-size: 0.92rem; }
 .eq-defs dt { color: var(--accent); font-weight: 600; white-space: nowrap; }

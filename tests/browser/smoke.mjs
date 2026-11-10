@@ -120,16 +120,27 @@ for (const slug of slugs) {
   console.log(`${hidden && shown ? 'OK  ' : 'FAIL'} mobile nav hidden=${hidden} toggled=${shown}`);
   if (!(hidden && shown)) failures++;
   await page.click('#nav-toggle');
-  // Mobile layout: no horizontal overflow on the home page nor on an experiment page.
-  const overflow = () => page.evaluate(() => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - window.innerWidth);
+  // Mobile layout: no horizontal overflow anywhere (home, course pages, sections,
+  // every experiment with its theory open). html/body do not clip overflow, so
+  // this measures what the reader would actually have to scroll.
+  const overflow = () => page.evaluate(() => {
+    document.querySelectorAll('details').forEach((d) => { d.open = true; });
+    return Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - document.documentElement.clientWidth;
+  });
   await page.evaluate(() => { location.hash = '#/'; }); await page.waitForSelector('.hero canvas'); await page.waitForTimeout(600);
   const ovHome = await overflow();
   if (!process.env.BASE_URL) await page.screenshot({ path: `${root}docs/screenshots/mobile-home.png`, fullPage: true });
-  await page.evaluate((h) => { location.hash = h; }, `#/${routes[0].slug}`); await page.waitForSelector('button.primary'); await page.waitForTimeout(600);
-  const ovExp = await overflow();
-  if (!process.env.BASE_URL) await page.screenshot({ path: `${root}docs/screenshots/mobile-experiment.png`, fullPage: true });
-  const okOv = ovHome <= 0 && ovExp <= 0;
-  console.log(`${okOv ? 'OK  ' : 'FAIL'} mobile overflow home=${ovHome}px experiment=${ovExp}px`);
+  const wide = [];
+  const mobileRoutes = [...PAGES.map((p) => p.id), ...SECTIONS.map((s) => `s/${s.id}`), ...routes.map((r) => r.slug)];
+  for (const h of mobileRoutes) {
+    await page.evaluate((x) => { location.hash = x; }, `#/${h}`);
+    await page.waitForTimeout(900);
+    const ov = await overflow();
+    if (h === routes[0].slug && !process.env.BASE_URL) await page.screenshot({ path: `${root}docs/screenshots/mobile-experiment.png`, fullPage: true });
+    if (ov > 0) wide.push(`${h}(+${ov}px)`);
+  }
+  const okOv = ovHome <= 0 && wide.length === 0;
+  console.log(`${okOv ? 'OK  ' : 'FAIL'} mobile overflow home=${ovHome}px routes=${mobileRoutes.length} wide=[${wide.join(' ')}]`);
   if (!okOv) failures++;
   await page.close();
 }
